@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's Cook</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+    <link rel="manifest" href="assets/images/site.webmanifest" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Let's Cook</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for recipes" />
+            <button id="searchButton">Search</button>
+            <button id="randomButton">Random Recipe</button>
+        </div>
+        <div id="recipeContainer" class="recipe-container"></div>
+    </div>
+
+    <div id="loading" class="loading"></div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalContent"></div>
+            <button id="saveButton">Save Recipe</button>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
