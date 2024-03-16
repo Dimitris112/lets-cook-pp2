@@ -38,9 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const closeButton = document.getElementsByClassName("close");
     const searchInput = document.getElementById("searchInput");
 
-
     searchInput.focus();
-
 
     searchInput.addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
@@ -55,13 +53,25 @@ document.addEventListener("DOMContentLoaded", function () {
         fetchRecipes(searchQuery);
     });
 
+
     randomButton.addEventListener("click", () => {
         fetchRandomRecipe();
-    })
+    });
 
     async function fetchRecipes(searchQuery) {
         try {
             const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`;
+            const response = await fetch(searchUrl);
+            const data = await response.json();
+            displayRecipes(data.meals);
+        } catch (error) {
+            console.error("Error fetching recipes:", error);
+        }
+    }
+
+    async function fetchRecipesByFirstLetter(letter) {
+        try {
+            const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`;
             const response = await fetch(searchUrl);
             const data = await response.json();
             displayRecipes(data.meals);
