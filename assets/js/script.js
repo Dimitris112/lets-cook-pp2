@@ -25,4 +25,28 @@ document.addEventListener("DOMContentLoaded", function () {
     randomButton.addEventListener("click", () => {
         fetchRandomRecipe();
     })
+
+
+    function displayRecipes(recipes) {
+        const recipeContainer = document.getElementById("recipeContainer");
+        recipeContainer.innerHTML = "";
+        recipes.forEach((recipe) => {
+            const recipeElement = document.createElement("div");
+            recipeElement.classList.add("recipe");
+            recipeElement.innerHTML = `
+            <h3>${recipe.strMeal}</h3>
+            <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}">
+            <button class="viewRecipeButton" data-recipe-id="${recipe.idMeal}">View Recipe</button>
+        `;
+            recipeContainer.appendChild(recipeElement);
+        });
+
+        const viewRecipeButtons = document.getElementsByClassName("viewRecipeButton");
+        viewRecipeButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const recipeId = button.getAttribute("data-recipe-id");
+                fetchAndDisplayRecipeDetails(recipeId);
+            });
+        });
+    }
 });
