@@ -164,12 +164,22 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
         modal.style.display = "block";
     }
+
+    if (closeButton && closeButton.length) {
+        closeButton[0].addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    } else {
+        console.error("Close button not found or closeButton is not iterable.");
+    }
+    
     // Event listener to close the modal when the user clicks outside
     window.addEventListener("click", (event) => {
         if (event.target === modal) {
             modal.style.display = "none";
         }
     });
+
     async function fetchMultipleData() {
         try {
             const urls = [
