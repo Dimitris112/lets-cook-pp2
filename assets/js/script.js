@@ -131,8 +131,39 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
         modal.style.display = "block";
     }
+    async function fetchAndDisplayRecipeDetails(recipeId) {
+        try {
+            const lookupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
+            const response = await fetch(lookupUrl);
+            const data = await response.json();
+            displayRecipeDetails(data.meals[0]);
+        } catch (error) {
+            console.error("Error fetching recipe details:", error);
+        }
+    }
+    async function fetchAndDisplayRecipeDetails(recipeId) {
+        try {
+            const lookupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
+            const response = await fetch(lookupUrl);
+            const data = await response.json();
+            displayRecipeDetails(data.meals[0]);
+        } catch (error) {
+            console.error("Error fetching recipe details:", error);
+        }
+    }
 
-
+    function displayRecipeDetails(recipe) {
+        const modalTitle = document.getElementById("modalTitle");
+        modalTitle.textContent = recipe.strMeal;
+        const modalContent = document.getElementById("modalContent");
+        modalContent.innerHTML = `
+            <p>${recipe.strInstructions}</p>
+            <p>Category: ${recipe.strCategory}</p>
+            <p>Area: ${recipe.strArea}</p>
+            <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" />
+        `;
+        modal.style.display = "block";
+    }
     // Event listener to close the modal when the user clicks outside
     window.addEventListener("click", (event) => {
         if (event.target === modal) {
