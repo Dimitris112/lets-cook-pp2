@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
         fetchRecipes(searchQuery);
     });
 
-
     randomButton.addEventListener("click", () => {
         fetchRandomRecipe();
     });
@@ -131,16 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
         modal.style.display = "block";
     }
-    async function fetchAndDisplayRecipeDetails(recipeId) {
-        try {
-            const lookupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
-            const response = await fetch(lookupUrl);
-            const data = await response.json();
-            displayRecipeDetails(data.meals[0]);
-        } catch (error) {
-            console.error("Error fetching recipe details:", error);
-        }
-    }
+
     async function fetchAndDisplayRecipeDetails(recipeId) {
         try {
             const lookupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
@@ -172,7 +162,8 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         console.error("Close button not found or closeButton is not iterable.");
     }
-    
+
+
     // Event listener to close the modal when the user clicks outside
     window.addEventListener("click", (event) => {
         if (event.target === modal) {
