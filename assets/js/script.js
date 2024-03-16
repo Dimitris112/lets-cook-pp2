@@ -1,8 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const browseByName = document.getElementsByClassName("browse-by-name")[0];
+
+    /**
+     * Function to generate letters from A to Z dynamically
+     * and add them to the browse-by-name section
+     */
+    function generateAlphabet() {
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        for (let letter of letters) {
+            const span = document.createElement("span");
+            span.classList.add("letter");
+            span.textContent = letter;
+            browseByName.appendChild(span);
+        }
+    }
+
+    generateAlphabet();
+
+    function handleLetterClick(event) {
+        const searchQuery = event.target.textContent;
+        fetchRecipesByFirstLetter(searchQuery);
+    }
+
+    // Add event listeners to each letter if letters is iterable
+    const letters = document.getElementsByClassName("letter");
+    if (letters && letters.length) {
+        for (let i = 0; i < letters.length; i++) {
+            letters[i].addEventListener("click", handleLetterClick);
+        }
+    } else {
+        console.error("No letters found or letters is not iterable.");
+    }
+
     const searchButton = document.getElementById("searchButton");
     const randomButton = document.getElementById("randomButton");
     const modal = document.getElementById("modal");
-    const closeButton = document.querySelector(".close");
+    const closeButton = document.getElementsByClassName("close");
     const searchInput = document.getElementById("searchInput");
 
 
@@ -70,6 +103,13 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+
+    // Event listener to close the modal when the user clicks outside
+    window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
     async function fetchMultipleData() {
         try {
             const urls = [
