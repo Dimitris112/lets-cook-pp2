@@ -70,5 +70,26 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+    async function fetchMultipleData() {
+        try {
+            const urls = [
+                'https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata',
+                'https://www.themealdb.com/api/json/v1/1/search.php?f=a',
+                'https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772',
+                'https://www.themealdb.com/api/json/v1/1/random.php',
+                'https://www.themealdb.com/api/json/v1/1/categories.php',
+                'https://www.themealdb.com/api/json/v1/1/list.php?c=list',
+                'https://www.themealdb.com/api/json/v1/1/list.php?a=list',
+                'https://www.themealdb.com/api/json/v1/1/list.php?i=list'
+            ];
 
+            const results = await Promise.all(urls.map(url => fetch(url).then(response => response.json())));
+
+            console.log('Results:', results);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+
+    fetchMultipleData();
 });
