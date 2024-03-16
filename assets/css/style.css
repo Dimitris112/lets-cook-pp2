@@ -5,23 +5,32 @@
 }
 
 body {
-    background: linear-gradient(45deg, #ff7f00, #3498db);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #ff9a00, #ee0979);
     color: #333;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
     max-width: 90%;
     margin: 0 auto;
     padding: 2%;
-    box-shadow: 0 0 20px #333;
+    box-shadow: 0 0 2% #0000001a;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 1.5%;
 }
 
 h1 {
     color: #ff7f00;
     text-align: center;
+    margin-bottom: 2%;
+    font-size: 2.5rem;
+}
+
+.decorative-line {
+    height: 0.2%;
+    width: 100%;
+    background-color: #ff7f00;
     margin-bottom: 2%;
 }
 
@@ -31,20 +40,23 @@ h1 {
 }
 
 #searchInput {
-    padding: 1%;
+    padding: 1.2% 2%;
     width: 60%;
-    border: 1px solid #3498db;
-    border-radius: 100px;
+    border: 0.2% solid #3498db;
+    border-radius: 5%;
+    font-size: 1.2rem;
+    color: #333;
 }
 
 button {
-    padding: 1% 2%;
+    padding: 1.2% 2.5%;
     background-color: #3498db;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 5%;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease-in-out;
+    font-size: 1.2rem;
 }
 
 button:hover {
@@ -54,7 +66,49 @@ button:hover {
 .recipe-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+.recipe {
+    position: relative;
+    text-align: center;
+    padding: 2%;
+    border: 0.1% solid #ccc;
+    border-radius: 1%;
+    margin-bottom: 2%;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 2% #0000001a;
+    width: 45%;
+}
+
+.recipe h3 {
+    margin-bottom: 10px;
+}
+
+.recipe img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.viewRecipeButton {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1% 2%;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    font-size: 1.2rem;
+}
+
+.viewRecipeButton:hover {
+    background-color: #2980b9;
+    transform: translate(-50%, -20%);
 }
 
 .modal {
@@ -70,15 +124,14 @@ button:hover {
     animation: fadeIn 0.5s ease;
 }
 
-
 .modal-content {
     background-color: #fff;
-    margin: 20% auto;
+    margin: 2% auto;
     padding: 2%;
-    border-radius: 5px;
+    border-radius: 5%;
     position: relative;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 20px #333;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 2% #00000033;
 }
 
 .close {
@@ -97,17 +150,13 @@ button:hover {
     cursor: pointer;
 }
 
-#saveButton {
-    margin-top: 2%;
-}
-
+/* Loading spinner */
 .loading {
     display: none;
     border: 2vw solid #f3f3f3;
     border-top: 2vw solid #3498db;
     border-radius: 50%;
     width: 10vw;
-    /* Circular rotation*/
     animation: spin 2s linear infinite;
     position: fixed;
     left: 50%;
@@ -115,6 +164,7 @@ button:hover {
     transform: translate(-50%, -50%);
 }
 
+/* Keyframe animations */
 @keyframes spin {
     0% {
         transform: rotate(0deg);
