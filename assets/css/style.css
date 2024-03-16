@@ -13,11 +13,11 @@ body {
 
 .container {
     max-width: 90%;
-    margin: 0 auto;
+    margin: 15%;
     padding: 2%;
-    box-shadow: 0 0 2% #0000001a;
-    background-color: #fff;
-    border-radius: 1.5%;
+    box-shadow: 0 0 2% #0000003d;
+    background-color: #ffffff77;
+    border-radius: 80px;
 }
 
 h1 {
@@ -67,6 +67,8 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 3%;
+
 }
 
 .recipe {
@@ -74,11 +76,11 @@ button:hover {
     text-align: center;
     padding: 2%;
     border: 0.1% solid #ccc;
-    border-radius: 1%;
-    margin-bottom: 2%;
+    margin-bottom: 3%;
     background-color: #f9f9f9;
     box-shadow: 0 0 2% #0000001a;
-    width: 45%;
+    width: 49%;
+    border-radius: 40px;
 }
 
 .recipe h3 {
@@ -89,6 +91,7 @@ button:hover {
     width: 100%;
     height: auto;
     margin-bottom: 10px;
+    border-radius: 40px;
 }
 
 .viewRecipeButton {
