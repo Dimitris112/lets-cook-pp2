@@ -26,6 +26,27 @@ document.addEventListener("DOMContentLoaded", function () {
         fetchRandomRecipe();
     })
 
+    async function fetchRecipes(searchQuery) {
+        try {
+            const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`;
+            const response = await fetch(searchUrl);
+            const data = await response.json();
+            displayRecipes(data.meals);
+        } catch (error) {
+            console.error("Error fetching recipes:", error);
+        }
+    }
+
+    async function fetchRandomRecipe() {
+        try {
+            const randomUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
+            const response = await fetch(randomUrl);
+            const data = await response.json();
+            displayRandomRecipe(data.meals[0]);
+        } catch (error) {
+            console.error("Error fetching random recipe:", error);
+        }
+    }
 
     function displayRecipes(recipes) {
         const recipeContainer = document.getElementById("recipeContainer");
@@ -49,4 +70,5 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+
 });
