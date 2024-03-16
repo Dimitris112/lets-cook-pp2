@@ -119,6 +119,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function displayRandomRecipe(recipe) {
+        const modalTitle = document.getElementById("modalTitle");
+        modalTitle.textContent = recipe.strMeal;
+        const modalContent = document.getElementById("modalContent");
+        modalContent.innerHTML = `
+            <p>${recipe.strInstructions}</p>
+            <p>Category: ${recipe.strCategory}</p>
+            <p>Area: ${recipe.strArea}</p>
+            <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" />
+        `;
+        modal.style.display = "block";
+    }
+
+
     // Event listener to close the modal when the user clicks outside
     window.addEventListener("click", (event) => {
         if (event.target === modal) {
