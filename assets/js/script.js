@@ -148,7 +148,11 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.style.display = "none";
         }
     });
-
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal.style.display === "block") {
+            modal.style.display = "none";
+        }
+    });
     async function fetchMultipleData() {
         try {
             const urls = [
