@@ -1,20 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     const browseHeading = document.createElement("h2");
     browseHeading.classList.add("browse-heading");
     browseHeading.textContent = "Browse the Recipes";
     document.body.insertBefore(browseHeading, document.body.firstChild);
 
-    // Div for spacing
-    const spaceDiv = document.createElement("div");
-    spaceDiv.style.height = "20px";
-    document.body.insertBefore(spaceDiv, browseHeading.nextSibling);
-
-    // Create the alphabet section
     const browseByName = document.createElement("div");
     browseByName.classList.add("browse-by-name");
-    browseByName.style.marginTop = "20px";
-    document.body.insertBefore(browseByName, spaceDiv.nextSibling);
+    browseByName.style.marginTop = "4%";
+    document.body.insertBefore(browseByName, document.body.firstChild);
 
     let alphabetGenerated = false;
 
@@ -48,6 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("modal");
     const closeButton = document.getElementsByClassName("close");
     const searchInput = document.getElementById("searchInput");
+    const saveButton = document.getElementById("saveButton");
+    const modalContent = document.getElementById("modalContent");
 
     searchInput.focus();
 
@@ -144,31 +139,6 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "block";
     }
 
-    async function fetchAndDisplayRecipeDetails(recipeId) {
-        try {
-            const lookupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
-            const response = await fetch(lookupUrl);
-            const data = await response.json();
-            displayRecipeDetails(data.meals[0]);
-        } catch (error) {
-            console.error("Error fetching recipe details:", error);
-        }
-    }
-
-    function displayRecipeDetails(recipe) {
-        const modalTitle = document.getElementById("modalTitle");
-        modalTitle.textContent = recipe.strMeal;
-        const modalContent = document.getElementById("modalContent");
-        modalContent.innerHTML = `
-            <p>${recipe.strInstructions}</p>
-            <p>Category: ${recipe.strCategory}</p>
-            <p>Area: ${recipe.strArea}</p>
-            <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" />
-        `;
-        modalContent.dataset.recipeId = recipe.idMeal;
-        modal.style.display = "block";
-    }
-
     closeButton[0].addEventListener("click", () => {
         modal.style.display = "none";
     });
@@ -201,4 +171,49 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     fetchMultipleData();
+
+    function saveRecipeLocally(recipeId) {
+        // Retrieves saved recipes from local storage
+        let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+
+        // Checks if the recipe is already saved
+        if (!savedRecipes.includes(recipeId)) {
+            savedRecipes.push(recipeId);
+            // Stores the updated list of saved recipes back to local storage
+            localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+            alert("Recipe saved successfully!");
+        } else {
+            alert("Recipe already saved!");
+        }
+    }
+
+    saveButton.addEventListener("click", () => {
+        const recipeId = modalContent.dataset.recipeId;
+        saveRecipeLocally(recipeId);
+    });
+
+    async function fetchAndDisplayRecipeDetails(recipeId) {
+        try {
+            const lookupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
+            const response = await fetch(lookupUrl);
+            const data = await response.json();
+            displayRecipeDetails(data.meals[0]);
+        } catch (error) {
+            console.error("Error fetching recipe details:", error);
+        }
+    }
+
+    function displayRecipeDetails(recipe) {
+        const modalTitle = document.getElementById("modalTitle");
+        modalTitle.textContent = recipe.strMeal;
+        const modalContent = document.getElementById("modalContent");
+        modalContent.innerHTML = `
+            <p>${recipe.strInstructions}</p>
+            <p>Category: ${recipe.strCategory}</p>
+            <p>Area: ${recipe.strArea}</p>
+            <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" />
+        `;
+        modalContent.dataset.recipeId = recipe.idMeal;
+        modal.style.display = "block";
+    }
 });
