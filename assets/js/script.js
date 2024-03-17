@@ -1,13 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
+
     const browseHeading = document.createElement("h2");
     browseHeading.classList.add("browse-heading");
     browseHeading.textContent = "Browse the Recipes";
     document.body.insertBefore(browseHeading, document.body.firstChild);
 
+    // Div for spacing
+    const spaceDiv = document.createElement("div");
+    spaceDiv.style.height = "20px";
+    document.body.insertBefore(spaceDiv, browseHeading.nextSibling);
+
+    // Create the alphabet section
     const browseByName = document.createElement("div");
     browseByName.classList.add("browse-by-name");
-    browseByName.style.marginTop = "4%";
-    document.body.insertBefore(browseByName, document.body.firstChild);
+    browseByName.style.marginTop = "20px";
+    document.body.insertBefore(browseByName, spaceDiv.nextSibling);
 
     let alphabetGenerated = false;
 
@@ -124,6 +131,31 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function displayRandomRecipe(recipe) {
+        const modalTitle = document.getElementById("modalTitle");
+        modalTitle.textContent = recipe.strMeal;
+        const modalContent = document.getElementById("modalContent");
+        modalContent.innerHTML = `
+            <p>${recipe.strInstructions}</p>
+            <p>Category: ${recipe.strCategory}</p>
+            <p>Area: ${recipe.strArea}</p>
+            <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" />
+        `;
+        modalContent.dataset.recipeId = recipe.idMeal;
+        modal.style.display = "block";
+    }
+
+    async function fetchAndDisplayRecipeDetails(recipeId) {
+        try {
+            const lookupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
+            const response = await fetch(lookupUrl);
+            const data = await response.json();
+            displayRecipeDetails(data.meals[0]);
+        } catch (error) {
+            console.error("Error fetching recipe details:", error);
+        }
+    }
+
+    function displayRecipeDetails(recipe) {
         const modalTitle = document.getElementById("modalTitle");
         modalTitle.textContent = recipe.strMeal;
         const modalContent = document.getElementById("modalContent");
