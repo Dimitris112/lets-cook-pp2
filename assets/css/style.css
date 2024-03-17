@@ -193,6 +193,13 @@ button:hover {
     transform: translate(-50%, -50%);
 }
 
+/* The message when no recipe is found */
+.no-recipes-message {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+}
+
 /* Keyframe animations */
 @keyframes spin {
     0% {

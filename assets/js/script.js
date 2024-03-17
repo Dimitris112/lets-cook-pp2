@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const browseByName = document.getElementsByClassName("browse-by-name")[0];
+    const saveButton = document.getElementById("saveButton");
 
     /**
      * Function to generate letters from A to Z dynamically
@@ -128,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <p>Area: ${recipe.strArea}</p>
             <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" />
         `;
+        modalContent.dataset.recipeId = recipe.idMeal;
         modal.style.display = "block";
     }
 
@@ -152,6 +154,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <p>Area: ${recipe.strArea}</p>
             <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" />
         `;
+        modalContent.dataset.recipeId = recipe.idMeal;
         modal.style.display = "block";
     }
 
@@ -163,13 +166,33 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error("Close button not found or closeButton is not iterable.");
     }
 
-
     // Event listener to close the modal when the user clicks outside
     window.addEventListener("click", (event) => {
         if (event.target === modal) {
             modal.style.display = "none";
         }
     });
+
+    function saveRecipeLocally(recipeId) {
+        // Retrieves saved recipes from local storage
+        let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+
+        // Checks if the recipe is already saved
+        if (!savedRecipes.includes(recipeId)) {
+            savedRecipes.push(recipeId);
+            // Stores the updated list of saved recipes back to local storage
+            localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+            alert("Recipe saved successfully!");
+        } else {
+            alert("Recipe already saved!");
+        }
+    }
+
+    saveButton.addEventListener("click", () => {
+        const recipeId = modalContent.dataset.recipeId;
+        saveRecipeLocally(recipeId);
+    });
+
 
     async function fetchMultipleData() {
         try {
