@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Recipe finder. Find what you're cooking next or make a new guess." />
     <!-- Meta tags for search engines -->
+    <meta name="description" content="Recipe finder. Find what you're cooking next or make a new guess." />
     <meta name="keywords"
         content="food, cooking, kitchen, taste, recipe, vegan, meat, seafood, chef, candy, sweet, meal, cook book, ingredients, gastronomy" />
     <title>Let's Cook</title>
@@ -22,46 +22,54 @@
         <div class="decorative-line"></div>
         <div class="browse-section">
             <h2 class="browse-heading">Browse the Recipes</h2>
-            <div class="browse-by-name">
-                <!-- Alphabet section -->
-                <div class="alphabet">
-                    <span class="letter">A</span>
-                    <span class="letter">B</span>
-                    <span class="letter">C</span>
-                    <span class="letter">D</span>
-                    <span class="letter">E</span>
-                    <span class="letter">F</span>
-                    <span class="letter">G</span>
-                    <span class="letter">H</span>
-                    <span class="letter">I</span>
-                    <span class="letter">J</span>
-                    <span class="letter">K</span>
-                    <span class="letter">L</span>
-                    <span class="letter">M</span>
-                    <span class="letter">N</span>
-                    <span class="letter">O</span>
-                    <span class="letter">P</span>
-                    <span class="letter">Q</span>
-                    <span class="letter">R</span>
-                    <span class="letter">S</span>
-                    <span class="letter">T</span>
-                    <span class="letter">U</span>
-                    <span class="letter">V</span>
-                    <span class="letter">W</span>
-                    <span class="letter">X</span>
-                    <span class="letter">Y</span>
-                    <span class="letter">Z</span>
-                </div>
+            <!-- Alphabet section -->
+            <div class="alphabet">
+                <span class="letter">A</span>
+                <span class="letter">B</span>
+                <span class="letter">C</span>
+                <span class="letter">D</span>
+                <span class="letter">E</span>
+                <span class="letter">F</span>
+                <span class="letter">G</span>
+                <span class="letter">H</span>
+                <span class="letter">I</span>
+                <span class="letter">J</span>
+                <span class="letter">K</span>
+                <span class="letter">L</span>
+                <span class="letter">M</span>
+                <span class="letter">N</span>
+                <span class="letter">O</span>
+                <span class="letter">P</span>
+                <span class="letter">Q</span>
+                <span class="letter">R</span>
+                <span class="letter">S</span>
+                <span class="letter">T</span>
+                <span class="letter">U</span>
+                <span class="letter">V</span>
+                <span class="letter">W</span>
+                <span class="letter">X</span>
+                <span class="letter">Y</span>
+                <span class="letter">Z</span>
             </div>
         </div>
+
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Search for recipes" />
             <button id="searchButton">Search</button>
             <button id="randomButton">Random Recipe</button>
         </div>
+
         <div id="recipeContainer" class="recipe-container"></div>
     </div>
+
+    <!-- Saved Recipes Container -->
+    <div id="savedRecipesContainer" class="saved-recipes-container">
+        <h2>Saved Recipes</h2>
+        <ul id="savedRecipesList"></ul>
+    </div>
+
     <div id="loading" class="loading"></div>
+
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -70,6 +78,7 @@
             <button id="saveButton">Save Recipe</button>
         </div>
     </div>
+
     <script src="assets/js/script.js"></script>
 </body>
 

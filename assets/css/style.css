@@ -18,7 +18,7 @@ body {
     max-width: 90%;
     margin: 15% auto;
     padding: 2%;
-    box-shadow: 0 0 2% #0000003d;
+    box-shadow: 0 0 2px #0000003d;
     background-color: #ffffff77;
     border-radius: 80px;
     position: relative;
@@ -90,7 +90,7 @@ h1 {
 #searchInput {
     padding: 1.2% 2%;
     width: 60%;
-    border: 0.2% solid #3498db;
+    border: 2px solid #3498db;
     border-radius: 5%;
     font-size: 1.2rem;
     color: #333;
@@ -111,6 +111,15 @@ button:hover {
     background-color: #2980b9;
 }
 
+/* Saved recipes */
+.saved-recipes-container {
+    padding: 1%;
+    margin-bottom: 4%;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #333;
+}
+
 /* Recipe container */
 .recipe-container {
     display: flex;
@@ -123,10 +132,10 @@ button:hover {
     position: relative;
     text-align: center;
     padding: 2%;
-    border: 0.1% solid #ccc;
+    border: 1px solid #ccc;
     margin-bottom: 3%;
     background-color: #f9f9f9;
-    box-shadow: 0 0 2% #0000001a;
+    box-shadow: 0 0 2px #0000001a;
     width: 49%;
     border-radius: 40px;
 }
@@ -136,7 +145,7 @@ button:hover {
 }
 
 .recipe img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     margin-bottom: 10px;
     border-radius: 40px;
@@ -183,7 +192,7 @@ button:hover {
     border-radius: 5%;
     position: relative;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 2% #00000033;
+    box-shadow: 0 0 2px #00000033;
 }
 
 .close {
