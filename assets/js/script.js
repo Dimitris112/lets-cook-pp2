@@ -1,45 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const browseHeading = document.createElement("h2");
-    browseHeading.classList.add("browse-heading");
-    browseHeading.textContent = "Browse the Recipes";
-    document.body.insertBefore(browseHeading, document.body.firstChild);
+    const alphabet = document.querySelector('.alphabet');
 
-    const browseByName = document.createElement("div");
-    browseByName.classList.add("browse-by-name");
-    browseByName.style.marginTop = "4%";
-    document.body.insertBefore(browseByName, document.body.firstChild);
-
-    let alphabetGenerated = false;
-
-    function generateAlphabet() {
-        if (!alphabetGenerated) {
-            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            for (let letter of letters) {
-                const span = document.createElement("span");
-                span.classList.add("letter");
-                span.textContent = letter;
-                browseByName.appendChild(span);
-            }
-            alphabetGenerated = true;
+    // Event listener for alphabet letters
+    alphabet.addEventListener('click', function (event) {
+        if (event.target.classList.contains('letter')) {
+            const letter = event.target.textContent;
+            fetchRecipesByFirstLetter(letter);
         }
-    }
-
-    generateAlphabet();
-
-    function handleLetterClick(event) {
-        const searchQuery = event.target.textContent;
-        fetchRecipesByFirstLetter(searchQuery);
-    }
-
-    const letters = document.getElementsByClassName("letter");
-    for (let i = 0; i < letters.length; i++) {
-        letters[i].addEventListener("click", handleLetterClick);
-    }
+    });
 
     const searchButton = document.getElementById("searchButton");
     const randomButton = document.getElementById("randomButton");
     const modal = document.getElementById("modal");
-    const closeButton = document.getElementsByClassName("close");
+    const closeButton = document.querySelector(".close");
     const searchInput = document.getElementById("searchInput");
     const saveButton = document.getElementById("saveButton");
     const modalContent = document.getElementById("modalContent");
@@ -113,13 +86,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 recipeContainer.appendChild(recipeElement);
             }
 
-            const viewRecipeButtons = document.getElementsByClassName("viewRecipeButton");
-            for (let i = 0; i < viewRecipeButtons.length; i++) {
-                viewRecipeButtons[i].addEventListener("click", () => {
-                    const recipeId = viewRecipeButtons[i].getAttribute("data-recipe-id");
+            const viewRecipeButtons = document.querySelectorAll(".viewRecipeButton");
+            viewRecipeButtons.forEach(button => {
+                button.addEventListener("click", () => {
+                    const recipeId = button.getAttribute("data-recipe-id");
                     fetchAndDisplayRecipeDetails(recipeId);
                 });
-            }
+            });
         } else {
             recipeContainer.innerHTML = "<p class='no-recipes-message'>No recipes found.</p>";
         }
@@ -128,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayRandomRecipe(recipe) {
         const modalTitle = document.getElementById("modalTitle");
         modalTitle.textContent = recipe.strMeal;
-        const modalContent = document.getElementById("modalContent");
         modalContent.innerHTML = `
             <p>${recipe.strInstructions}</p>
             <p>Category: ${recipe.strCategory}</p>
@@ -139,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "block";
     }
 
-    closeButton[0].addEventListener("click", () => {
+    closeButton.addEventListener("click", () => {
         modal.style.display = "none";
     });
 
@@ -148,38 +120,16 @@ document.addEventListener("DOMContentLoaded", function () {
             modal.style.display = "none";
         }
     });
+
     document.addEventListener("keydown", (event) => {
         if (event.key === "Escape" && modal.style.display === "block") {
             modal.style.display = "none";
         }
     });
-    async function fetchMultipleData() {
-        try {
-            const urls = [
-                'https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata',
-                'https://www.themealdb.com/api/json/v1/1/search.php?f=a',
-                'https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772',
-                'https://www.themealdb.com/api/json/v1/1/random.php',
-                'https://www.themealdb.com/api/json/v1/1/categories.php',
-                'https://www.themealdb.com/api/json/v1/1/list.php?c=list',
-                'https://www.themealdb.com/api/json/v1/1/list.php?a=list',
-                'https://www.themealdb.com/api/json/v1/1/list.php?i=list'
-            ];
-
-            const results = await Promise.all(urls.map(url => fetch(url).then(response => response.json())));
-
-            console.log('Results:', results);
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    }
-
-    fetchMultipleData();
 
     function saveRecipeLocally(recipeId) {
         // Retrieves saved recipes from local storage
         let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
-
         // Checks if the recipe is already saved
         if (!savedRecipes.includes(recipeId)) {
             savedRecipes.push(recipeId);
@@ -210,7 +160,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayRecipeDetails(recipe) {
         const modalTitle = document.getElementById("modalTitle");
         modalTitle.textContent = recipe.strMeal;
-        const modalContent = document.getElementById("modalContent");
         modalContent.innerHTML = `
             <p>${recipe.strInstructions}</p>
             <p>Category: ${recipe.strCategory}</p>
