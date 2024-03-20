@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     savedRecipesList.addEventListener("click", async (event) => {
-        const li = event.target.closest("li");
-        if (li) {
+        if (event.target.tagName.toLowerCase() === 'li') {
+            const li = event.target;
             const recipeName = li.textContent;
             try {
                 const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`;
@@ -74,6 +74,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (data.meals && data.meals.length > 0) {
                     const recipe = data.meals[0];
                     displayRecipeDetails(recipe);
+                    // Checks if the recipe is already saved
+                    checkIfRecipeIsSaved(recipe.idMeal);
                 } else {
                     console.error("Recipe not found:", recipeName);
                 }
@@ -82,6 +84,21 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+
+    function checkIfRecipeIsSaved(recipeId) {
+        try {
+            let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+            const saveButton = document.getElementById("saveButton");
+            if (savedRecipes.includes(recipeId)) {
+                saveButton.style.display = "none";
+            } else {
+                saveButton.style.display = "block";
+            }
+        } catch (error) {
+            console.error("Error checking if recipe is saved:", error);
+        }
+    }
+
 
     function clearSavedRecipes() {
         localStorage.removeItem('savedRecipes');
