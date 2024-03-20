@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalContent = document.getElementById("modalContent");
     const recipeContainer = document.getElementById("recipeContainer");
     const savedRecipesList = document.getElementById("savedRecipesList");
+    const resetButton = document.getElementById("resetButton");
 
     searchInput.focus();
 
@@ -58,6 +59,14 @@ document.addEventListener("DOMContentLoaded", function () {
         displaySavedRecipes();
     });
 
+    resetButton.addEventListener("click", () => {
+        clearSavedRecipes();
+    });
+
+    function clearSavedRecipes() {
+        localStorage.removeItem('savedRecipes');
+        savedRecipesList.innerHTML = '';
+    }
     async function fetchRecipes(searchQuery) {
         try {
             const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`;

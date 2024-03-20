@@ -111,13 +111,18 @@ button:hover {
     background-color: #2980b9;
 }
 
-/* Saved recipes */
+/* Saved recipes container */
 .saved-recipes-container {
-    padding: 1%;
+    padding: 1% 0;
     margin-bottom: 4%;
     text-align: center;
     font-size: 1.2rem;
     color: #333;
+}
+
+
+.saved-recipes-container ul {
+    list-style-type: none;
 }
 
 /* Recipe container */
@@ -209,6 +214,10 @@ button:hover {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+#resetButton {
+    margin-top: 2%;
 }
 
 /* Loading spinner */
