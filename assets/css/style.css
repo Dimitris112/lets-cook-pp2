@@ -16,7 +16,7 @@ body {
 
 .container {
     max-width: 90%;
-    margin: 15% auto;
+    margin: 10% auto 5%;
     padding: 2%;
     box-shadow: 0 0 2px #0000003d;
     background-color: #ffffff77;
@@ -111,18 +111,33 @@ button:hover {
     background-color: #2980b9;
 }
 
-/* Saved recipes container */
+/*  saved recipes container */
 .saved-recipes-container {
     padding: 1% 0;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
     text-align: center;
     font-size: 1.2rem;
     color: #333;
 }
 
-
 .saved-recipes-container ul {
     list-style-type: none;
+}
+
+.saved-recipes-container ul li {
+    margin-top: 5px;
+    margin-bottom: 3px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: #fafafa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px #00000080, 2px 2px 4px #4CAF50;
+    transition: transform 0.3s ease-in-out;
+}
+
+.saved-recipes-container ul li:hover {
+    transform: scale(1.1);
 }
 
 /* Recipe container */
@@ -218,6 +233,7 @@ button:hover {
 
 #resetButton {
     margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 /* Loading spinner */
