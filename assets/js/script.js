@@ -63,10 +63,31 @@ document.addEventListener("DOMContentLoaded", function () {
         clearSavedRecipes();
     });
 
+    savedRecipesList.addEventListener("click", async (event) => {
+        const li = event.target.closest("li");
+        if (li) {
+            const recipeName = li.textContent;
+            try {
+                const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`;
+                const response = await fetch(searchUrl);
+                const data = await response.json();
+                if (data.meals && data.meals.length > 0) {
+                    const recipe = data.meals[0];
+                    displayRecipeDetails(recipe);
+                } else {
+                    console.error("Recipe not found:", recipeName);
+                }
+            } catch (error) {
+                console.error("Error fetching recipe by name:", error);
+            }
+        }
+    });
+
     function clearSavedRecipes() {
         localStorage.removeItem('savedRecipes');
         savedRecipesList.innerHTML = '';
     }
+
     async function fetchRecipes(searchQuery) {
         try {
             const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`;
