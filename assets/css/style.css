@@ -119,6 +119,7 @@ button:hover {
     text-align: center;
     font-size: 1.2rem;
     color: #333;
+    position: relative;
 }
 
 .saved-recipes-container ul {
@@ -260,13 +261,6 @@ button:hover {
     cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 /* Loading spinner */
 .loading {
     display: none;
@@ -297,27 +291,6 @@ button:hover {
     cursor: pointer;
 }
 
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* Loading spinner */
-.loading {
-    display: none;
-    border: 2vw solid #f3f3f3;
-    border-top: 2vw solid #3498db;
-    border-radius: 50%;
-    width: 10vw;
-    animation: spin 2s linear infinite;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
 /* The message when no recipe is found */
 .no-recipes-message {
     text-align: center;
@@ -325,6 +298,61 @@ button:hover {
     width: 100%;
 }
 
+/* Reset button */
+#resetButton {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+/* ---------------------------- SCROLLBAR BELOW ---------------------------- */
+
+::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+    background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-button {
+    background-color: #3498db;
+}
+
+::-webkit-scrollbar:horizontal {
+    width: 0;
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff9a00, #ee0979);
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px #333333;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(45deg, #ee0979, #ff9a00);
+}
+
+::-webkit-scrollbar-track {
+    background-color: #cccccc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #ccc;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 8px;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: #ffffff;
+}
+
+::-webkit-resizer {
+    background-color: #3498db;
+}
+
+/* ---------------------------- SCROLLBAR ABOVE ---------------------------- */
 
 /* Keyframe animations */
 @keyframes spin {
