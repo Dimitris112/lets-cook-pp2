@@ -295,20 +295,16 @@ button:hover {
     cursor: pointer;
 }
 
-/* The message when no recipe is found */
-.no-recipes-message {
-    text-align: center;
-    margin: auto;
-    width: 100%;
-}
-
 /* Reset button */
 #resetButton {
     margin-top: 2%;
     margin-bottom: 2%;
+    padding: 0.8% 2%;
+    font-size: 1rem;
 }
 
 /* ---------------------------- SCROLLBAR BELOW ---------------------------- */
+/* ----------------- Only browsers including webkit  -----------------*/
 
 ::-webkit-scrollbar {
     width: 20px;
