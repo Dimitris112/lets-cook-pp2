@@ -261,6 +261,10 @@ button:hover {
     cursor: pointer;
 }
 
+.close:hover {
+    color: #333;
+}
+
 /* Loading spinner */
 .loading {
     display: none;
