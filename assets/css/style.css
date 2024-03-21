@@ -316,15 +316,6 @@ button:hover {
     background-color: #f1f1f1;
 }
 
-::-webkit-scrollbar-button {
-    background-color: #3498db;
-}
-
-::-webkit-scrollbar:horizontal {
-    width: 0;
-    display: none;
-}
-
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(45deg, #ff9a00, #ee0979);
     border-radius: 10px;
@@ -338,14 +329,6 @@ button:hover {
 ::-webkit-scrollbar-track {
     background-color: #cccccc;
     border-radius: 10px;
-}
-
-::-webkit-scrollbar-track-piece {
-    background-color: #ccc;
-}
-
-::-webkit-scrollbar:vertical {
-    width: 8px;
 }
 
 ::-webkit-scrollbar-corner {
