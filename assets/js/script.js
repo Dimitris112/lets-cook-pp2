@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const alphabet = document.getElementsByClassName('alphabet')[0];
+    // Variables
+    const alphabet = document.getElementsByClassName("alphabet")[0];
+    const modal = document.getElementById("modal");
     const searchButton = document.getElementById("searchButton");
     const randomButton = document.getElementById("randomButton");
-    const modal = document.getElementById("modal");
-    const closeButton = document.getElementsByClassName("close")[0];
+    const closeButton = document.querySelector(".close");
     const searchInput = document.getElementById("searchInput");
     const saveButton = document.getElementById("saveButton");
     const modalContent = document.getElementById("modalContent");
@@ -13,77 +14,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
     searchInput.focus();
 
-    searchInput.addEventListener("keydown", function (event) {
+    // Event listeners
+    searchInput.addEventListener("keydown", handleSearchInput);
+    searchButton.addEventListener("click", handleSearchButtonClick);
+    randomButton.addEventListener("click", fetchRandomRecipe);
+    alphabet.addEventListener("click", handleAlphabetClick);
+    closeButton.addEventListener("click", closeModal);
+    window.addEventListener("click", outsideModalClick);
+    document.addEventListener("keydown", escapeKeyCloseModal);
+    saveButton.addEventListener("click", handleSaveButtonClick);
+    resetButton.addEventListener("click", clearSavedRecipes);
+    savedRecipesList.addEventListener("click", handleSavedRecipeClick);
+
+    // Functions
+    function handleSearchInput(event) {
         if (event.key === "Enter") {
             event.preventDefault();
-            const searchQuery = searchInput.value;
-            fetchRecipes(searchQuery);
+            fetchRecipes(searchInput.value);
         }
-    });
+    }
 
-    searchButton.addEventListener("click", () => {
-        const searchQuery = searchInput.value;
-        fetchRecipes(searchQuery);
-    });
+    function handleSearchButtonClick() {
+        fetchRecipes(searchInput.value);
+    }
 
-    randomButton.addEventListener("click", () => {
-        fetchRandomRecipe();
-    });
-
-    alphabet.addEventListener("click", (event) => {
+    function handleAlphabetClick(event) {
         if (event.target.classList.contains('letter')) {
-            const letter = event.target.textContent;
-            fetchRecipesByFirstLetter(letter);
+            fetchRecipesByFirstLetter(event.target.textContent);
         }
-    });
+    }
 
-    closeButton.addEventListener("click", () => {
+    function closeModal() {
         modal.style.display = "none";
-    });
+    }
 
-    window.addEventListener("click", (event) => {
+    function outsideModalClick(event) {
         if (event.target === modal) {
-            modal.style.display = "none";
+            closeModal();
         }
-    });
+    }
 
-    document.addEventListener("keydown", (event) => {
+    function escapeKeyCloseModal(event) {
         if (event.key === "Escape" && modal.style.display === "block") {
-            modal.style.display = "none";
+            closeModal();
         }
-    });
+    }
 
-    saveButton.addEventListener("click", () => {
-        const recipeId = modalContent.dataset.recipeId;
-        saveRecipeLocally(recipeId);
+    function handleSaveButtonClick() {
+        saveRecipeLocally(modalContent.dataset.recipeId);
         displaySavedRecipes();
-    });
+    }
 
-    resetButton.addEventListener("click", () => {
-        clearSavedRecipes();
-    });
-
-    savedRecipesList.addEventListener("click", async (event) => {
+    function handleSavedRecipeClick(event) {
         if (event.target.tagName.toLowerCase() === 'li') {
-            const li = event.target;
-            const recipeName = li.textContent;
-            try {
-                const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`;
-                const response = await fetch(searchUrl);
-                const data = await response.json();
-                if (data.meals && data.meals.length > 0) {
-                    const recipe = data.meals[0];
-                    displayRecipeDetails(recipe);
-                    // Checks if the recipe is already saved
-                    checkIfRecipeIsSaved(recipe.idMeal);
-                } else {
-                    console.error("Recipe not found:", recipeName);
-                }
-            } catch (error) {
-                console.error("Error fetching recipe by name:", error);
-            }
+            const recipeName = event.target.textContent;
+            fetchRecipeByName(recipeName);
         }
-    });
+    }
 
     function checkIfRecipeIsSaved(recipeId) {
         try {
@@ -97,12 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (error) {
             console.error("Error checking if recipe is saved:", error);
         }
-    }
-
-
-    function clearSavedRecipes() {
-        localStorage.removeItem('savedRecipes');
-        savedRecipesList.innerHTML = '';
     }
 
     async function fetchRecipes(searchQuery) {
@@ -140,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function displayRecipes(recipes) {
         recipeContainer.innerHTML = "";
-
         if (recipes && recipes.length > 0) {
             recipes.forEach(recipe => {
                 const recipeElement = document.createElement("div");
@@ -188,8 +168,13 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
             alert("Recipe saved successfully!");
         } else {
-            alert("Recipe already saved!");
+            alert(" Recipe already saved!");
         }
+    }
+
+    function clearSavedRecipes() {
+        localStorage.removeItem('savedRecipes');
+        savedRecipesList.innerHTML = '';
     }
 
     async function displaySavedRecipes() {
@@ -222,6 +207,23 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    async function fetchRecipeByName(recipeName) {
+        try {
+            const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`;
+            const response = await fetch(searchUrl);
+            const data = await response.json();
+            if (data.meals && data.meals.length > 0) {
+                const recipe = data.meals[0];
+                displayRecipeDetails(recipe);
+                checkIfRecipeIsSaved(recipe.idMeal);
+            } else {
+                console.error("Recipe not found:", recipeName);
+            }
+        } catch (error) {
+            console.error("Error fetching recipe by name:", error);
+        }
+    }
+
     function displayRecipeDetails(recipe) {
         const modalTitle = document.getElementById("modalTitle");
         modalTitle.textContent = recipe.strMeal;
@@ -236,4 +238,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     displaySavedRecipes();
+
 });
