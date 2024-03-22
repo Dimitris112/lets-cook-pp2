@@ -17,7 +17,7 @@ body {
 
 .container {
     max-width: 90%;
-    margin: 10% auto 5%;
+    margin: 18% auto 2%;
     padding: 2%;
     box-shadow: 0 0 2px #0000003d;
     background-color: #ffffff77;
@@ -122,7 +122,7 @@ button:active {
 
 /* Saved recipes container */
 .saved-recipes-container {
-    padding: 1% 0;
+    padding: 9% 0;
     margin-bottom: 2%;
     text-align: center;
     font-size: 1.2rem;
@@ -405,30 +405,4 @@ button:active {
         transform: scale(1);
         box-shadow: 0 0 10px #333;
     }
-}
-
-
-/* Media query for small / fold phones (279px+) */
-@media screen and (min-width: 279px) {
-    .container {
-        max-width: 90%;
-        margin: 30% auto 5%;
-        padding: 4%;
-        position: relative;
-    }
-
-    .browse-section {
-        margin-bottom: 2%;
-    }
-
-    .browse-heading {
-        font-size: 1.5rem;
-        margin: 3% auto;
-    }
-
-
-    #savedRecipesContainer {
-        padding-top: 12%;
-    }
-
 }
