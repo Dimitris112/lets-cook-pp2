@@ -28,10 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Functions
     function handleSearchInput(event) {
-        if (event.key === "Enter") {
-            event.preventDefault();
-            fetchRecipes(searchInput.value);
-        }
+        event.key === "Enter" ? (event.preventDefault(), fetchRecipes(searchInput.value)) : null;
     }
 
     function handleSearchButtonClick() {
@@ -39,9 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function handleAlphabetClick(event) {
-        if (event.target.classList.contains('letter')) {
-            fetchRecipesByFirstLetter(event.target.textContent);
-        }
+        event.target.classList.contains('letter') ? fetchRecipesByFirstLetter(event.target.textContent) : null;
     }
 
     function closeModal() {
@@ -49,15 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function outsideModalClick(event) {
-        if (event.target === modal) {
-            closeModal();
-        }
+        event.target === modal ? closeModal() : null;
     }
 
     function escapeKeyCloseModal(event) {
-        if (event.key === "Escape" && modal.style.display === "block") {
-            closeModal();
-        }
+        event.key === "Escape" && modal.style.display === "block" ? closeModal() : null;
     }
 
     function handleSaveButtonClick() {
@@ -66,21 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function handleSavedRecipeClick(event) {
-        if (event.target.tagName.toLowerCase() === 'li') {
-            const recipeName = event.target.textContent;
-            fetchRecipeByName(recipeName);
-        }
+        event.target.tagName.toLowerCase() === 'li' ? fetchRecipeByName(event.target.textContent) : null;
     }
 
     function checkIfRecipeIsSaved(recipeId) {
         try {
             let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
             const saveButton = document.getElementById("saveButton");
-            if (savedRecipes.includes(recipeId)) {
-                saveButton.style.display = "none";
-            } else {
-                saveButton.style.display = "block";
-            }
+            savedRecipes.includes(recipeId) ? saveButton.style.display = "none" : saveButton.style.display = "block";
         } catch (error) {
             console.error("Error checking if recipe is saved:", error);
         }
@@ -159,17 +143,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function saveRecipeLocally(recipeId) {
-        // Retrieves saved recipes from local storage
         let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
-        // Checks if the recipe is already saved
-        if (!savedRecipes.includes(recipeId)) {
-            savedRecipes.push(recipeId);
-            // Stores the updated list of saved recipes back to local storage
-            localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
-            alert("Recipe saved successfully!");
-        } else {
-            alert(" Recipe already saved!");
-        }
+        !savedRecipes.includes(recipeId) ? (savedRecipes.push(recipeId), localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes)), alert("Recipe saved successfully!")) : alert(" Recipe already saved!");
     }
 
     function clearSavedRecipes() {
@@ -238,5 +213,4 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     displaySavedRecipes();
-
 });
