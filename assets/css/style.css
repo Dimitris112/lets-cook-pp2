@@ -97,6 +97,7 @@ h1 {
     color: #333;
 }
 
+/* Buttons */
 button {
     padding: 1.2% 2.5%;
     background-color: #3498db;
@@ -104,13 +105,20 @@ button {
     border: none;
     border-radius: 5%;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     font-size: 1.2rem;
+    animation: buttonTransition 0.5s ease-in-out;
 }
 
 button:hover {
-    background-color: #2980b9;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #555;
 }
+
+button:active {
+    transform: scale(0.95);
+}
+
 
 /* Saved recipes container */
 .saved-recipes-container {
@@ -368,4 +376,59 @@ button:hover {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+@keyframes buttonTransition {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #333;
+    }
+
+    25% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px #555;
+    }
+
+    50% {
+        background-color: #1e87d3;
+        color: #fff;
+        transform: scale(1);
+        box-shadow: 0 0 10px #333;
+    }
+
+    75% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px #555;
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #333;
+    }
+}
+
+
+/* Media query for small / fold phones (279px+) */
+@media screen and (min-width: 279px) {
+    .container {
+        max-width: 90%;
+        margin: 30% auto 5%;
+        padding: 4%;
+        position: relative;
+    }
+
+    .browse-section {
+        margin-bottom: 2%;
+    }
+
+    .browse-heading {
+        font-size: 1.5rem;
+        margin: 3% auto;
+    }
+
+
+    #savedRecipesContainer {
+        padding-top: 12%;
+    }
+
 }
