@@ -33,14 +33,25 @@ document.addEventListener("DOMContentLoaded", function () {
     savedRecipesList.addEventListener("click", handleSavedRecipeClick);
     prevPageButton.addEventListener("click", goToPrevPage);
     nextPageButton.addEventListener("click", goToNextPage);
+    recipeContainer.addEventListener("click", function (event) {
+        if (event.target.classList.contains("viewRecipeButton")) {
+            const recipeId = event.target.dataset.recipeId;
+            fetchAndDisplayRecipeDetails(recipeId);
+        }
+    });
 
     // Functions
     function handleSearchInput(event) {
-        event.key === "Enter" ? (event.preventDefault(), fetchRecipes(searchInput.value)) : null;
+        if (event.key === "Enter") {
+            event.preventDefault();
+            fetchRecipes(searchInput.value);
+        }
     }
 
     function handleAlphabetClick(event) {
-        event.target.classList.contains('letter') ? fetchRecipesByFirstLetter(event.target.textContent) : null;
+        if (event.target.classList.contains('letter')) {
+            fetchRecipesByFirstLetter(event.target.textContent);
+        }
     }
 
     function closeModal() {
@@ -48,11 +59,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function outsideModalClick(event) {
-        event.target === modal ? closeModal() : null;
+        if (event.target === modal) {
+            closeModal();
+        }
     }
 
     function escapeKeyCloseModal(event) {
-        event.key === "Escape" && modal.style.display === "block" ? closeModal() : null;
+        if (event.key === "Escape" && modal.style.display === "block") {
+            closeModal();
+        }
     }
 
     function handleSaveButtonClick() {
@@ -62,14 +77,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function handleSavedRecipeClick(event) {
-        event.target.tagName.toLowerCase() === 'li' ? fetchRecipeByName(event.target.textContent) : null;
+        if (event.target.tagName.toLowerCase() === 'li') {
+            fetchRecipeByName(event.target.textContent);
+        }
     }
 
     function checkIfRecipeIsSaved(recipeId) {
         try {
             let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
             const saveButton = document.getElementById("saveButton");
-            savedRecipes.includes(recipeId) ? saveButton.style.display = "none" : saveButton.style.display = "block";
+            saveButton.style.display = savedRecipes.includes(recipeId) ? "none" : "block";
         } catch (error) {
             console.error("Error checking if recipe is saved:", error);
         }
@@ -93,35 +110,24 @@ document.addEventListener("DOMContentLoaded", function () {
             const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`;
             const response = await fetch(searchUrl);
             const data = await response.json();
-            recipes = data.meals;
+            recipes = data.meals || [];
             totalRecipes = recipes.length;
             displayRecipes(recipes);
-            const paginationContainers = document.getElementsByClassName('pagination-container');
-            if (paginationContainers.length > 0) {
-                const paginationContainer = paginationContainers[0];
-                // Checks if there are 4 or more recipes in order to show pagination
-                if (totalRecipes >= 4) {
-                    paginationContainer.style.display = "flex";
-                } else {
-                    paginationContainer.style.display = "none";
-                }
-            }
         } catch (error) {
             console.error("Error fetching recipes:", error);
         }
     }
 
-
     async function fetchRecipesByFirstLetter(letter) {
         try {
-            const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`;
+            const searchUrl = letter === '' ? 'https://www.themealdb.com/api/json/v1/1/search.php' : `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`;
             const response = await fetch(searchUrl);
             const data = await response.json();
-            // Updates the recipes array
-            recipes = data.meals;
+            recipes = data.meals || [];
+            totalRecipes = recipes.length;
             displayRecipes(recipes);
         } catch (error) {
-            console.error("Error fetching recipes:", error);
+            console.error("Error fetching recipes by first letter:", error);
         }
     }
 
@@ -139,11 +145,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayRecipes(recipes) {
         recipeContainer.innerHTML = "";
         if (recipes && recipes.length > 0) {
-            // Paginate the recipes
             const startIndex = (currentPage - 1) * pageSize;
-            const endIndex = startIndex + pageSize;
-            const recipesToShow = recipes.slice(startIndex, endIndex);
-            recipesToShow.forEach(recipe => {
+            const endIndex = Math.min(startIndex + pageSize, recipes.length);
+            for (let i = startIndex; i < endIndex; i++) {
+                const recipe = recipes[i];
                 const recipeElement = document.createElement("div");
                 recipeElement.classList.add("recipe");
                 recipeElement.innerHTML = `
@@ -152,28 +157,25 @@ document.addEventListener("DOMContentLoaded", function () {
                     <button class="viewRecipeButton" data-recipe-id="${recipe.idMeal}">View Recipe</button>
                 `;
                 recipeContainer.appendChild(recipeElement);
-            });
-
-            const viewRecipeButtons = document.getElementsByClassName("viewRecipeButton");
-            Array.from(viewRecipeButtons).forEach(button => {
-                button.addEventListener("click", () => {
-                    const recipeId = button.getAttribute("data-recipe-id");
-                    fetchAndDisplayRecipeDetails(recipeId);
-                });
-            });
+            }
+            totalRecipes = recipes.length;
+            updatePaginationControls();
         } else {
             recipeContainer.innerHTML = "<p class='no-recipes-message'>No recipes found.</p>";
-            updatePaginationControls(recipes.length);
+            updatePaginationControls(0);
         }
     }
 
-    function updatePaginationControls(totalRecipes) {
+
+    function updatePaginationControls() {
         const totalPages = Math.ceil(totalRecipes / pageSize);
-        document.getElementById("currentPage").textContent = currentPage;
-        const pagination = document.getElementsByClassName("pagination")[0];
-        pagination.style.display = "flex";
-        document.getElementById("prevPageButton").disabled = currentPage === 1;
-        document.getElementById("nextPageButton").disabled = currentPage === totalPages;
+        const prevPageDisabled = currentPage === 1;
+        const nextPageDisabled = currentPage === totalPages || totalPages < 1;
+        prevPageButton.disabled = prevPageDisabled;
+        nextPageButton.disabled = nextPageDisabled;
+        document.getElementById("currentPage").textContent = `Page ${currentPage}`;
+        const paginationContainer = document.getElementsByClassName("pagination-container")[0];
+        paginationContainer.style.display = totalRecipes > 4 ? "flex" : "none";
     }
 
     function goToPrevPage() {
@@ -192,21 +194,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function saveRecipeLocally(recipeId) {
-        let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
-        !savedRecipes.includes(recipeId) ? (savedRecipes.push(recipeId), localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes)), alert("Recipe saved successfully!")) : alert(" Recipe already saved!");
+        try {
+            let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+            if (!savedRecipes.includes(recipeId)) {
+                savedRecipes.push(recipeId);
+                localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+                alert("Recipe saved successfully!");
+            } else {
+                alert("Recipe already saved!");
+            }
+        } catch (error) {
+            console.error("Error saving recipe locally:", error);
+        }
     }
 
     function clearSavedRecipes() {
-        localStorage.removeItem('savedRecipes');
-        savedRecipesList.innerHTML = '';
+        try {
+            localStorage.removeItem('savedRecipes');
+            savedRecipesList.innerHTML = '';
+        } catch (error) {
+            console.error("Error clearing saved recipes:", error);
+        }
     }
 
     async function displaySavedRecipes() {
-        savedRecipesList.innerHTML = "";
-        let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
-        for (let i = 0; i < savedRecipes.length; i++) {
-            const recipeId = savedRecipes[i];
-            try {
+        try {
+            savedRecipesList.innerHTML = "";
+            let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+            for (let i = 0; i < savedRecipes.length; i++) {
+                const recipeId = savedRecipes[i];
                 const lookupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
                 const response = await fetch(lookupUrl);
                 const data = await response.json();
@@ -214,9 +230,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 const li = document.createElement("li");
                 li.textContent = recipe.strMeal;
                 savedRecipesList.appendChild(li);
-            } catch (error) {
-                console.error("Error fetching recipe details:", error);
             }
+        } catch (error) {
+            console.error("Error displaying saved recipes:", error);
         }
     }
 
@@ -252,11 +268,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const modalTitle = document.getElementById("modalTitle");
         modalTitle.textContent = recipe.strMeal;
         modalContent.innerHTML = `
-            <p>${recipe.strInstructions}</p>
-            <p>Category: ${recipe.strCategory}</p>
-            <p>Area: ${recipe.strArea}</p>
-            <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" />
-        `;
+                <p>${recipe.strInstructions}</p>
+                <p>Category: ${recipe.strCategory}</p>
+                <p>Area: ${recipe.strArea}</p>
+                <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" />
+                `;
         modalContent.dataset.recipeId = recipe.idMeal;
         modal.style.display = "block";
     }
