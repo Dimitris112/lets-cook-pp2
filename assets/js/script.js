@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const modal = document.getElementById("modal");
     const searchButton = document.getElementById("searchButton");
     const randomButton = document.getElementById("randomButton");
-    const closeButton = document.querySelector(".close");
+    const closeButton = document.getElementsByClassName("close")[0];
     const searchInput = document.getElementById("searchInput");
     const saveButton = document.getElementById("saveButton");
     const modalContent = document.getElementById("modalContent");
@@ -117,8 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 recipeContainer.appendChild(recipeElement);
             });
 
-            const viewRecipeButtons = document.querySelectorAll(".viewRecipeButton");
-            viewRecipeButtons.forEach(button => {
+            const viewRecipeButtons = document.getElementsByClassName("viewRecipeButton");
+            Array.from(viewRecipeButtons).forEach(button => {
                 button.addEventListener("click", () => {
                     const recipeId = button.getAttribute("data-recipe-id");
                     fetchAndDisplayRecipeDetails(recipeId);
