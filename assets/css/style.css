@@ -346,6 +346,46 @@ button:active {
 
 /* ---------------------------- SCROLLBAR ABOVE ---------------------------- */
 
+/* Footer */
+footer {
+    background-color: #333333cc;
+    color: #fff;
+    padding: 1% 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+}
+
+.footer-social-icons {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.footer-social-icons li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.footer-social-icons li:last-child {
+    margin-right: 0;
+}
+
+.footer-social-icons a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.footer-social-icons a:hover {
+    color: #ff7f00;
+}
+
+
 /* Keyframe animations */
 @keyframes spin {
     0% {
