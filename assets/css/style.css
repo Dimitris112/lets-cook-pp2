@@ -96,6 +96,44 @@ h1 {
     color: #333;
 }
 
+/* Pagination */
+.pagination-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.pagination-button {
+    background-color: #2980b9;
+    color: white;
+    padding: 1% 2%;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px #00000033;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin: 0 1%;
+}
+
+.pagination-button:hover {
+    background-color: #3498db;
+    box-shadow: 0px 4px 8px #00000033;
+}
+
+#currentPage {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px #0000001a;
+}
+
 /* Buttons */
 button {
     padding: 1.2% 2.5%;
@@ -292,15 +330,6 @@ button:active {
     text-align: center;
     margin: auto;
     width: 100%;
-}
-
-.close {
-    position: absolute;
-    top: 1%;
-    right: 2%;
-    font-size: 2vw;
-    color: #aaaaaa;
-    cursor: pointer;
 }
 
 /* Reset button */

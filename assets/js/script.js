@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const prevPageButton = document.getElementById("prevPageButton");
     const nextPageButton = document.getElementById("nextPageButton");
     let currentPage = 1;
-    const pageSize = 6;
+    const pageSize = 4;
     let recipes = [];
     let totalRecipes = 0;
 
@@ -96,10 +96,21 @@ document.addEventListener("DOMContentLoaded", function () {
             recipes = data.meals;
             totalRecipes = recipes.length;
             displayRecipes(recipes);
+            const paginationContainers = document.getElementsByClassName('pagination-container');
+            if (paginationContainers.length > 0) {
+                const paginationContainer = paginationContainers[0];
+                // Checks if there are 4 or more recipes in order to show pagination
+                if (totalRecipes >= 4) {
+                    paginationContainer.style.display = "flex";
+                } else {
+                    paginationContainer.style.display = "none";
+                }
+            }
         } catch (error) {
             console.error("Error fetching recipes:", error);
         }
     }
+
 
     async function fetchRecipesByFirstLetter(letter) {
         try {
