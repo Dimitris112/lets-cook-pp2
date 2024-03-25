@@ -134,6 +134,57 @@ h1 {
     box-shadow: 0 4px 8px #0000001a;
 }
 
+/* Filtering */
+.filter-options {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter-options h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.dropdown {
+    margin-bottom: 20px;
+}
+
+.dropdown label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: center;
+}
+
+.dropdown select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #555;
+    font-size: 1rem;
+}
+
+.dropdown select:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px #3498db80;
+}
+
+
+/* Just for Microsoft browsers */
+.dropdown select::-ms-expand {
+    display: none;
+}
+
+.dropdown select option {
+    padding: 8px;
+}
+
 /* Buttons */
 button {
     padding: 1.2% 2.5%;

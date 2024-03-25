@@ -57,8 +57,43 @@
             <button id="searchButton">Search</button>
             <button id="randomButton">Random Recipe</button>
         </div>
-
         <div id="recipeContainer" class="recipe-container"></div>
+
+        <div class="filter-options">
+            <h2>Filter Options</h2>
+            <!-- Dietary  Dropdown -->
+            <div class="dropdown">
+                <label for="dietaryPreferences">Dietary Preferences:</label>
+                <select id="dietaryPreferences">
+                    <option value="none">Select</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="glutenFree">Gluten-Free</option>
+                    <option value="lowCarb">Low Carb</option>
+                    <option value="lowFat">Low Fat</option>
+                    <option value="highProtein">High Protein</option>
+                    <option value="pescatarian">Pescatarian</option>
+                </select>
+            </div>
+
+
+            <!-- Cuisine Dropdown -->
+            <div class="dropdown">
+                <label for="cuisine">Cuisine:</label>
+                <select id="cuisine">
+                    <option value="none">Select</option>
+                    <option value="american">American</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="french">French</option>
+                    <option value="indian">Indian</option>
+                    <option value="italian">Italian</option>
+                    <option value="japanese">Japanese</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="thai">Thai</option>
+                    <option value="greek">Greek</option>
+                </select>
+            </div>
+        </div>
 
         <!-- Pagination controls -->
         <div class="pagination-container">
