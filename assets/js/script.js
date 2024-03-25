@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const resetButton = document.getElementById("resetButton");
     const prevPageButton = document.getElementById("prevPageButton");
     const nextPageButton = document.getElementById("nextPageButton");
+    const categoryDropdown = document.getElementById("categoryDropdown");
     let currentPage = 1;
     const pageSize = 4;
     let recipes = [];
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     savedRecipesList.addEventListener("click", handleSavedRecipeClick);
     prevPageButton.addEventListener("click", goToPrevPage);
     nextPageButton.addEventListener("click", goToNextPage);
+    mealCategory.addEventListener("change", handleCategoryChange);
     recipeContainer.addEventListener("click", function (event) {
         if (event.target.classList.contains("viewRecipeButton")) {
             const recipeId = event.target.dataset.recipeId;
@@ -105,9 +107,12 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "block";
     }
 
-    async function fetchRecipes(searchQuery) {
+    async function fetchRecipes(searchQuery, category = '') {
         try {
-            const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`;
+            let searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`;
+            if (category) {
+                searchUrl += `&c=${category}`;
+            }
             const response = await fetch(searchUrl);
             const data = await response.json();
             recipes = data.meals || [];
@@ -165,7 +170,6 @@ document.addEventListener("DOMContentLoaded", function () {
             updatePaginationControls(0);
         }
     }
-
 
     function updatePaginationControls() {
         const totalPages = Math.ceil(totalRecipes / pageSize);
@@ -261,6 +265,28 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         } catch (error) {
             console.error("Error fetching recipe by name:", error);
+        }
+    }
+
+    async function fetchRecipesByCategory(category) {
+        try {
+            const searchUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
+            const response = await fetch(searchUrl);
+            const data = await response.json();
+            recipes = data.meals || [];
+            totalRecipes = recipes.length;
+            displayRecipes(recipes);
+        } catch (error) {
+            console.error("Error fetching recipes by category:", error);
+        }
+    }
+
+    function handleCategoryChange(event) {
+        const selectedCategory = event.target.value;
+        if (selectedCategory !== "all") {
+            fetchRecipesByCategory(selectedCategory);
+        } else {
+            fetchRecipes(searchInput.value);
         }
     }
 
