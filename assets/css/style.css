@@ -634,3 +634,122 @@ footer p {
         opacity: 0.8;
     }
 }
+
+/* ------------------------- Media queries ------------------------- */
+
+@media screen and (min-width: 279px) {
+    .container {
+        padding: 4%;
+        margin: 10% auto;
+        border-radius: 20px;
+        max-width: 80%;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    #searchInput {
+        padding: 1.5% 2.5%;
+        font-size: 1rem;
+    }
+
+    #searchInput::placeholder {
+        font-size: 0.8rem;
+    }
+
+    .browse-section {
+        margin-bottom: 5%;
+        position: relative;
+    }
+
+    .alphabet .letter {
+        font-size: 1.2rem;
+    }
+
+    button {
+        padding: 1.5% 3%;
+        margin: 2% 0;
+        font-size: 1rem;
+    }
+
+    .recipe-container {
+        margin-top: 5%;
+    }
+
+    .modal-content {
+        padding: 2%;
+        margin: 5% auto;
+        font-size: 0.8rem;
+        max-width: 90%;
+        overflow-y: auto;
+    }
+
+    .modal-content img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    .close {
+        font-size: 12vw;
+        top: -0.2%;
+        right: 4%;
+    }
+
+
+    /* Dropdown */
+    .dropdown {
+        margin-bottom: 4.5%;
+        position: relative;
+    }
+
+    .dropdown label {
+        display: block;
+        margin-bottom: 2.5%;
+        text-align: center;
+    }
+
+    .dropdown select {
+        width: 100%;
+        padding: 2.5%;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .dropdown .dropdown-content {
+        display: none;
+        position: absolute;
+        width: calc(100% - 4%);
+        top: calc(100% + 1.25%);
+        left: 2%;
+        border-radius: 5px;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .pagination-button,
+    .viewRecipeButton,
+    #currentPage {
+        padding: 1% 2%;
+        font-size: 0.8rem;
+    }
+}
+
+
+/* --------------------------- 576px+ --------------------------- */
+@media screen and (min-width: 576px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+/* --------------------------- 768px to 1023px --------------------------- */
+@media screen and (min-width: 768px) and (max-width: 1023px) {}
