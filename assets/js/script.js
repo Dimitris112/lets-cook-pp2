@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 recipeElement.classList.add("recipe");
                 recipeElement.innerHTML = `
                     <h3>${recipe.strMeal}</h3>
-                    <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}">
+                    <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" loading="lazy">
                     <button class="viewRecipeButton" data-recipe-id="${recipe.idMeal}">View Recipe</button>
                 `;
                 recipeContainer.appendChild(recipeElement);
@@ -170,6 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updatePaginationControls(0);
         }
     }
+
 
     function updatePaginationControls() {
         const totalPages = Math.ceil(totalRecipes / pageSize);
