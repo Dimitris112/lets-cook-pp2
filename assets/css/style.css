@@ -442,7 +442,6 @@ footer {
     position: relative;
     z-index: 1;
     overflow: hidden;
-
 }
 
 .footer-social-icons {
@@ -519,7 +518,6 @@ footer p {
     transform: translateX(-50%);
     z-index: -5;
 }
-
 
 .footer-content:hover .footer-social-icons {
     opacity: 1;
@@ -599,6 +597,7 @@ footer p {
         margin: 10% auto;
         border-radius: 20px;
         max-width: 80%;
+        min-height: calc(100vh - 20%);
     }
 
     h1 {
@@ -692,20 +691,43 @@ footer p {
         padding: 1% 2%;
         font-size: 0.8rem;
     }
+
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 0.8rem;
+    }
 }
 
 
 /* --------------------------- 576px+ --------------------------- */
 @media screen and (min-width: 576px) {
     body {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     .container {
         width: 90%;
-        margin: 0 auto;
+        margin: 10% auto 0;
+    }
+
+    .recipe {
+        margin-bottom: 3%;
+    }
+
+    .recipe img {
+        padding: 1%;
+    }
+
+    h2 {
+        letter-spacing: 0.2rem;
     }
 }
+
+
 
 /* --------------------------- 768px to 1023px --------------------------- */
 @media screen and (min-width: 768px) and (max-width: 1023px) {}
