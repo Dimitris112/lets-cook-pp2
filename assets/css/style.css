@@ -650,6 +650,7 @@ footer p {
         font-size: 12vw;
         top: -0.2%;
         right: 4%;
+        position: absolute;
     }
 
 
@@ -725,8 +726,14 @@ footer p {
     h2 {
         letter-spacing: 0.2rem;
     }
-}
 
+    .close {
+        font-size: 9vw;
+        position: absolute;
+        top: -1%;
+        left: 92%;
+    }
+}
 
 
 /* --------------------------- 768px to 1023px --------------------------- */
