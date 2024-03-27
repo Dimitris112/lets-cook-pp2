@@ -289,6 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             fetchRecipes(searchInput.value);
         }
+        currentPage = 1;
     }
 
     function displayRecipeDetails(recipe) {
