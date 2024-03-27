@@ -188,6 +188,15 @@ h1 {
     padding: 8px;
 }
 
+/*Toggle speech to text */
+#toggleSpeechButton {
+    position: absolute;
+    top: 50%;
+    right: 13%;
+    z-index: 9999;
+    display: none;
+}
+
 /* Buttons */
 button {
     padding: 1.2% 2.5%;

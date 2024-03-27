@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const prevPageButton = document.getElementById("prevPageButton");
     const nextPageButton = document.getElementById("nextPageButton");
     const categoryDropdown = document.getElementById("categoryDropdown");
+    const toggleSpeechButton = document.getElementById("toggleSpeechButton");
     let currentPage = 1;
     const pageSize = 4;
     let recipes = [];
@@ -58,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function closeModal() {
         modal.style.display = "none";
+        hideSpeechButton();
     }
 
     function outsideModalClick(event) {
@@ -304,6 +306,15 @@ document.addEventListener("DOMContentLoaded", function () {
         modalContent.dataset.recipeId = recipe.idMeal;
         modal.style.display = "block";
         checkIfRecipeIsSaved(recipe.idMeal);
+        showSpeechButton();
+    }
+
+    function hideSpeechButton() {
+        toggleSpeechButton.style.display = "none";
+    }
+
+    function showSpeechButton() {
+        toggleSpeechButton.style.display = "block";
     }
 
     displaySavedRecipes();
