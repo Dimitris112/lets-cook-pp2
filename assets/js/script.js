@@ -56,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target.classList.contains('letter')) {
             fetchRecipesByFirstLetter(event.target.textContent);
         }
+        currentPage = 1;
     }
 
     function closeModal() {
