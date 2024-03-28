@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     prevPageButton.addEventListener("click", goToPrevPage);
     nextPageButton.addEventListener("click", goToNextPage);
     mealCategory.addEventListener("change", handleCategoryChange);
+    toggleSpeechButton.addEventListener("click", toggleSpeech);
     recipeContainer.addEventListener("click", function (event) {
         if (event.target.classList.contains("viewRecipeButton")) {
             const recipeId = event.target.dataset.recipeId;
@@ -84,6 +85,26 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target.tagName.toLowerCase() === 'li') {
             fetchRecipeByName(event.target.textContent);
         }
+    }
+
+    function toggleSpeech() {
+        if ('speechSynthesis' in window) {
+            if (speechSynthesis.speaking) {
+                speechSynthesis.cancel();
+            } else {
+                readRecipeDetails();
+            }
+        } else {
+            alert("Speech synthesis is not supported in your browser.");
+        }
+    }
+
+    function readRecipeDetails() {
+        const recipeDetails = modalContent.textContent;
+        const speech = new SpeechSynthesisUtterance(recipeDetails);
+        speech.rate = 1;
+        speech.volume = 1;
+        speechSynthesis.speak(speech);
     }
 
     function checkIfRecipeIsSaved(recipeId) {
