@@ -36,18 +36,19 @@ document.addEventListener("DOMContentLoaded", function () {
     nextPageButton.addEventListener("click", goToNextPage);
     mealCategory.addEventListener("change", handleCategoryChange);
     toggleSpeechButton.addEventListener("click", toggleSpeech);
-    recipeContainer.addEventListener("click", function (event) {
+    document.addEventListener("click", function (event) {
         if (event.target.classList.contains("viewRecipeButton")) {
             const recipeId = event.target.dataset.recipeId;
             fetchAndDisplayRecipeDetails(recipeId);
-        }
-    });
-    savedRecipesList.addEventListener("click", function (event) {
-        if (event.target.classList.contains("remove-button")) {
+        } else if (event.target.classList.contains("remove-button")) {
             const recipeId = event.target.dataset.recipeId;
             removeSavedRecipe.call(event.target, recipeId);
+        } else if (event.target.tagName.toLowerCase() === 'li') {
+            const recipeName = event.target.textContent.split('Remove')[0].trim();
+            fetchRecipeByName(recipeName);
         }
     });
+
 
     // Functions
     function handleSearchInput(event) {
