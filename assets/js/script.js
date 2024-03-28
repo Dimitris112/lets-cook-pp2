@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const resetButton = document.getElementById("resetButton");
     const prevPageButton = document.getElementById("prevPageButton");
     const nextPageButton = document.getElementById("nextPageButton");
-    const categoryDropdown = document.getElementById("categoryDropdown");
     const toggleSpeechButton = document.getElementById("toggleSpeechButton");
     let currentPage = 1;
     const pageSize = 4;
@@ -41,6 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target.classList.contains("viewRecipeButton")) {
             const recipeId = event.target.dataset.recipeId;
             fetchAndDisplayRecipeDetails(recipeId);
+        }
+    });
+    savedRecipesList.addEventListener("click", function (event) {
+        if (event.target.classList.contains("remove-button")) {
+            const recipeId = event.target.dataset.recipeId;
+            removeSavedRecipe.call(event.target, recipeId);
         }
     });
 
@@ -77,6 +82,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function removeSavedRecipe(recipeId) {
+        try {
+            let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+            const index = savedRecipes.indexOf(recipeId);
+            if (index !== -1) {
+                savedRecipes.splice(index, 1);
+                localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+                this.parentElement.remove();
+            }
+        } catch (error) {
+            console.error("Error removing saved recipe:", error);
+        }
+    }
+
     function handleSaveButtonClick() {
         const recipeId = modalContent.dataset.recipeId;
         saveRecipeLocally(recipeId);
@@ -85,9 +104,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function handleSavedRecipeClick(event) {
         if (event.target.tagName.toLowerCase() === 'li') {
-            fetchRecipeByName(event.target.textContent);
+            // Extracts the recipe name
+            const recipeName = event.target.textContent.split('Remove')[0].trim();
+            fetchRecipeByName(recipeName);
         }
     }
+
 
     function toggleSpeech() {
         if ('speechSynthesis' in window) {
@@ -261,12 +283,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 const recipe = data.meals[0];
                 const li = document.createElement("li");
                 li.textContent = recipe.strMeal;
+                const removeButton = document.createElement("button");
+                removeButton.textContent = "Remove";
+                removeButton.classList.add("remove-button");
+                removeButton.dataset.recipeId = recipe.idMeal;
+                li.appendChild(removeButton);
                 savedRecipesList.appendChild(li);
             }
         } catch (error) {
             console.error("Error displaying saved recipes:", error);
         }
     }
+
 
     async function fetchAndDisplayRecipeDetails(recipeId) {
         try {
