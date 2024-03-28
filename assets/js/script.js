@@ -107,6 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
         modalContent.dataset.recipeId = recipe.idMeal;
         modal.style.display = "block";
+        checkIfRecipeIsSaved(recipe.idMeal);
+        showSpeechButton();
     }
 
     async function fetchRecipes(searchQuery, category = '') {
