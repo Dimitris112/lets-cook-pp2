@@ -190,11 +190,23 @@ h1 {
 
 /*Toggle speech to text */
 #toggleSpeechButton {
-    position: absolute;
-    top: 50%;
-    right: 13%;
-    z-index: 9999;
+    padding: 1.2% 2.5%;
     display: none;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5%;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-size: 1.2rem;
+    animation: buttonTransition 0.5s ease-in-out;
+    margin-left: 14%;
+    margin-top: -6.3%;
+}
+
+#saveButton,
+#toggleSpeechButton {
+    display: inline-block;
 }
 
 /* Buttons */
@@ -326,6 +338,7 @@ button:active {
     transition: opacity 0.3s ease-in-out;
     box-shadow: 0 0 2px #00000033;
     animation: slideInModal 0.5s ease-in-out;
+
 }
 
 .modal-content img {
@@ -637,6 +650,11 @@ footer p {
         font-size: 1rem;
     }
 
+    #toggleSpeechButton {
+        margin-left: 0;
+        margin-top: 2%;
+    }
+
     .recipe-container {
         margin-top: 5%;
     }
@@ -741,6 +759,12 @@ footer p {
         position: absolute;
         top: -1%;
         left: 92%;
+    }
+
+    #toggleSpeechButton {
+        margin-left: 1%;
+        margin-top: 0;
+        position: relative;
     }
 }
 
