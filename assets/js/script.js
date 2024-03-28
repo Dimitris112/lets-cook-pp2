@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function closeModal() {
         modal.style.display = "none";
         hideSpeechButton();
+        speechSynthesis.cancel();
     }
 
     function outsideModalClick(event) {
