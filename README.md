@@ -1,5 +1,5 @@
 # Let's Cook
-Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:target="_blank"}
+Go to the website -> [Live link!](https://dimitris112.github.io/lets-cook-pp2/)
 
 
 - responsiveness screenshot will be here
@@ -32,10 +32,10 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
 
 ## Features 
  - ### **DISCLAIMER**
- The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API){:target="_blank"}
+ The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API!](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
  
  The scrollbar effects / colors will be visible **ONLY** to browsers that include the `::-webkit-scrollbar`. Here's the link for more information -> 
- [Webkit Scrollbar](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar){:target="_blank"}
+ [Webkit Scrollbar!](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar)
 
   ![Scrollbar](assets/images/validation/scrollbar.gif "Scrollbar with the webkit effects")
 
@@ -49,8 +49,8 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
 ## Technology
 ## Testing
  - ### Code Validation
-  1. For the HTML validation I used [w3](https://validator.w3.org/){:target="_blank"} which shows the [page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F){:target="_blank"} error free. 
-  2. For the CSS I used the same method which is also error free but received warnings about the `::-webkit-scrollbar` because it is not universal among the browsers. See for yourself -> [CLICK ME](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en){:target="_blank"}
+  1. For the HTML validation I used [w3!](https://validator.w3.org/) which shows the [page!](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F) error free. 
+  2. For the CSS I used the same method which is also error free but received warnings about the `::-webkit-scrollbar` because it is not universal among the browsers. See for yourself -> [CLICK ME!](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
   3. For the JavaScript I used 
 
  - ### Test cases "user story based with screenshots"
@@ -64,6 +64,6 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
  2. Now once you've done the 1st step, your next move is to navigate to your repository ***Settings*** located near the top left corner. If you cannot see the ***Settings*** tab, click the ... dropdown menu and select it.
  3. In the ***Code and Automation*** section , click ***Pages***
  4. Under the **Build and Deployment** you can deploy from a *branch*. You have to select **main** as your branch and `/root` as your folder. Then click **save**
- 5. ***OPTIONAL*** you can create your custom domain if you want to. Click [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site){:target="_blank"} for more information.
+ 5. ***OPTIONAL*** you can create your custom domain if you want to. Click [here!](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)for more information.
  6. The URL for the page takes some time to be created, once it's done it will be displayed at the top. In the meantime while you're waiting, find something to cook!
 ## Credits
