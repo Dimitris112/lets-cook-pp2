@@ -30,7 +30,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
  The scrollbar effects / colors will be visible **ONLY** to browsers that include the `::-webkit-scrollbar`. Here's the link for more information -> 
  [Webkit Scrollbar](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar)
 
-  ![Scrollbar](assets/images/validation/scrollbar.gif)
+  ![Scrollbar](assets/images/validation/scrollbar.gif "Scrollbar with the webkit effects")
 
  
 
@@ -53,4 +53,10 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
 ## Deployment
  - ### Via Gitpod
  - ### Via Github pages
+ 1. Before you do anything, make sure in your repository you've included an `index.html` and `README.md` file.
+ 2. Now once you've done the 1st step, your next move is to navigate to your repository ***Settings*** located near the top left corner. If you cannot see the ***Settings*** tab, click the ... dropdown menu and select it.
+ 3. In the ***Code and Automation*** section , click ***Pages***
+ 4. Under the **Build and Deployment** you can deploy from a *branch*. You have to select **main** as your branch and `/root` as your folder. Then click **save**
+ 5. ***OPTIONAL*** you can create your custom domain if you want to. Click [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) for more information.
+ 6. The URL for the page takes some time to be created, once it's done it will be displayed at the top. In the meantime while you're waiting, find something to cook!
 ## Credits
