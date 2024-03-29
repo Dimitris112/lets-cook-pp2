@@ -1,4 +1,6 @@
-live link over here / logo 
+# Let's Cook
+Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
+
 - responsiveness screenshot will be here
 - ## [Purpose of the project](#purpose-of-the-project)
 - ## [User Stories](#user-stories)
@@ -17,13 +19,17 @@ live link over here / logo
     - [Github Pages](#via-github-pages)
 - ## [Credits](#credits)
 
-
-
 # Purpose of the project
 - The purpose of the project is a website called "Let's Cook" that serves as a recipe finder. The project aims to provide users with a platform to search, browse, and discover recipes based on various criteria such as keywords, categories, and alphabetical order. Additionally, users can save locally their favorite recipes for future reference.
 
 ## User stories
 ## Features 
+ - ### **DISCLAIMER**
+ The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
+ 
+ The scrollbar effects / colors will be visible only to browsers that include the `::-webkit-scrollbar`. Here's the link for more information -> [Webkit Scrollbar](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar)
+ 
+
 ## Future Features
 
 ## Typography and color scheme
