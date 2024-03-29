@@ -23,6 +23,12 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
 - The purpose of the project is a website called "Let's Cook" that serves as a recipe finder. The project aims to provide users with a platform to search, browse, and discover recipes based on various criteria such as keywords, categories, and alphabetical order. Additionally, users can save locally their favorite recipes for future reference.
 
 ## User stories
+- As a food explorer, I want to try recipes from different cultures and regions to expand my knowledge in gastronomy.
+ - As a food enthousiast, I want to explore recipes from different cuisines and categories.
+ - As a busy individual, I want to be able to search recipes based on specific ingredients or keywords so that I can quickly find recipes that match my available ingredients or dietary preferences. This feature would save me time and help me make the most out of my limited cooking time.
+ - As someone passionate about cooking, I want to have a functionality to save recipes that I find intriguing or unique, empowering me to experiment with new flavors and techniques at my own pace.
+ - couple more will come if i add any more functionality
+
 ## Features 
  - ### **DISCLAIMER**
  The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
@@ -43,7 +49,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
 ## Testing
  - ### Code Validation
   1. For the HTML validation I used [w3](https://validator.w3.org/) which shows the [page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F) error free. 
-  2. For the CSS I used the same method which is also error free but received warnings about the `::-webkit-scrollbar` which is not universal among the browsers. See for yourself -> [CLICK ME](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  2. For the CSS I used the same method which is also error free but received warnings about the `::-webkit-scrollbar` because it is not universal among the browsers. See for yourself -> [CLICK ME](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
   3. For the JavaScript I used 
 
  - ### Test cases "user story based with screenshots"
