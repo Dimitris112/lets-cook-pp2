@@ -27,7 +27,11 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
  - ### **DISCLAIMER**
  The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
  
- The scrollbar effects / colors will be visible only to browsers that include the `::-webkit-scrollbar`. Here's the link for more information -> [Webkit Scrollbar](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar)
+ The scrollbar effects / colors will be visible **ONLY** to browsers that include the `::-webkit-scrollbar`. Here's the link for more information -> 
+ [Webkit Scrollbar](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar)
+
+  ![Scrollbar](assets/images/validation/scrollbar.gif)
+
  
 
 ## Future Features
@@ -38,6 +42,10 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
 ## Technology
 ## Testing
  - ### Code Validation
+  1. For the HTML validation I used [w3](https://validator.w3.org/) which shows the [page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F) error free. 
+  2. For the CSS I used the same method which is also error free but received warnings about the `::-webkit-scrollbar` which is not universal among the browsers. See for yourself -> [CLICK ME](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  3. For the JavaScript I used 
+
  - ### Test cases "user story based with screenshots"
  - ### Fixed bugs
  - ### Unfixed bugs
