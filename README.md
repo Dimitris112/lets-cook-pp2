@@ -1,7 +1,22 @@
 live link over here / logo 
 - responsiveness screenshot will be here
-- anchor tags
-- 
+- ## [Purpose of the project](#purpose-of-the-project)
+- ## [User Stories](#user-stories)
+- ## [Features](#features)
+- ## [Future Features](#future-features)
+- ## [Typography and color scheme](#typography-and-color-scheme)
+- ## [Technology](#technology)
+- ## [Testing](#testing)
+    - [Code Validation](#code-validation)
+    - [Test cases](#test-cases)
+    - [Fixed bugs](#fixed-bugs)
+    - [Unfixed bugs](#unfixed-bugs)
+    - [Supported screens and browsers](#supported-screens-and-browsers)
+- ## [Deployment](#deployment)
+    - [Gitpod](#via-gitpod)
+    - [Github Pages](#via-github-pages)
+- ## [Credits](#credits)
+
 
 
 # Purpose of the project
@@ -16,12 +31,12 @@ live link over here / logo
 
 ## Technology
 ## Testing
- - Code Validation
- - Test cases "user story based with screenshots"
- - Fixed bugs
- - Unfixed bugs
- - Supported screend and browsers
+ - ### Code Validation
+ - ### Test cases "user story based with screenshots"
+ - ### Fixed bugs
+ - ### Unfixed bugs
+ - ### Supported screend and browsers
 ## Deployment
- - Via Gitpod
- - Via Github pages
+ - ### Via Gitpod
+ - ### Via Github pages
 ## Credits
