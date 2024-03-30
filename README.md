@@ -32,10 +32,10 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
 
 ## Features 
 - Users can easily navigate through recipes **[alphabetically](#alphabetical-search)** by selecting a letter, instantly filtering the displayed recipes to those beginning with the chosen letter.
-- Users can discover new and exciting recipes by clicking the **[`Random Recipe`](#random-recipe)** button, which selects a recipe at random from the mealdb API providing an element of surprise.
+- Users can discover new and exciting recipes by clicking the **[Random Recipe](#random-recipe)** button, which selects a recipe at random from the mealdb API providing an element of surprise.
 - Users can refine their recipe search based on specific meal **[categories](#filter-category)** via a dropdown menu, which provides a list of available food cateogires to choose from.
 - The project includes clean **[pagination](#pagination)** functionality, ensuring a smooth browsing experience by displaying up to 4 recipes per page. Pagination controls such as `Previous` and `Next` buttons enable the user to navigate between pages.
-- Users can save each recipe they desire by clicking the `Save Recipe` button which then will be stored below the **[Saved Recipes](#saved-recipes)**. To manage their saved recipes, users have the flexibility to either remove individual recipes by clicking the `Remove` button or clear their entire saved collection with a single click on the `Reset` button. Moreover the `Save Recipe` button is hidden within the details of recipes that are already saved, which ensures that the users arern't overwhelmed with unnecessary options.
+- Users can save each recipe they desire by clicking the `Save Recipe` button which then will be stored below the **[Saved Recipes](#saved-recipes)**. To manage their saved recipes, users have the flexibility to either remove individual recipes by clicking the `Remove` button or clear their entire saved collection with a single click on the `Reset` button. Moreover the `Save Recipe` button is hidden within the details of recipes that are already saved, which ensures that the users arern't overwhelmed with unnecessary options. When the user saves the recipe for the first time, an alert will pop displaying **Recipe saved succesfully!**, if it's clicked again it will be displayed as **Recipe already saved!**.
 - The project includes a **[Toggle Speech](#toggle-speech)** button which will read aloud the details of the recipe once the user has clicked to view one. It's easily accessible since its below the `Save Recipe` button. The speech can be ended in 2 ways. The first is by clicking the `Toggle Speech` button a second time and the second is when the user exits the reipce details window either by clicking the X button or just by clicking out of it. This feature enhances accessibility, catering to users who may benefit from auditory assistance.
 - On the **[footer](#footer)** I've included a visually appealing spherical pulse effect housing my 2 social icons which lead to this **Github repository** and my [Linkedin](https://www.linkedin.com/in/dimitrios-thlivitis-617492300/) profile.
 
@@ -48,6 +48,9 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
   - Saved recipes will be saved **ONLY** locally in the browser (computer or mobile) as for now the project lacks back-end services.
 
 ## Future Features
+- Add the option for users to search recipes by *Area* just like they can search by meal category.
+- Implement user authentication with signup/login functionality once back-end services are introduced, enabling users to leave comments and ratings on their favorite recipes.
+- 
 
 ## Typography and color scheme
 - The project utilizes the **Montserrat** font family from Google Fonts, while the primary font is Montserrat / the fallback font is Sans-serrif. As for the color scheme for the body `background: linear-gradient(135deg, #ff9a00, #ee0979);` it ensures a vibrant orange for primary color `"ff9a00"` and bold pink for the secondary color `"ee0979"` while the `linear-gradient of 135deg` let's it flow diagonally from the bottom left to the top right with a value of 135degrees creating a smooth color change.
@@ -73,7 +76,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
       ![Pagination](assets/images/validation/category_pagination.gif "Pagination controls")
 
       - ### Saved Recipes 
-      ![Saved Recipes](assets/images/validation/savedrecipes.png "Saved recipe list")
+      ![Saved Recipes](assets/images/validation/savedrecipes.png "Saved recipe list") ![Saved alert](assets/images/validation/recipe_saved.png "Saved recipe alert") ![Already saved alert](assets/images/validation/recipe_already_saved.png "Already saved recipe alert")
 
       - ### Toggle Speach 
       ![Toggle Speech](assets/images/validation/togglespeech.png "Toggle Speech button")
