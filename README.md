@@ -34,8 +34,8 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
 - 
 - 
 - 
-- Saved recipes 
-- The project includes a **Toggle Speech** button which will read aloud the details of the recipe once the user has clicked to view one. It's easily accessible since its below the `Save Recipe` button. The speech can be ended in 2 ways. The first is by clicking the `Toggle Speech` button and the second is when the user exits the reipce details window either by clicking the X button or just by clicking outside of it. This feature enhances accessibility, catering to users who may benefit from auditory assistance. 
+- Users can save each recipe they desire by clicking the `Save Recipe` button which then will be stored below the **Saved Recipes**. To manage their saved recipes, users have the flexibility to either remove individual recipes by clicking the `Remove` button or clear their entire saved collection with a single click on the `Reset` button. Moreover the `Save Recipe` button is hidden within the details of recipes that are already saved, which ensures that the users arern't overwhelmed with unnecessary options.
+- The project includes a **Toggle Speech** button which will read aloud the details of the recipe once the user has clicked to view one. It's easily accessible since its below the `Save Recipe` button. The speech can be ended in 2 ways. The first is by clicking the `Toggle Speech` button a second time and the second is when the user exits the reipce details window either by clicking the X button or just by clicking out of it. This feature enhances accessibility, catering to users who may benefit from auditory assistance. 
 
 - ### **DISCLAIMER**
   - The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API){:target="_blank"}
@@ -61,6 +61,8 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
       ![Toggle Speech](assets/images/validation/togglespeech.png "Toggle Speech button")
 
       ![Scrollbar](assets/images/validation/scrollbar.gif "Scrollbar with the webkit effects")
+      
+      ![Saved Recipes](assets/images/validation/savedrecipes.png "Saved recipe list")
 
  - ### Fixed bugs
  - ### Unfixed bugs
