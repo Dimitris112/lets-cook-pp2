@@ -31,15 +31,19 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
  - couple more will come if i add any more functionality
 
 ## Features 
- - ### **DISCLAIMER**
- The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API){:target="_blank"}
+- 
+- 
+- 
+- Saved recipes 
+- The project includes a **Toggle Speech** button which will read aloud the details of the recipe once the user has clicked to view one. It's easily accessible since its below the `Save Recipe` button. The speech can be ended in 2 ways. The first is by clicking the `Toggle Speech` button and the second is when the user exits the reipce details window either by clicking the X button or just by clicking outside of it. This feature enhances accessibility, catering to users who may benefit from auditory assistance. 
+
+- ### **DISCLAIMER**
+  - The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API){:target="_blank"}
  
- The scrollbar effects / colors will be visible **ONLY** to browsers that include the `::-webkit-scrollbar`. Here's the link for more information -> 
+  - The scrollbar effects / colors will be visible **ONLY** to browsers that include the `::-webkit-scrollbar`. Here's the link for more information -> 
  [Webkit Scrollbar](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar){:target="_blank"}
 
-![Scrollbar](assets/images/validation/scrollbar.gif "Scrollbar with the webkit effects")
-
- 
+  - Saved recipes will be saved **ONLY** locally in the browser (computer or mobile) as for now the project lacks back-end services.
 
 ## Future Features
 
@@ -49,11 +53,15 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
 ## Technology
 ## Testing
  - ### Code Validation
-  1. For the HTML validation I used [w3](https://validator.w3.org/){:target="_blank"} which shows the [page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F){:target="_blank"} error free. 
-  2. For the CSS I used the same method which is also error free but received warnings about the `::-webkit-scrollbar` because it is not universal among the browsers. See for yourself -> [CLICK ME](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en){:target="_blank"}
-  3. For the JavaScript I used 
+   - For the HTML validation I used [w3](https://validator.w3.org/){:target="_blank"} which shows the [page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F){:target="_blank"} error free. 
+   - For the CSS I used the same method which is also error free but received warnings about the `::-webkit-scrollbar` because it is not universal among the browsers. See for yourself -> [CLICK ME](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en){:target="_blank"}
+   - For the JavaScript I used 
 
  - ### Test cases "user story based with screenshots"
+      ![Toggle Speech](assets/images/validation/togglespeech.png "Toggle Speech button")
+
+      ![Scrollbar](assets/images/validation/scrollbar.gif "Scrollbar with the webkit effects")
+
  - ### Fixed bugs
  - ### Unfixed bugs
  - ### Supported screend and browsers
@@ -65,5 +73,5 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
  3. In the ***Code and Automation*** section , click ***Pages***
  4. Under the **Build and Deployment** you can deploy from a *branch*. You have to select **main** as your branch and `/root` as your folder. Then click **save**
  5. ***OPTIONAL*** you can create your custom domain if you want to. Click [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site){:target="_blank"} for more information.
- 6. The URL for the page takes some time to be created, once it's done it will be displayed at the top. In the meantime while you're waiting, find something to cook!
+ 6. The URL for the page takes some time to be created, once it's done it will be displayed at the top. In the meantime, find something to cook!
 ## Credits
