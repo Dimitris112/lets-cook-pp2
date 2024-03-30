@@ -50,7 +50,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
 ## Future Features
 - Add the option for users to search recipes by *Area* just like they can search by meal category.
 - Implement user authentication with signup/login functionality once back-end services are introduced, enabling users to leave comments and ratings on their favorite recipes.
-- 
+- Enable voice search functionality enabling users to search resipes by simply speaking, providing a convenient user experience.
 
 ## Typography and color scheme
 - The project utilizes the **Montserrat** font family from Google Fonts, while the primary font is Montserrat / the fallback font is Sans-serrif. As for the color scheme for the body `background: linear-gradient(135deg, #ff9a00, #ee0979);` it ensures a vibrant orange for primary color `"ff9a00"` and bold pink for the secondary color `"ee0979"` while the `linear-gradient of 135deg` let's it flow diagonally from the bottom left to the top right with a value of 135degrees creating a smooth color change.
