@@ -25,19 +25,19 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
 
 ## User stories
 - As a food explorer, I want to try recipes from different cultures and regions to expand my knowledge in gastronomy.
- - As a food enthousiast, I want to explore recipes from different cuisines and categories.
- - As a busy individual, I want to be able to search recipes based on specific ingredients or keywords so that I can quickly find recipes that match my available ingredients or dietary preferences. This feature would save me time and help me make the most out of my limited cooking time.
- - As someone passionate about cooking, I want to have a functionality to save recipes that I find intriguing or unique, empowering me to experiment with new flavors and techniques at my own pace.
- - couple more will come if i add any more functionality
+- As a food enthousiast, I want to explore recipes from different cuisines and categories.
+- As a busy individual, I want to be able to search recipes based on specific ingredients or keywords so that I can quickly find recipes that match my available ingredients or dietary preferences. This feature would save me time and help me make the most out of my limited cooking time.
+- As someone passionate about cooking, I want to have a functionality to save recipes that I find intriguing or unique, empowering me to experiment with new flavors and techniques at my own pace.
+- couple more will come if i add any more functionality
 
 ## Features 
-- Users can easily navigate through recipes **alphabetically** by selecting a letter, instantly filtering the displayed recipes to those beginning with the chosen letter.
-- Users can discover new and exciting recipes by clicking the `Random Recipe` button, which selects a recipe at random from the mealdb API providing an element of surprise.
-- Users can refine their recipe search based on specific meal **categories** via a dropdown menu, which provides a list of available food cateogires to choose from.
-- The project includes clean **pagination** functionality, ensuring a smooth browsing experience by displaying up to 4 recipes per page. Pagination controls such as `Previous` and `Next` buttons enalbe the user to navigate between pages.
-- Users can save each recipe they desire by clicking the `Save Recipe` button which then will be stored below the **Saved Recipes**. To manage their saved recipes, users have the flexibility to either remove individual recipes by clicking the `Remove` button or clear their entire saved collection with a single click on the `Reset` button. Moreover the `Save Recipe` button is hidden within the details of recipes that are already saved, which ensures that the users arern't overwhelmed with unnecessary options.
-- The project includes a **Toggle Speech** button which will read aloud the details of the recipe once the user has clicked to view one. It's easily accessible since its below the `Save Recipe` button. The speech can be ended in 2 ways. The first is by clicking the `Toggle Speech` button a second time and the second is when the user exits the reipce details window either by clicking the X button or just by clicking out of it. This feature enhances accessibility, catering to users who may benefit from auditory assistance.
-- On the **footer** I've included a visually appealing spherical pulse effect housing my 2 social icons which lead to this **Github repository** and my [Linkedin](https://www.linkedin.com/in/dimitrios-thlivitis-617492300/) profile.
+- Users can easily navigate through recipes **[alphabetically](#alphabetical-search)** by selecting a letter, instantly filtering the displayed recipes to those beginning with the chosen letter.
+- Users can discover new and exciting recipes by clicking the **[`Random Recipe`](#random-recipe)** button, which selects a recipe at random from the mealdb API providing an element of surprise.
+- Users can refine their recipe search based on specific meal **[categories](#filter-category)** via a dropdown menu, which provides a list of available food cateogires to choose from.
+- The project includes clean **[pagination](#pagination)** functionality, ensuring a smooth browsing experience by displaying up to 4 recipes per page. Pagination controls such as `Previous` and `Next` buttons enable the user to navigate between pages.
+- Users can save each recipe they desire by clicking the `Save Recipe` button which then will be stored below the **[Saved Recipes](#saved-recipes)**. To manage their saved recipes, users have the flexibility to either remove individual recipes by clicking the `Remove` button or clear their entire saved collection with a single click on the `Reset` button. Moreover the `Save Recipe` button is hidden within the details of recipes that are already saved, which ensures that the users arern't overwhelmed with unnecessary options.
+- The project includes a **[Toggle Speech](#toggle-speech)** button which will read aloud the details of the recipe once the user has clicked to view one. It's easily accessible since its below the `Save Recipe` button. The speech can be ended in 2 ways. The first is by clicking the `Toggle Speech` button a second time and the second is when the user exits the reipce details window either by clicking the X button or just by clicking out of it. This feature enhances accessibility, catering to users who may benefit from auditory assistance.
+- On the **[footer](#footer)** I've included a visually appealing spherical pulse effect housing my 2 social icons which lead to this **Github repository** and my [Linkedin](https://www.linkedin.com/in/dimitrios-thlivitis-617492300/) profile.
 
 - ### **DISCLAIMER**
   - The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API){:target="_blank"}
@@ -60,25 +60,35 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
    - For the JavaScript I used 
 
  - ### Test cases "user story based with screenshots"
+      - ### Alphabetical Search 
       ![Alphabetical Search](assets/images/validation/alphabet.png "Alphabetical search")
 
+      - ### Random Recipe 
       ![Random Recipe](assets/images/validation/random.png "Random Recipe button")
 
+      - ### Filter Category 
       ![Filter Category](assets/images/validation/filter_category.png "Filter category dropdown menu")
 
+      - ### Pagination 
       ![Pagination](assets/images/validation/category_pagination.gif "Pagination controls")
 
-      ![Toggle Speech](assets/images/validation/togglespeech.png "Toggle Speech button")
-
-      ![Scrollbar](assets/images/validation/scrollbar.gif "Scrollbar with the webkit effects")
-      
+      - ### Saved Recipes 
       ![Saved Recipes](assets/images/validation/savedrecipes.png "Saved recipe list")
 
+      - ### Toggle Speach 
+      ![Toggle Speech](assets/images/validation/togglespeech.png "Toggle Speech button")
+
+      - ### Scrollbar 
+      ![Scrollbar](assets/images/validation/scrollbar.gif "Scrollbar with the webkit effects")
+      
+      - ### Footer 
       ![Footer](assets/images/validation/footer.gif "Footer")
 
  - ### Fixed bugs
  - ### Unfixed bugs
- - ### Supported screend and browsers
+ - ### Supported screens and browsers
+   - **Responsive Design:** The website is fully responsive and optimized for all screen sizes, ensuring seamless browsing experience. From the compact *Samsung Galaxy Fold* with a width as small as 280px up to large PC monitors.
+   - **Browser Compatibility:** The website is compatible with all up to date browsers, ensuring a consistent experience for users accross different platforms. However there are some minor variations in the visuals on certain browsers. For more information refer to the above -> [disclaimer](#disclaimer)
 ## Deployment
  - ### Via Gitpod
  - ### Via Github pages
