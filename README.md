@@ -53,9 +53,13 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
 - Enable voice search functionality enabling users to search resipes by simply speaking, providing a convenient user experience.
 
 ## Typography and color scheme
-- The project utilizes the **Montserrat** font family from Google Fonts, while the primary font is Montserrat / the fallback font is Sans-serrif. As for the color scheme for the body `background: linear-gradient(135deg, #ff9a00, #ee0979);` it ensures a vibrant orange for primary color `"ff9a00"` and bold pink for the secondary color `"ee0979"` while the `linear-gradient of 135deg` let's it flow diagonally from the bottom left to the top right with a value of 135degrees creating a smooth color change.
+- The project utilizes the **Montserrat** font family from Google Fonts, while the primary font is Montserrat / the fallback font is Sans-serrif. As for the color scheme for the body `background: linear-gradient(135deg, #ff9a00, #ee0979);` it ensures a vibrant orange for primary color `"ff9a00"` and bold pink for the secondary color `"ee0979"` while the `linear-gradient of 135deg` let's it flow diagonally from the bottom left to the top right with a value of 135degrees creating a smooth color change. Furthermore buttons, headings and images are enhanced with effects like text shadow / box shadow adding depth and dimension.
 
 ## Technology
+ - **HTML, CSS and JavaScript** were used for creating the website's structure, styling, and interactivity.
+ -  Data for the recipes were fetched from the [Mealdb API](https://www.themealdb.com/api.php) using asynchronous functions.
+ - 
+
 ## Testing
  - ### Code Validation
    - For the HTML validation I used [w3](https://validator.w3.org/){:target="_blank"} which shows the [page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F){:target="_blank"} error free. 
