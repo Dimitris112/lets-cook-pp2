@@ -98,6 +98,17 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
    - **Browser Compatibility:** The website is compatible with all up to date browsers, ensuring a consistent experience for users accross different platforms. However there are some minor variations in the visuals on certain browsers. For more information refer to the above -> [disclaimer](#disclaimer)
 ## Deployment
  - ### Via Gitpod
+  1. Head over to [Gitpod](https://www.gitpod.io/) and click the ***Login*** button, it's located at the top right corner, if you can't see it click the **=** dropdown menu and then login. There will be 3 options.
+   - Continue with **GitLab**.
+   - Continue with **GitHub**  "prefer this one"
+   - Continue with **Bitbucket**.
+  2. Click to login or register with your prefered option.
+  3. Now click on ***Dashboard*** which is located near the top right corner, again if you can't see it click the **=** button which will display a dropdown menu.
+  4. **BEFORE** you procceed further you have to create your repository in your **Github**  profile or what was your choosing. Find more information here -> [Github repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories)
+  5. Once you're in, you will see the ***Workspaces*** screen. Click `New Workspace` and select the repository you created in your **Github profile** or any of the platform you chose. You can choose an **IDE** "Integrated Development Enviroment" of your liking. Below that there will be an option for you to choose, based on your system `Standard` or `Large`. Make sure to select the correct repository from the list presented in the Gitpod interface.
+  6. Afterwards Gitpod will start initializing your workspace based on your repository, this may take a moment.
+  7. Once the proccess is complete, you'll be inside the **Gitpod IDE**.
+
  - ### Via Github pages
  1. Before you do anything, make sure in your repository you've included an `index.html` and `README.md` file.
  2. Now once you've done the 1st step, your next move is to navigate to your repository ***Settings*** located near the top left corner. If you cannot see the ***Settings*** tab, click the ... dropdown menu and select it.
