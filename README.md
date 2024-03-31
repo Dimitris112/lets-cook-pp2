@@ -1,5 +1,5 @@
 # Let's Cook
-Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:target="_blank"}
+Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
 
 
 - responsiveness screenshot will be here
@@ -40,10 +40,10 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
 - On the **[footer](#footer)** I've included a visually appealing spherical pulse effect housing my 2 social icons which lead to this **Github repository** and my [Linkedin](https://www.linkedin.com/in/dimitrios-thlivitis-617492300/) profile.
 
 - ### **DISCLAIMER**
-  - The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API){:target="_blank"}
+  - The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
  
   - The scrollbar effects / colors will be visible **ONLY** to browsers that include the `::-webkit-scrollbar`. Here's the link for more information -> 
- [Webkit Scrollbar](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar){:target="_blank"}
+ [Webkit Scrollbar](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar)
 
   - Saved recipes will be saved **ONLY** locally in the browser (computer or mobile) as for now the project lacks back-end services.
 
@@ -62,9 +62,9 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
 
 ## Testing
  - ### Code Validation
-   - For the HTML validation I used [w3](https://validator.w3.org/){:target="_blank"} which shows the [page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F){:target="_blank"} error free. 
-   - For the CSS I used the same method which is also error free but received warnings about the `::-webkit-scrollbar` because it is not universal among the browsers. See for yourself -> [CLICK ME](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en){:target="_blank"}
-   - For the JavaScript I used 
+   - For the **HTML** validation I used [w3](https://validator.w3.org/) which shows the [page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F) error free. 
+   - For the **CSS** I used the same method which is also error free but received warnings about the `::-webkit-scrollbar` because it is not universal among the browsers. See for yourself -> [CLICK ME](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+   - For the **JavaScript** I used 
 
  - ### Test cases "user story based with screenshots"
       - ### Alphabetical Search 
@@ -99,9 +99,9 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
 ## Deployment
  - ### Via Gitpod
   1. Head over to [Gitpod](https://www.gitpod.io/) and click the ***Login*** button, it's located at the top right corner, if you can't see it click the **=** dropdown menu and then login. There will be 3 options.
-   - Continue with **GitLab**.
-   - Continue with **GitHub**  "prefer this one"
-   - Continue with **Bitbucket**.
+  - Continue with **GitLab**.
+  - Continue with **GitHub**  "prefer this one"
+  - Continue with **Bitbucket**.
   2. Click to login or register with your prefered option.
   3. Now click on ***Dashboard*** which is located near the top right corner, again if you can't see it click the **=** button which will display a dropdown menu.
   4. **BEFORE** you procceed further you have to create your repository in your **Github**  profile or what was your choosing. Find more information here -> [Github repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories)
@@ -116,4 +116,10 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/){:
  4. Under the **Build and Deployment** you can deploy from a *branch*. You have to select **main** as your branch and `/root` as your folder. Then click **save**
  5. ***OPTIONAL*** you can create your custom domain if you want to.
  6. The URL for the page takes some time to be created, once it's done it will be displayed at the top. In the meantime, find something to cook!
+
 ## Credits
+  - When I was thinking of building a recipe finder website, I searched here and there for some information on how to implement the key functions for the recipes etc and landed on using the [mealDB](https://www.themealdb.com/). Used only the free version of its API.
+  - .
+  - .
+- ### Media
+  - I got the idea for the scrollbar effects from this video -> [How to Web Dev](https://www.youtube.com/watch?v=rjYo5YUA2fU)
