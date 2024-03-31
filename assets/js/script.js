@@ -36,6 +36,13 @@ document.addEventListener("DOMContentLoaded", function () {
     nextPageButton.addEventListener("click", goToNextPage);
     mealCategory.addEventListener("change", handleCategoryChange);
     toggleSpeechButton.addEventListener("click", toggleSpeech);
+
+    /**
+     * I've included both the viewrecipe and remove buttons in the event listener below
+     * clicking the viewrecipe button -> it shows the recipe details
+     * clicking the remove -> it deletes the single recipe
+     * clicking on a saved recipe in the list, fetches the recipe by name
+     */
     document.addEventListener("click", function (event) {
         if (event.target.classList.contains("viewRecipeButton")) {
             const recipeId = event.target.dataset.recipeId;
@@ -58,6 +65,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /**
+     * Clicking on a letter from the alphabet, shows the recipes that start with this letter
+     * also each time the user clicks on a different letter, the recipes will start from page 1
+     */
     function handleAlphabetClick(event) {
         if (event.target.classList.contains('letter')) {
             fetchRecipesByFirstLetter(event.target.textContent);
@@ -65,6 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
         currentPage = 1;
     }
 
+    /**
+     * Closing the modal for the recipes also terminates the speech and hides the speech button
+     */
     function closeModal() {
         modal.style.display = "none";
         hideSpeechButton();
@@ -83,6 +97,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /**
+     * Retrieves saved recipes, removes the specified recipe from the array
+     * updates the local storage and remove the UI element
+     * also logs erros to the console, if they occur
+     */
     function removeSavedRecipe(recipeId) {
         try {
             let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
@@ -103,15 +122,23 @@ document.addEventListener("DOMContentLoaded", function () {
         displaySavedRecipes();
     }
 
+    /**
+     * When the user clicks on a saved recipe,
+     * the function extracts the recipe name from the clicked item's text content and
+     * fetches the recipe details using the name
+     */
     function handleSavedRecipeClick(event) {
         if (event.target.tagName.toLowerCase() === 'li') {
-            // Extracts the recipe name
             const recipeName = event.target.textContent.split('Remove')[0].trim();
             fetchRecipeByName(recipeName);
         }
     }
 
-
+    /**
+     * If the user's browser include the SpeechSynthesis API
+     * then this function cancels any ongoing speech synthesis or
+     * proceeds to read the recipe details, else it will show an alert informing the user
+     */
     function toggleSpeech() {
         if ('speechSynthesis' in window) {
             if (speechSynthesis.speaking) {
@@ -124,6 +151,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /**
+     * Uses the web speech api and creates speech synthesis utterance object with
+     * recipe details, sets the speech rate and volume and forces the browser to 
+     * speak the utterance
+     */
     function readRecipeDetails() {
         const recipeDetails = modalContent.textContent;
         const speech = new SpeechSynthesisUtterance(recipeDetails);
@@ -132,6 +164,11 @@ document.addEventListener("DOMContentLoaded", function () {
         speechSynthesis.speak(speech);
     }
 
+    /**
+     * Checks if a recipe is saved in the browser's local storage and adjust the save button to
+     * either be hidden if the recipe is already saved otherwise to be displayed, also any error that may occur
+     * during this proccess will be logged to the console
+     */
     function checkIfRecipeIsSaved(recipeId) {
         try {
             let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
@@ -142,6 +179,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /**
+     * Displays a random recipe from the modal, sets the title's text content to the name of the recipe
+     * populates the modal with instructions, category, area and the image of the recipe
+     * also sets the dataset attribute of the modal content to store the recipe's ID
+     * dispalys the modal, checks if the recipe is saved and shows the speech button
+     */
     function displayRandomRecipe(recipe) {
         const modalTitle = document.getElementById("modalTitle");
         modalTitle.textContent = recipe.strMeal;
