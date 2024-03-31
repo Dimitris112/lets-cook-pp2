@@ -392,20 +392,6 @@ button:active {
     color: #333;
 }
 
-/* Loading spinner */
-.loading {
-    display: none;
-    border: 2vw solid #f3f3f3;
-    border-top: 2vw solid #3498db;
-    border-radius: 50%;
-    width: 10vw;
-    animation: spin 2s linear infinite;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
 /* The message when no recipe is found */
 .no-recipes-message {
     text-align: center;
@@ -773,6 +759,32 @@ footer p {
     }
 }
 
+/* --------------------------- 768px+ --------------------------- */
+@media screen and (min-width: 768px) {
+    .container {
+        width: 80%;
+        margin: 5% auto 0;
+    }
 
-/* --------------------------- 768px to 1023px --------------------------- */
-@media screen and (min-width: 768px) and (max-width: 1023px) {}
+    .recipe {
+        margin-bottom: 4%;
+    }
+
+    .recipe img {
+        padding: 1.5%;
+    }
+
+    h2 {
+        letter-spacing: 0.3rem;
+    }
+
+    .close {
+        font-size: 7vw;
+    }
+
+    #toggleSpeechButton {
+        margin-left: 2%;
+        margin-top: 0;
+        position: relative;
+    }
+}
