@@ -200,6 +200,13 @@ document.addEventListener("DOMContentLoaded", function () {
         showSpeechButton();
     }
 
+    /**
+     * Fetches recipes from the API based on a search query and category
+     * constructs a URL using these and if it's provided then it makes a HTTP request
+     * to that specific URL using the 'fetch' API. Next if it receives a response
+     * it extracts the array of recipes and updates the UI to display them
+     * if there is an error, it will be logged to the console
+     */
     async function fetchRecipes(searchQuery, category = '') {
         try {
             let searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`;
@@ -216,6 +223,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+
     async function fetchRecipesByFirstLetter(letter) {
         try {
             const searchUrl = letter === '' ? 'https://www.themealdb.com/api/json/v1/1/search.php' : `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`;
@@ -229,6 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+
     async function fetchRandomRecipe() {
         try {
             const randomUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
@@ -240,6 +249,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /**
+     * Shows recipe cards based on the array of the recipes and it begins
+     * by clearing any existing content within the recipe container
+     * then it checks if there are available recipes to display and if there are
+     * it itterates over each recipe creating a recipe card for each one
+     * Each card contains the title, thumnail image and a button to view the details
+     * also the cards are appended to the recipe container
+     * If no recipes are found, it displays a message indicating so
+     * Finally updates the pagination controls based on the total number of recipes displayed. 
+     */
     function displayRecipes(recipes) {
         recipeContainer.innerHTML = "";
         if (recipes && recipes.length > 0) {
@@ -265,6 +284,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    /**
+     * Calculates the total number of pages required to display all of the recipes based
+     * on the total number of recipes found and the page size, also ensures that at least 
+     * 1 page is displayed by rounding the up the nearest whole number with the ceil method
+     * Next determines whether the previous or next buttons should be disabled to prevent navigation
+     * to a non existant page. If the current page is the First, it disables the previous button, in the
+     * same way if the page is the Last page, it disables the next button
+     * Then updates the text content of the current page to display the correct pagination number
+     * Finally determines whether the pagination container should be displayed or be hidden based
+     * on the total number of recipes, if there are more or less than 4 recipes per page
+     */
     function updatePaginationControls() {
         const totalPages = Math.ceil(totalRecipes / pageSize);
         const prevPageDisabled = currentPage === 1;
@@ -275,6 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const paginationContainer = document.getElementsByClassName("pagination-container")[0];
         paginationContainer.style.display = totalRecipes > 4 ? "flex" : "none";
     }
+
 
     function goToPrevPage() {
         if (currentPage > 1) {
@@ -291,6 +322,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /**
+     * Saves the recipe locally in the browser's storage, starts by retrieving the
+     * array of saved recipes from the local storage and if there are no saved recipes
+     * or if retrieving them fails, then it sets an empty array
+     * Checks if the recipe id is already included in the saved array, if it isn't 
+     * then it adds it by pushing it, then updates the local storage by stringifying the
+     * array and stores it under it using the set item
+     * If it's already saved, then it triggers an alert indicating that it is already saved
+     * any errors that occured during the proccess are caught by the try and catch block, then 
+     * it's logged into the console
+     */
     function saveRecipeLocally(recipeId) {
         try {
             let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
@@ -314,6 +356,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Error clearing saved recipes:", error);
         }
     }
+
 
     async function displaySavedRecipes() {
         try {
@@ -351,6 +394,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+
     async function fetchRecipeByName(recipeName) {
         try {
             const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`;
@@ -367,6 +411,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Error fetching recipe by name:", error);
         }
     }
+
 
     async function fetchRecipesByCategory(category) {
         try {
@@ -390,6 +435,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         currentPage = 1;
     }
+
 
     function displayRecipeDetails(recipe) {
         const modalTitle = document.getElementById("modalTitle");
