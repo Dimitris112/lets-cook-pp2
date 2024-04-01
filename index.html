@@ -16,7 +16,8 @@
 </head>
 
 <body>
-    <div class="container">
+    <!-- Main content -->
+    <main class="container">
         <h1>Let's Cook</h1>
         <div class="decorative-line"></div>
 
@@ -52,15 +53,15 @@
             </div>
         </div>
 
-        <div class="search-container">
+        <section class="search-container">
             <input type="text" id="searchInput" placeholder="Search for recipes">
             <button id="searchButton">Search</button>
             <button id="randomButton">Random Recipe</button>
-        </div>
+        </section>
         <div id="recipeContainer" class="recipe-container"></div>
 
         <!-- Filter Options -->
-        <div class="filter-options">
+        <section class="filter-options">
             <h2>Filter Options</h2>
             <div class="dropdown">
                 <label for="mealCategory">Meal Category:</label>
@@ -82,26 +83,26 @@
                     <option value="Goat">Goat</option>
                 </select>
             </div>
-        </div>
+        </section>
 
         <!-- Pagination controls -->
-        <div class="pagination-container">
+        <section class="pagination-container">
             <button id="prevPageButton" class="pagination-button">Previous</button>
             <span id="currentPage">Page 1</span>
             <button id="nextPageButton" class="pagination-button">Next</button>
-        </div>
+        </section>
 
-    </div>
+    </main>
 
     <!-- Saved Recipes -->
-    <div id="savedRecipesContainer" class="saved-recipes-container">
+    <section id="savedRecipesContainer" class="saved-recipes-container">
         <h2>Saved Recipes</h2>
         <button id="resetButton">Reset</button>
         <ul id="savedRecipesList"></ul>
-    </div>
+    </section>
 
     <!-- Modal -->
-    <div id="modal" class="modal">
+    <section id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2 id="modalTitle">Recipe Details</h2>
@@ -109,11 +110,11 @@
             <button id="saveButton">Save Recipe</button>
             <button id="toggleSpeechButton">Toggle Speech</button>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
+        <section class="footer-content">
             <ul class="footer-social-icons">
                 <li><a href="https://github.com/Dimitris112/lets-cook-pp2" target="_blank"><i
                             class="fab fa-github"></i></a>
@@ -122,7 +123,7 @@
                             class="fab fa-linkedin"></i></a></li>
             </ul>
             <p>Created by Dimitris 2024</p>
-        </div>
+        </section>
     </footer>
 
     <!-- Font awesome kit -->

@@ -104,7 +104,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
   - Continue with **Bitbucket**.
   2. Click to login or register with your prefered option.
   3. Now click on ***Dashboard*** which is located near the top right corner, again if you can't see it click the **=** button which will display a dropdown menu.
-  4. **BEFORE** you procceed further you have to create your repository in your **Github**  profile or what was your choosing. Find more information here -> [Github repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories)
+  4. <ins>***BEFORE***</ins> you procceed further you have to create your repository in your **Github**  profile or what was your choosing. Find more information here -> [Github repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories)
   5. Once you're in, you will see the ***Workspaces*** screen. Click `New Workspace` and select the repository you created in your **Github profile** or any of the platform you chose. You can choose an **IDE** "Integrated Development Enviroment" of your liking. Below that there will be an option for you to choose, based on your system `Standard` or `Large`. Make sure to select the correct repository from the list presented in the Gitpod interface.
   6. Afterwards Gitpod will start initializing your workspace based on your repository, this may take a moment.
   7. Once the proccess is complete, you'll be inside the **Gitpod IDE**.
@@ -114,7 +114,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
  2. Now once you've done the 1st step, your next move is to navigate to your repository ***Settings*** located near the top left corner. If you cannot see the ***Settings*** tab, click the ... dropdown menu and select it.
  3. In the ***Code and Automation*** section , click ***Pages***
  4. Under the **Build and Deployment** you can deploy from a *branch*. You have to select **main** as your branch and `/root` as your folder. Then click **save**
- 5. ***OPTIONAL*** you can create your custom domain if you want to.
+ 5. <ins>***OPTIONAL***</ins> you can create your custom domain if you want to.
  6. The URL for the page takes some time to be created, once it's done it will be displayed at the top. In the meantime, find something to cook!
 
 ## Credits
