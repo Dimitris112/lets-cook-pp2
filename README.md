@@ -50,15 +50,25 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
 ## Future Features
 - Add the option for users to search recipes by *Area* just like they can search by meal category.
 - Implement user authentication with signup/login functionality once back-end services are introduced, enabling users to leave comments and ratings on their favorite recipes.
-- Enable voice search functionality enabling users to search resipes by simply speaking, providing a convenient user experience.
+- Enable voice search functionality enabling users to search recipes by simply speaking, providing a convenient user experience.
 
 ## Typography and color scheme
 - The project utilizes the **Montserrat** font family from Google Fonts, while the primary font is Montserrat / the fallback font is Sans-serrif. As for the color scheme for the body `background: linear-gradient(135deg, #ff9a00, #ee0979);` it ensures a vibrant orange for primary color `"ff9a00"` and bold pink for the secondary color `"ee0979"` while the `linear-gradient of 135deg` let's it flow diagonally from the bottom left to the top right with a value of 135degrees creating a smooth color change. Furthermore buttons, headings and images are enhanced with effects like text shadow / box shadow adding depth and dimension.
 
 ## Technology
- - **HTML, CSS and JavaScript** were used for creating the website's structure, styling, and interactivity.
- -  Data for the recipes were fetched from the [Mealdb API](https://www.themealdb.com/api.php) using asynchronous functions.
- - 
+- ### ***Languages*** 
+  - **HTML** Used for structuring the web page.
+  - **CSS** Used for styling the web page making it visually appearing.
+  - **JavaScript** Used for adding interactivity for the user and dynamic behaviour to the web page.
+- ### ***Tools***
+  - **Git** Used for version control eg. **`git`** `add - commit - push`
+  - **Github** Used as the hosting platform for the repository.
+  - **Github Pages** Used for deploying the webpage.
+  - **Gitpod** Used as the IDE for writting, editing and debugging code.
+  - [**Favicon**](https://favicon.io/) Used for generating the favicon.
+  - [**Fontawesome**](https://fontawesome.com/) Used for the social icons in the footer.
+- ### ***API***
+  - Recipe data was obtained from the **[Mealdb API](https://www.themealdb.com/api.php)** using asynchornous functions. 
 
 ## Testing
  - ### Code Validation
@@ -92,6 +102,15 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
       ![Footer](assets/images/validation/footer.gif "Footer")
 
  - ### Fixed bugs
+  - Fixed an issue with the save recipe button not storing the recipes locally in the browser by updating the JavaScript code so when the user clicks it, it will be stored no matter if the browser is closed or refreshed,
+  added an error handling to manage issues during the saving or retrieval proccess.
+  - Removed the horizontal scrollbar when the user would hover over the saved recipes, which led to bad zoom in-out effects.
+  - Fixed the pagination of the recipes to always start on page 1 and the pagination control buttons `previous - next` to keep searching when the user clicks them.
+  - Fixed the meal category dropdown menu to show the correct category when the user selects it by adding an event listener to it and adjusting the functions responsible for fetching the recipes. Both asynchronous and non async.
+  - Fixed a minor issue with the save recipe button not reappearing after viewing an already saved recipe, just by updating the function which displays the recipe details.
+  - Fixed the speech to stop whenever the user exits the recipe details window.
+  - 
+
  - ### Unfixed bugs
  - ### Supported screens and browsers
    - **Responsive Design:** The website is fully responsive and optimized for all screen sizes, ensuring seamless browsing experience. From the compact *Samsung Galaxy Fold* with a width as small as 280px up to large PC monitors.
@@ -100,7 +119,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
  - ### Via Gitpod
   1. Head over to [Gitpod](https://www.gitpod.io/) and click the ***Login*** button, it's located at the top right corner, if you can't see it click the **=** dropdown menu and then login. There will be 3 options.
   - Continue with **GitLab**.
-  - Continue with **GitHub**  "prefer this one"
+  - Continue with **GitHub**.  "prefer this one"
   - Continue with **Bitbucket**.
   2. Click to login or register with your prefered option.
   3. Now click on ***Dashboard*** which is located near the top right corner, again if you can't see it click the **=** button which will display a dropdown menu.

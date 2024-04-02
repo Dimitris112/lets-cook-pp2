@@ -357,7 +357,20 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
+    /**
+     * Clears the content in the saved recipe list and then retrieves the array from the
+     * local storage parsing it as JSON, if no recipes are found or ir there is an error it defaults
+     * to an empty array. Then iterates over each saved recipe ID and for each ID it constructs a URL
+     * to fetch recipe details from the mealdb API, makes async request to the URL and waits for a response
+     * 
+     * When the response occurs then it parses the JSON data and extracts the first meal from the array
+     * creates a new list element for the saved recipe to be at and sets the list text content to be the 
+     * name of the meal. Then creates a remove button for each saved recipe, adds a class to the remove button
+     * and sets the dataset of the remove button to the ID of the recipe, then appends the remove button as a 
+     * child of the list and finally appends the list item to the saved recipe list for it to be displayed
+     * 
+     * If any error occurs , then by try and catch it will be logged to the console
+     */
     async function displaySavedRecipes() {
         try {
             savedRecipesList.innerHTML = "";
