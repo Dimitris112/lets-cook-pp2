@@ -1,5 +1,5 @@
 # Let's Cook
-Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
+Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "target=_blank")
 
 ![Responsiveness](assets/images/validation/responsive.png "Screenshot of the webpage on multiple screen sizes")
 
@@ -37,13 +37,13 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
 - The project includes clean **[pagination](#pagination)** functionality, ensuring a smooth browsing experience by displaying up to 4 recipes per page. Pagination controls such as `Previous` and `Next` buttons enable the user to navigate between pages.
 - Users can save each recipe they desire by clicking the `Save Recipe` button which then will be stored below the **[Saved Recipes](#saved-recipes)**. To manage their saved recipes, users have the flexibility to either remove individual recipes by clicking the `Remove` button or clear their entire saved collection with a single click on the `Reset` button. Moreover the `Save Recipe` button is hidden within the details of recipes that are already saved, which ensures that the users arern't overwhelmed with unnecessary options. When the user saves the recipe for the first time, an alert will pop displaying **Recipe saved succesfully!**, if it's clicked again it will be displayed as **Recipe already saved!**.
 - The project includes a **[Toggle Speech](#toggle-speech)** button which will read aloud the details of the recipe once the user has clicked to view one. It's easily accessible since its below the `Save Recipe` button. The speech can be ended in 2 ways. The first is by clicking the `Toggle Speech` button a second time and the second is when the user exits the reipce details window either by clicking the X button or just by clicking out of it. This feature enhances accessibility, catering to users who may benefit from auditory assistance.
-- On the **[footer](#footer)** I've included a visually appealing spherical pulse effect housing my 2 social icons which lead to this **Github repository** and my [Linkedin](https://www.linkedin.com/in/dimitrios-thlivitis-617492300/) profile.
+- On the **[footer](#footer)** I've included a visually appealing spherical pulse effect housing my 2 social icons which lead to this **Github repository** and my [Linkedin](https://www.linkedin.com/in/dimitrios-thlivitis-617492300/ "target=_blank") profile.
 
 - ### **DISCLAIMER**
-  - The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API)
+  - The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API "target=_blank")
  
   - The scrollbar effects / colors will be visible **ONLY** to browsers that include the `::-webkit-scrollbar`. Here's the link for more information -> 
- [Webkit Scrollbar](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar)
+ [Webkit Scrollbar](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar "target=_blank")
 
   - Saved recipes will be saved **ONLY** locally in the browser (computer or mobile) as for now the project lacks back-end services.
 
@@ -65,16 +65,16 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
   - **Github** Used as the hosting platform for the repository.
   - **Github Pages** Used for deploying the webpage.
   - **Gitpod** Used as the IDE for writting, editing and debugging code.
-  - [**Favicon**](https://favicon.io/) Used for generating the favicon.
-  - [**Fontawesome**](https://fontawesome.com/) Used for the social icons in the footer.
-  - [**Am I Reponsive**](https://ui.dev/amiresponsive?url=https://dimitris112.github.io/lets-cook-pp2/) Used for checking the responsiveness of the website.
+  - [**Favicon**](https://favicon.io/ "target=_blank") Used for generating the favicon.
+  - [**Fontawesome**](https://fontawesome.com/ "target=_blank") Used for the social icons in the footer.
+  - [**Am I Reponsive**](https://ui.dev/amiresponsive?url=https://dimitris112.github.io/lets-cook-pp2/ "target=_blank") Used for checking the responsiveness of the website.
 - ### ***API***
   - Recipe data was obtained from the **[Mealdb API](https://www.themealdb.com/api.php)** using asynchornous functions. 
 
 ## Testing
  - ### Code Validation
-   - For the **HTML** validation I used [w3](https://validator.w3.org/) which shows the [page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F) error free. 
-   - For the **CSS** I used the same method which is also error free but received warnings about the `::-webkit-scrollbar` because it is not universal among the browsers. See for yourself -> [CLICK ME](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+   - For the **HTML** validation I used [w3](https://validator.w3.org/ "target=_blank") which shows the [page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F "target=_blank") error free. 
+   - For the **CSS** I used the same method which is also error free but received warnings about the `::-webkit-scrollbar` because it is not universal among the browsers. See for yourself -> [CLICK ME](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en "target=_blank")
    - For the **JavaScript** I used 
 
  - ### Test cases "user story based with screenshots"
@@ -103,14 +103,14 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
       ![Footer](assets/images/validation/footer.gif "Footer")
 
  - ### Fixed bugs
-  - Fixed an issue with the save recipe button not storing the recipes locally in the browser by updating the JavaScript code so when the user clicks it, it will be stored no matter if the browser is closed or refreshed,
+   - Fixed an issue with the save recipe button not storing the recipes locally in the browser by updating the JavaScript code so when the user clicks it, it will be stored no matter if the browser is closed or refreshed,
   added an error handling to manage issues during the saving or retrieval proccess.
-  - Removed the horizontal scrollbar when the user would hover over the saved recipes, which led to bad zoom in-out effects.
-  - Fixed the pagination of the recipes to always start on page 1 and the pagination control buttons `previous - next` to keep searching when the user clicks them.
-  - Fixed the meal category dropdown menu to show the correct category when the user selects it by adding an event listener to it and adjusting the functions responsible for fetching the recipes. Both asynchronous and non async.
-  - Fixed a minor issue with the save recipe button not reappearing after viewing an already saved recipe, just by updating the function which displays the recipe details.
-  - Fixed the speech to stop whenever the user exits the recipe details window.
-  - 
+   - Removed the horizontal scrollbar when the user would hover over the saved recipes, which led to bad zoom in-out effects.
+   - Fixed the pagination of the recipes to always start on page 1 and the pagination control buttons `previous - next` to keep searching when the user clicks them.
+   - Fixed the meal category dropdown menu to show the correct category when the user selects it by adding an event listener to it and adjusting the functions responsible for fetching the recipes. Both asynchronous and non async.
+   - Fixed a minor issue with the save recipe button not reappearing after viewing an already saved recipe, just by updating the function which displays the recipe details.
+   - Fixed the speech to stop whenever the user exits the recipe details window.
+    
 
  - ### Unfixed bugs
  - ### Supported screens and browsers
@@ -118,28 +118,28 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
    - **Browser Compatibility:** The website is compatible with all up to date browsers, ensuring a consistent experience for users accross different platforms. However there are some minor variations in the visuals on certain browsers. For more information refer to the above -> [disclaimer](#disclaimer)
 ## Deployment
  - ### Via Gitpod
-  1. Head over to [Gitpod](https://www.gitpod.io/) and click the ***Login*** button, it's located at the top right corner, if you can't see it click the **=** dropdown menu and then login. There will be 3 options.
-  - Continue with **GitLab**.
-  - Continue with **GitHub**.  "prefer this one"
-  - Continue with **Bitbucket**.
-  2. Click to login or register with your prefered option.
-  3. Now click on ***Dashboard*** which is located near the top right corner, again if you can't see it click the **=** button which will display a dropdown menu.
-  4. <ins>***BEFORE***</ins> you procceed further you have to create your repository in your **Github**  profile or what was your choosing. Find more information here -> [Github repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories)
-  5. Once you're in, you will see the ***Workspaces*** screen. Click `New Workspace` and select the repository you created in your **Github profile** or any of the platform you chose. You can choose an **IDE** "Integrated Development Enviroment" of your liking. Below that there will be an option for you to choose, based on your system `Standard` or `Large`. Make sure to select the correct repository from the list presented in the Gitpod interface.
-  6. Afterwards Gitpod will start initializing your workspace based on your repository, this may take a moment.
-  7. Once the proccess is complete, you'll be inside the **Gitpod IDE**.
+   1. Head over to [Gitpod](https://www.gitpod.io/ "target=_blank") and click the ***Login*** button, it's located at the top right corner, if you can't see it click the **`=`** dropdown menu and then login. There will be 3 options.
+   - Continue with **GitLab**.
+   - Continue with **GitHub**.  "prefer this one"
+   - Continue with **Bitbucket**.
+   2. Click to login or register with your prefered option.
+   3. Now click on ***Dashboard*** which is located near the top right corner, again if you can't see it click the **`=`** button which will display a dropdown menu.
+   4. <ins>***BEFORE***</ins> you procceed further you have to create your repository in your **Github**  profile or what was your choosing. Find more information here -> [Github repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories "target=_blank")
+   5. Once you're in, you will see the ***Workspaces*** screen. Click `New Workspace` and select the repository you created in your **Github profile** or any of the platform you chose. You can choose an **IDE** "Integrated Development Enviroment" of your liking. Below that there will be an option for you to choose, based on your system `Standard` or `Large`. Make sure to select the correct repository from the list presented in the Gitpod interface.
+   6. Afterwards Gitpod will start initializing your workspace based on your repository, this may take a moment.
+   7. Once the proccess is complete, you'll be inside the **Gitpod IDE**.
 
  - ### Via Github pages
- 1. Before you do anything, make sure in your repository you've included an `index.html` and `README.md` file.
- 2. Now once you've done the 1st step, your next move is to navigate to your repository ***Settings*** located near the top left corner. If you cannot see the ***Settings*** tab, click the ... dropdown menu and select it.
- 3. In the ***Code and Automation*** section , click ***Pages***
- 4. Under the **Build and Deployment** you can deploy from a *branch*. You have to select **main** as your branch and `/root` as your folder. Then click **save**
- 5. <ins>***OPTIONAL***</ins> you can create your custom domain if you want to.
- 6. The URL for the page takes some time to be created, once it's done it will be displayed at the top. In the meantime, find something to cook!
+   1. Before you do anything, make sure in your repository you've included an `index.html` and `README.md` file.
+   2. Now once you've done the 1st step, your next move is to navigate to your repository ***Settings*** located near the top left corner. If you cannot see the ***Settings*** tab, click the `...` dropdown menu and select it.
+   3. In the ***Code and Automation*** section , click ***Pages***
+   4. Under the **Build and Deployment** you can deploy from a *branch*. You have to select **main** as your branch and `/root` as your folder. Then click **save**
+   5. <ins>***OPTIONAL***</ins> you can create your custom domain if you want to.
+   6. The URL for the page takes some time to be created, once it's done it will be displayed at the top. In the meantime, find something to cook!
 
 ## Credits
-  - When I was thinking of building a recipe finder website, I searched here and there for some information on how to implement the key functions for the recipes etc and landed on using the [mealDB](https://www.themealdb.com/). Used only the free version of its API.
+  - When I was thinking of building a recipe finder website, I searched here and there for some information on how to implement the key functions for the recipes etc and landed on using the [mealDB](https://www.themealdb.com/ "target=_blank"). Used only the free version of its API.
   - .
   - .
 - ### Media
-  - I got the idea for the scrollbar effects from this video -> [How to Web Dev](https://www.youtube.com/watch?v=rjYo5YUA2fU)
+  - I got the idea for the scrollbar effects from this video -> [How to Web Dev](https://www.youtube.com/watch?v=rjYo5YUA2fU "target=_blank")
