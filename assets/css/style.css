@@ -788,3 +788,28 @@ footer p {
         position: relative;
     }
 }
+
+/* --------------------------- 1100px+ --------------------------- */
+
+@media screen and (min-width: 1100px) {
+    .close {
+        font-size: 6vw;
+    }
+}
+
+/* --------------------------- 1400px+ --------------------------- */
+
+@media screen and (min-width: 1400px) {
+    .close {
+        font-size: 4vw;
+    }
+
+    .saved-recipes-container {
+        margin-bottom: -2%;
+    }
+
+    .container h1 {
+        font-size: 5vw;
+    }
+
+}
