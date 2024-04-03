@@ -1,8 +1,8 @@
 # Let's Cook
 Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
 
+![Responsiveness](assets/images/validation/responsive.png "Screenshot of the webpage on multiple screen sizes")
 
-- responsiveness screenshot will be here
 - ## [Purpose of the project](#purpose-of-the-project)
 - ## [User Stories](#user-stories)
 - ## [Features](#features)
@@ -67,6 +67,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/)
   - **Gitpod** Used as the IDE for writting, editing and debugging code.
   - [**Favicon**](https://favicon.io/) Used for generating the favicon.
   - [**Fontawesome**](https://fontawesome.com/) Used for the social icons in the footer.
+  - [**Am I Reponsive**](https://ui.dev/amiresponsive?url=https://dimitris112.github.io/lets-cook-pp2/) Used for checking the responsiveness of the website.
 - ### ***API***
   - Recipe data was obtained from the **[Mealdb API](https://www.themealdb.com/api.php)** using asynchornous functions. 
 
