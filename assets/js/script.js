@@ -56,8 +56,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    /**
+     * Instead of importing every code from the mealdb API 
+     * I've set URLs to search for as they have it there in the free version
+     * https://www.themealdb.com/api.php
+     */
 
     // Functions
+
     function handleSearchInput(event) {
         if (event.key === "Enter") {
             event.preventDefault();
@@ -223,7 +229,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
+    /**
+     * Fetches recipes by the first letter of their name and takes the letter as parameter
+     * If the first letter is empty, then it sets the URL to fetch all recipes, else it sets it to fetch recipes starting by the specific letter
+     * After fetching the data from the API , updates the recipes array with the retrived meals and
+     * updates the total number of recipes, then calls the display recipes function to render them to the page
+     * Logs any error occured if any are found
+     */
     async function fetchRecipesByFirstLetter(letter) {
         try {
             const searchUrl = letter === '' ? 'https://www.themealdb.com/api/json/v1/1/search.php' : `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`;
@@ -237,7 +249,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
+    /**
+     * Fetches a random recipe by sending a GET request to the URL, upon receiving the response
+     * it parses the JSON data and extracts the random recipe which is stored to the data variable
+     * Then the display random recipe function is called using the first index of its array to display
+     * the recipe, if any errors occur, they will be caught by the catch block and logged to the console
+     */
     async function fetchRandomRecipe() {
         try {
             const randomUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
@@ -395,7 +412,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
+    /**
+     * Constructs a URL which fetches the recipe details using the recipe ID and
+     * sends a request to the mealDB API to retrieve them. Then parses the response as 
+     * JSON data and displays the fetched recipe details on the page and logs any errors during
+     * the proccess
+     */
     async function fetchAndDisplayRecipeDetails(recipeId) {
         try {
             const lookupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
@@ -407,7 +429,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
+    /**
+     * The async function has the parameter of recipeName which represents the 
+     * name of the recipe to search for, by try and catch method 
+     * sets the URL to search for fetching the recipe details based on their name and
+     * fetches the data by sending a GET request to the URL provided using fetch and awaits for
+     * the response to be received before peocceeding further
+     * Parses the JSON response received from the mealDB API into an object
+     * Then checks if the API contains any meal data, if it does then diplays the details of the first
+     * meal found and the data are stored in the recipe variable and then the display recipe details function 
+     * is called in order to display them
+     * If an error occurs during the proccess, it is caught by the catch block and it's logged to the console.
+     */
     async function fetchRecipeByName(recipeName) {
         try {
             const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`;
@@ -425,7 +458,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-
+    /**
+     * The async function takes a single parameter of Category, 
+     * sets a URL for fetching recipes by category and sends a GET request to that URL which then
+     * parses the response as JSON data
+     * Then extracts the list of recipes from the response data provided or an empty array if none is found
+     * Then updaes the total recipes based on the fetched data and displays the recipes on the page
+     * By catch it logs any error occured to the console
+     */
     async function fetchRecipesByCategory(category) {
         try {
             const searchUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
@@ -439,6 +479,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    /**
+     * Manages the changes in the recipe category selection, extracts the value of the selected category from the
+     * event target and stores it in the selected category variable
+     * If the selected category is not equal to all (all recipes) then calls the fetch recipes by category passing the selected
+     * category as argument which fetches and displays the recipes
+     * Else calls the fetch recipes function passing the value of the search input
+     * Also resets the current page to always start on 1 whenever the user changes category
+     */
     function handleCategoryChange(event) {
         const selectedCategory = event.target.value;
         if (selectedCategory !== "all") {
@@ -449,7 +497,15 @@ document.addEventListener("DOMContentLoaded", function () {
         currentPage = 1;
     }
 
-
+    /**
+     * Presents the details of the recipe within a modal / pop up window
+     * the function takes as a single parameter which is the recipe object and
+     * it updates the the modal title with the recipe name and fills the 
+     * modal content with instructions, category, area and the image of the recipe
+     * Then sets the dataset property of the modal content by setting its style to block
+     * to store the recipe ID
+     * Also checks if the recipe is already saved and shows the speech button
+     */
     function displayRecipeDetails(recipe) {
         const modalTitle = document.getElementById("modalTitle");
         modalTitle.textContent = recipe.strMeal;

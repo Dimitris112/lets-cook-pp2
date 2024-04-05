@@ -19,6 +19,8 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
     - [Gitpod](#via-gitpod)
     - [Github Pages](#via-github-pages)
 - ## [Credits](#credits)
+    - [General](#general)
+    - [Media](#media)
 
 # Purpose of the project
 - The purpose of the project is a website called "Let's Cook" that serves as a recipe finder. The project aims to provide users with a platform to search, browse, and discover recipes based on various criteria such as keywords, categories, and alphabetical order. Additionally, users can save locally their favorite recipes for future reference.
@@ -113,6 +115,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
     
 
  - ### Unfixed bugs
+ 
  - ### Supported screens and browsers
    - **Responsive Design:** The website is fully responsive and optimized for all screen sizes, ensuring seamless browsing experience. From the compact *Samsung Galaxy Fold* with a width as small as 280px up to large PC monitors.
    - **Browser Compatibility:** The website is compatible with all up to date browsers, ensuring a consistent experience for users accross different platforms. However there are some minor variations in the visuals on certain browsers. For more information refer to the above -> [disclaimer](#disclaimer)
@@ -138,6 +141,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
   6. The URL for the page takes some time to be created, once it's done it will be displayed at the top. In the meantime, find something to cook!
 
 ## Credits
+- ### General
   - When I was thinking of building a recipe finder website, I searched here and there for some information on how to implement the key functions for the recipes etc and landed on using the [mealDB](https://www.themealdb.com/ "target=_blank"). Used only the free version of its API.
   - .
   - .
