@@ -35,10 +35,10 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 ## Features 
 - Users can easily navigate through recipes **[alphabetically](#alphabetical-search)** by selecting a letter, instantly filtering the displayed recipes to those beginning with the chosen letter.
 - Users can discover new and exciting recipes by clicking the **[Random Recipe](#random-recipe)** button, which selects a recipe at random from the mealdb API providing an element of surprise.
-- Users can refine their recipe search based on specific meal **[categories](#filter-category)** via a dropdown menu, which provides a list of available food cateogires to choose from.
+- Users can refine their recipe search based on specific meal **[categories](#filter-category)** via a dropdown menu, which provides a list of available food categories to choose from.
 - The project includes clean **[pagination](#pagination)** functionality, ensuring a smooth browsing experience by displaying up to 4 recipes per page. Pagination controls such as `Previous` and `Next` buttons enable the user to navigate between pages.
-- Users can save each recipe they desire by clicking the `Save Recipe` button which then will be stored below the **[Saved Recipes](#saved-recipes)**. To manage their saved recipes, users have the flexibility to either remove individual recipes by clicking the `Remove` button or clear their entire saved collection with a single click on the `Reset` button. Moreover the `Save Recipe` button is hidden within the details of recipes that are already saved, which ensures that the users arern't overwhelmed with unnecessary options. When the user saves the recipe for the first time, an alert will pop displaying **Recipe saved succesfully!**, if it's clicked again it will be displayed as **Recipe already saved!**.
-- The project includes a **[Toggle Speech](#toggle-speech)** button which will read aloud the details of the recipe once the user has clicked to view one. It's easily accessible since its below the `Save Recipe` button. The speech can be ended in 2 ways. The first is by clicking the `Toggle Speech` button a second time and the second is when the user exits the reipce details window either by clicking the X button or just by clicking out of it. This feature enhances accessibility, catering to users who may benefit from auditory assistance.
+- Users can save each recipe they desire by clicking the `Save Recipe` button which then will be stored below the **[Saved Recipes](#saved-recipes)**. To manage their saved recipes, users have the flexibility to either remove individual recipes by clicking the `Remove` button or clear their entire saved collection with a single click on the `Reset` button. Moreover the `Save Recipe` button is hidden within the details of recipes that are already saved, which ensures that the users are not overwhelmed with unnecessary options. When the user saves the recipe for the first time, an alert will pop displaying **Recipe saved successfully!**, if it's clicked again it will be displayed as **Recipe already saved!**.
+- The project includes a **[Toggle Speech](#toggle-speech)** button which will read aloud the details of the recipe once the user has clicked to view one. It's easily accessible since its below the `Save Recipe` button. The speech can be ended in 2 ways. The first is by clicking the `Toggle Speech` button a second time and the second is when the user exits the recipe details window either by clicking the X button or just by clicking out of it. This feature enhances accessibility, catering to users who may benefit from auditory assistance.
 - On the **[footer](#footer)** I've included a visually appealing spherical pulse effect housing my 2 social icons which lead to this **Github repository** and my [Linkedin](https://www.linkedin.com/in/dimitrios-thlivitis-617492300/ "target=_blank") profile.
 
 - ### **DISCLAIMER**
@@ -51,7 +51,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 
 ## Future Features
 - Add the option for users to search recipes by *Area* just like they can search by meal category.
-- Implement user authentication with signup/login functionality once back-end services are introduced, enabling users to leave comments and ratings on their favorite recipes.
+- Implement user authentication with sign-up / login functionality once back-end services are introduced, enabling users to leave comments and ratings on their favorite recipes.
 - Enable voice search functionality enabling users to search recipes by simply speaking, providing a convenient user experience.
 
 ## Typography and color scheme
@@ -61,15 +61,15 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 - ### ***Languages*** 
   - **HTML** Used for structuring the web page.
   - **CSS** Used for styling the web page making it visually appearing.
-  - **JavaScript** Used for adding interactivity for the user and dynamic behaviour to the web page.
+  - **JavaScript** Used for adding interactivity for the user and dynamic behavior to the web page.
 - ### ***Tools***
   - **Git** Used for version control eg. **`git`** `add - commit - push`
   - **Github** Used as the hosting platform for the repository.
   - **Github Pages** Used for deploying the webpage.
-  - **Gitpod** Used as the IDE for writting, editing and debugging code.
+  - **Gitpod** Used as the IDE for writing, editing and debugging code.
   - [**Favicon**](https://favicon.io/ "target=_blank") Used for generating the favicon.
-  - [**Fontawesome**](https://fontawesome.com/ "target=_blank") Used for the social icons in the footer.
-  - [**Am I Reponsive**](https://ui.dev/amiresponsive?url=https://dimitris112.github.io/lets-cook-pp2/ "target=_blank") Used for checking the responsiveness of the website.
+  - [**Font awesome**](https://fontawesome.com/ "target=_blank") Used for the social icons in the footer.
+  - [**Am I Responsive**](https://ui.dev/amiresponsive?url=https://dimitris112.github.io/lets-cook-pp2/ "target=_blank") Used for checking the responsiveness of the website.
 - ### ***API***
   - Recipe data was obtained from the **[Mealdb API](https://www.themealdb.com/api.php)** using asynchornous functions. 
 
@@ -95,7 +95,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
       - ### Saved Recipes 
       ![Saved Recipes](assets/images/validation/savedrecipes.png "Saved recipe list") ![Saved alert](assets/images/validation/recipe_saved.png "Saved recipe alert") ![Already saved alert](assets/images/validation/recipe_already_saved.png "Already saved recipe alert")
 
-      - ### Toggle Speach 
+      - ### Toggle Speech 
       ![Toggle Speech](assets/images/validation/togglespeech.png "Toggle Speech button")
 
       - ### Scrollbar 
@@ -106,7 +106,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 
  - ### Fixed bugs
    - Fixed an issue with the save recipe button not storing the recipes locally in the browser by updating the JavaScript code so when the user clicks it, it will be stored no matter if the browser is closed or refreshed,
-  added an error handling to manage issues during the saving or retrieval proccess.
+  added an error handling to manage issues during the saving or retrieval process.
    - Removed the horizontal scrollbar when the user would hover over the saved recipes, which led to bad zoom in-out effects.
    - Fixed the pagination of the recipes to always start on page 1 and the pagination control buttons `previous - next` to keep searching when the user clicks them.
    - Fixed the meal category dropdown menu to show the correct category when the user selects it by adding an event listener to it and adjusting the functions responsible for fetching the recipes. Both asynchronous and non async.
@@ -118,19 +118,19 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
  
  - ### Supported screens and browsers
    - **Responsive Design:** The website is fully responsive and optimized for all screen sizes, ensuring seamless browsing experience. From the compact *Samsung Galaxy Fold* with a width as small as 280px up to large PC monitors.
-   - **Browser Compatibility:** The website is compatible with all up to date browsers, ensuring a consistent experience for users accross different platforms. However there are some minor variations in the visuals on certain browsers. For more information refer to the above -> [disclaimer](#disclaimer)
+   - **Browser Compatibility:** The website is compatible with all up to date browsers, ensuring a consistent experience for users across different platforms. However there are some minor variations in the visuals on certain browsers. For more information refer to the above -> [disclaimer](#disclaimer)
 ## Deployment
  - ### Via Gitpod
   1. Head over to [Gitpod](https://www.gitpod.io/ "target=_blank") and click the ***Login*** button, it's located at the top right corner, if you can't see it click the **`=`** dropdown menu and then login. There will be 3 options.
    - Continue with **GitLab**.
    - Continue with **GitHub**.  "prefer this one"
    - Continue with **Bitbucket**.
-  2. Click to login or register with your prefered option.
+  2. Click to login or register with your preferred option.
   3. Now click on ***Dashboard*** which is located near the top right corner, again if you can't see it click the **`=`** button which will display a dropdown menu.
-  4. <ins>***BEFORE***</ins> you procceed further you have to create your repository in your **Github**  profile or what was your choosing. Find more information here -> [Github repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories "target=_blank")
-  5. Once you're in, you will see the ***Workspaces*** screen. Click `New Workspace` and select the repository you created in your **Github profile** or any of the platform you chose. You can choose an **IDE** "Integrated Development Enviroment" of your liking. Below that there will be an option for you to choose, based on your system `Standard` or `Large`. Make sure to select the correct repository from the list presented in the Gitpod interface.
+  4. <ins>***BEFORE***</ins> you proceed further you have to create your repository in your **Github**  profile or what was your choosing. Find more information here -> [Github repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories "target=_blank")
+  5. Once you're in, you will see the ***Workspaces*** screen. Click `New Workspace` and select the repository you created in your **Github profile** or any of the platform you chose. You can choose an **IDE** "Integrated Development Environment" of your liking. Below that there will be an option for you to choose, based on your system `Standard` or `Large`. Make sure to select the correct repository from the list presented in the Gitpod interface.
   6. Afterwards Gitpod will start initializing your workspace based on your repository, this may take a moment.
-  7. Once the proccess is complete, you'll be inside the **Gitpod IDE**.
+  7. Once the process is complete, you'll be inside the **Gitpod IDE**.
 
  - ### Via Github pages
   1. Before you do anything, make sure in your repository you've included an `index.html` and `README.md` file.

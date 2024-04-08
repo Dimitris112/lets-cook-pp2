@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
     /**
      * Retrieves saved recipes, removes the specified recipe from the array
      * updates the local storage and remove the UI element
-     * also logs erros to the console, if they occur
+     * also logs errors to the console, if they occur
      */
     function removeSavedRecipe(recipeId) {
         try {
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
     /**
      * Checks if a recipe is saved in the browser's local storage and adjust the save button to
      * either be hidden if the recipe is already saved otherwise to be displayed, also any error that may occur
-     * during this proccess will be logged to the console
+     * during this process will be logged to the console
      */
     function checkIfRecipeIsSaved(recipeId) {
         try {
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Displays a random recipe from the modal, sets the title's text content to the name of the recipe
      * populates the modal with instructions, category, area and the image of the recipe
      * also sets the dataset attribute of the modal content to store the recipe's ID
-     * dispalys the modal, checks if the recipe is saved and shows the speech button
+     * displays the modal, checks if the recipe is saved and shows the speech button
      */
     function displayRandomRecipe(recipe) {
         const modalTitle = document.getElementById("modalTitle");
@@ -232,9 +232,9 @@ document.addEventListener("DOMContentLoaded", function () {
     /**
      * Fetches recipes by the first letter of their name and takes the letter as parameter
      * If the first letter is empty, then it sets the URL to fetch all recipes, else it sets it to fetch recipes starting by the specific letter
-     * After fetching the data from the API , updates the recipes array with the retrived meals and
+     * After fetching the data from the API , updates the recipes array with the retrieved meals and
      * updates the total number of recipes, then calls the display recipes function to render them to the page
-     * Logs any error occured if any are found
+     * Logs any error occurred if any are found
      */
     async function fetchRecipesByFirstLetter(letter) {
         try {
@@ -270,8 +270,8 @@ document.addEventListener("DOMContentLoaded", function () {
      * Shows recipe cards based on the array of the recipes and it begins
      * by clearing any existing content within the recipe container
      * then it checks if there are available recipes to display and if there are
-     * it itterates over each recipe creating a recipe card for each one
-     * Each card contains the title, thumnail image and a button to view the details
+     * it iterates over each recipe creating a recipe card for each one
+     * Each card contains the title, thumbnail image and a button to view the details
      * also the cards are appended to the recipe container
      * If no recipes are found, it displays a message indicating so
      * Finally updates the pagination controls based on the total number of recipes displayed. 
@@ -306,7 +306,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * on the total number of recipes found and the page size, also ensures that at least 
      * 1 page is displayed by rounding the up the nearest whole number with the ceil method
      * Next determines whether the previous or next buttons should be disabled to prevent navigation
-     * to a non existant page. If the current page is the First, it disables the previous button, in the
+     * to a non existent page. If the current page is the First, it disables the previous button, in the
      * same way if the page is the Last page, it disables the next button
      * Then updates the text content of the current page to display the correct pagination number
      * Finally determines whether the pagination container should be displayed or be hidden based
@@ -344,10 +344,10 @@ document.addEventListener("DOMContentLoaded", function () {
      * array of saved recipes from the local storage and if there are no saved recipes
      * or if retrieving them fails, then it sets an empty array
      * Checks if the recipe id is already included in the saved array, if it isn't 
-     * then it adds it by pushing it, then updates the local storage by stringifying the
+     * then it adds it by pushing it, then updates the local storage by stringify method the
      * array and stores it under it using the set item
      * If it's already saved, then it triggers an alert indicating that it is already saved
-     * any errors that occured during the proccess are caught by the try and catch block, then 
+     * any errors that occurred during the process are caught by the try and catch block, then 
      * it's logged into the console
      */
     function saveRecipeLocally(recipeId) {
@@ -416,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Constructs a URL which fetches the recipe details using the recipe ID and
      * sends a request to the mealDB API to retrieve them. Then parses the response as 
      * JSON data and displays the fetched recipe details on the page and logs any errors during
-     * the proccess
+     * the process
      */
     async function fetchAndDisplayRecipeDetails(recipeId) {
         try {
@@ -434,12 +434,12 @@ document.addEventListener("DOMContentLoaded", function () {
      * name of the recipe to search for, by try and catch method 
      * sets the URL to search for fetching the recipe details based on their name and
      * fetches the data by sending a GET request to the URL provided using fetch and awaits for
-     * the response to be received before peocceeding further
+     * the response to be received before proceeding further
      * Parses the JSON response received from the mealDB API into an object
-     * Then checks if the API contains any meal data, if it does then diplays the details of the first
+     * Then checks if the API contains any meal data, if it does then displays the details of the first
      * meal found and the data are stored in the recipe variable and then the display recipe details function 
      * is called in order to display them
-     * If an error occurs during the proccess, it is caught by the catch block and it's logged to the console.
+     * If an error occurs during the process, it is caught by the catch block and it's logged to the console.
      */
     async function fetchRecipeByName(recipeName) {
         try {
@@ -463,8 +463,8 @@ document.addEventListener("DOMContentLoaded", function () {
      * sets a URL for fetching recipes by category and sends a GET request to that URL which then
      * parses the response as JSON data
      * Then extracts the list of recipes from the response data provided or an empty array if none is found
-     * Then updaes the total recipes based on the fetched data and displays the recipes on the page
-     * By catch it logs any error occured to the console
+     * Then updates the total recipes based on the fetched data and displays the recipes on the page
+     * By catch it logs any error occurred to the console
      */
     async function fetchRecipesByCategory(category) {
         try {
