@@ -104,7 +104,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
       - ### Scrollbar **[Go back to features](#features)**
       ![Scrollbar](assets/images/validation/scrollbar.gif "Scrollbar with the webkit effects")
       
-      - ### Social Media Sharing**[Go back to features](#features)**
+      - ### Social Media Sharing **[Go back to features](#features)**
       ![Social Media Sharing](assets/images/validation/share.gif "Social media icons")
 
       - ### Footer **[Go back to features](#features)**
