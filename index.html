@@ -2,134 +2,136 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Recipe finder. Find what you're cooking next or make a new guess.">
-    <meta name="keywords"
-        content="food, cooking, kitchen, taste, recipe, vegan, meat, seafood, chef, candy, sweet, meal, cook book, ingredients, gastronomy, dessert, gluten-free">
-    <title>Let's Cook</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-    <link rel="manifest" href="assets/images/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Recipe finder. Find what you're cooking next or make a new guess.">
+  <meta name="keywords"
+    content="food, cooking, kitchen, taste, recipe, vegan, meat, seafood, chef, candy, sweet, meal, cook book, ingredients, gastronomy, dessert, gluten-free">
+  <title>Let's Cook</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+  <link rel="manifest" href="assets/images/site.webmanifest">
 </head>
 
 <body>
-    <!-- Main content -->
-    <main class="container">
-        <h1>Let's Cook</h1>
-        <div class="decorative-line"></div>
+  <!-- Main content -->
+  <main class="container">
+    <h1>Let's Cook</h1>
+    <div class="decorative-line"></div>
 
-        <div class="browse-section">
-            <h2 class="browse-heading">Browse the Recipes</h2>
-            <div class="alphabet">
-                <span class="letter">A</span>
-                <span class="letter">B</span>
-                <span class="letter">C</span>
-                <span class="letter">D</span>
-                <span class="letter">E</span>
-                <span class="letter">F</span>
-                <span class="letter">G</span>
-                <span class="letter">H</span>
-                <span class="letter">I</span>
-                <span class="letter">J</span>
-                <span class="letter">K</span>
-                <span class="letter">L</span>
-                <span class="letter">M</span>
-                <span class="letter">N</span>
-                <span class="letter">O</span>
-                <span class="letter">P</span>
-                <span class="letter">Q</span>
-                <span class="letter">R</span>
-                <span class="letter">S</span>
-                <span class="letter">T</span>
-                <span class="letter">U</span>
-                <span class="letter">V</span>
-                <span class="letter">W</span>
-                <span class="letter">X</span>
-                <span class="letter">Y</span>
-                <span class="letter">Z</span>
-            </div>
-        </div>
+    <div class="browse-section">
+      <h2 class="browse-heading">Browse the Recipes</h2>
+      <div class="alphabet">
+        <span class="letter">A</span>
+        <span class="letter">B</span>
+        <span class="letter">C</span>
+        <span class="letter">D</span>
+        <span class="letter">E</span>
+        <span class="letter">F</span>
+        <span class="letter">G</span>
+        <span class="letter">H</span>
+        <span class="letter">I</span>
+        <span class="letter">J</span>
+        <span class="letter">K</span>
+        <span class="letter">L</span>
+        <span class="letter">M</span>
+        <span class="letter">N</span>
+        <span class="letter">O</span>
+        <span class="letter">P</span>
+        <span class="letter">Q</span>
+        <span class="letter">R</span>
+        <span class="letter">S</span>
+        <span class="letter">T</span>
+        <span class="letter">U</span>
+        <span class="letter">V</span>
+        <span class="letter">W</span>
+        <span class="letter">X</span>
+        <span class="letter">Y</span>
+        <span class="letter">Z</span>
+      </div>
+    </div>
 
-        <section class="search-container">
-            <input type="text" id="searchInput" placeholder="Search for recipes">
-            <button id="searchButton">Search</button>
-            <button id="randomButton">Random Recipe</button>
-        </section>
-        <div id="recipeContainer" class="recipe-container"></div>
+    <section class="search-container">
+      <h5>Search container</h5>
+      <input type="text" id="searchInput" placeholder="Search for recipes">
+      <button id="searchButton">Search</button>
+      <button id="randomButton">Random Recipe</button>
+    </section>
+    <div id="recipeContainer" class="recipe-container"></div>
 
-        <!-- Filter Options -->
-        <section class="filter-options">
-            <h2>Filter Options</h2>
-            <div class="dropdown">
-                <label for="mealCategory">Meal Category:</label>
-                <select id="mealCategory">
-                    <option value="all">Select</option>
-                    <option value="Beef">Beef</option>
-                    <option value="Chicken">Chicken</option>
-                    <option value="Dessert">Dessert</option>
-                    <option value="Lamb">Lamb</option>
-                    <option value="Miscellaneous">Miscellaneous</option>
-                    <option value="Pasta">Pasta</option>
-                    <option value="Pork">Pork</option>
-                    <option value="Seafood">Seafood</option>
-                    <option value="Side">Side</option>
-                    <option value="Starter">Starter</option>
-                    <option value="Vegan">Vegan</option>
-                    <option value="Vegetarian">Vegetarian</option>
-                    <option value="Breakfast">Breakfast</option>
-                    <option value="Goat">Goat</option>
-                </select>
-            </div>
-        </section>
-
-        <!-- Pagination controls -->
-        <section class="pagination-container">
-            <button id="prevPageButton" class="pagination-button">Previous</button>
-            <span id="currentPage">Page 1</span>
-            <button id="nextPageButton" class="pagination-button">Next</button>
-        </section>
-
-    </main>
-
-    <!-- Saved Recipes -->
-    <section id="savedRecipesContainer" class="saved-recipes-container">
-        <h2>Saved Recipes</h2>
-        <button id="resetButton">Reset</button>
-        <ul id="savedRecipesList"></ul>
+    <!-- Filter Options -->
+    <section class="filter-options">
+      <h2>Filter Options</h2>
+      <div class="dropdown">
+        <label for="mealCategory">Meal Category:</label>
+        <select id="mealCategory">
+          <option value="all">Select</option>
+          <option value="Beef">Beef</option>
+          <option value="Chicken">Chicken</option>
+          <option value="Dessert">Dessert</option>
+          <option value="Lamb">Lamb</option>
+          <option value="Miscellaneous">Miscellaneous</option>
+          <option value="Pasta">Pasta</option>
+          <option value="Pork">Pork</option>
+          <option value="Seafood">Seafood</option>
+          <option value="Side">Side</option>
+          <option value="Starter">Starter</option>
+          <option value="Vegan">Vegan</option>
+          <option value="Vegetarian">Vegetarian</option>
+          <option value="Breakfast">Breakfast</option>
+          <option value="Goat">Goat</option>
+        </select>
+      </div>
     </section>
 
-    <!-- Modal -->
-    <section id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modalTitle">Recipe Details</h2>
-            <div id="modalContent"></div>
-            <button id="saveButton">Save Recipe</button>
-            <button id="toggleSpeechButton">Toggle Speech</button>
-        </div>
+    <!-- Pagination controls -->
+    <section class="pagination-container">
+      <h5>Pagination controls</h5>
+      <button id="prevPageButton" class="pagination-button">Previous</button>
+      <span id="currentPage">Page 1</span>
+      <button id="nextPageButton" class="pagination-button">Next</button>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <section class="footer-content">
-            <ul class="footer-social-icons">
-                <li><a href="https://github.com/Dimitris112/lets-cook-pp2" target="_blank"><i
-                            class="fab fa-github"></i></a>
-                </li>
-                <li><a href="https://www.linkedin.com/in/dimitrios-thlivitis-617492300/" target="_blank"><i
-                            class="fab fa-linkedin"></i></a></li>
-            </ul>
-            <p>Created by Dimitris 2024</p>
-        </section>
-    </footer>
+  </main>
 
-    <!-- Font awesome kit -->
-    <script src="https://kit.fontawesome.com/e07e87e2b4.js" crossorigin="anonymous"></script>
-    <!-- JavaScript -->
-    <script src="assets/js/script.js"></script>
+  <!-- Saved Recipes -->
+  <section id="savedRecipesContainer" class="saved-recipes-container">
+    <h2>Saved Recipes</h2>
+    <button id="resetButton">Reset</button>
+    <ul id="savedRecipesList"></ul>
+  </section>
+
+  <!-- Modal -->
+  <section id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle">Recipe Details</h2>
+      <div id="modalContent"></div>
+      <button id="saveButton">Save Recipe</button>
+      <button id="toggleSpeechButton">Toggle Speech</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <section class="footer-content">
+      <h5>Footer content</h5>
+      <ul class="footer-social-icons">
+        <li><a href="https://github.com/Dimitris112/lets-cook-pp2" target="_blank"><i class="fab fa-github"></i></a>
+        </li>
+        <li><a href="https://www.linkedin.com/in/dimitrios-thlivitis-617492300/" target="_blank"><i
+              class="fab fa-linkedin"></i></a></li>
+      </ul>
+      <p>Created by Dimitris 2024</p>
+    </section>
+  </footer>
+
+  <!-- Font awesome kit -->
+  <script src="https://kit.fontawesome.com/e07e87e2b4.js" crossorigin="anonymous"></script>
+  <!-- JavaScript -->
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>
