@@ -396,13 +396,18 @@ button:active {
     color: #333;
 }
 
+.social-media-sharing {
+    text-align: center;
+}
+
 .social-media-sharing button {
     font-size: 1.4rem;
 }
 
 .social-media-sharing h2 {
-    font-size: 15px;
+    font-size: 1.3rem;
     margin-bottom: 10px;
+    font-weight: bold;
 }
 
 /* The message when no recipe is found */
