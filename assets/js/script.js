@@ -38,11 +38,12 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleSpeechButton.addEventListener("click", toggleSpeech);
 
     /**
-     * I've included both the viewrecipe and remove buttons in the event listener below
-     * clicking the viewrecipe button -> it shows the recipe details
+     * I've included both the view recipe and remove buttons in the event listener below
+     * clicking the view recipe button -> it shows the recipe details
      * clicking the remove -> it deletes the single recipe
      * clicking on a saved recipe in the list, fetches the recipe by name
      */
+
     document.addEventListener("click", function (event) {
         if (event.target.classList.contains("viewRecipeButton")) {
             const recipeId = event.target.dataset.recipeId;
@@ -55,6 +56,24 @@ document.addEventListener("DOMContentLoaded", function () {
             fetchRecipeByName(recipeName);
         }
     });
+
+    /**
+     * The user clicks on a specified button ID and depending on the ID, the appropriate
+     * sharing function is called
+     */
+
+    document.addEventListener("click", function (event) {
+        if (event.target.id === "facebook-share-btn") {
+            shareOnFacebook();
+        } else if (event.target.id === "twitter-share-btn") {
+            shareOnTwitter();
+        } else if (event.target.id === "pinterest-share-btn") {
+            shareOnPinterest();
+        } else if (event.target.id === "email-share-btn") {
+            shareByEmail();
+        }
+    });
+
 
     /**
      * Instead of importing every code from the mealdb API 
@@ -527,6 +546,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function showSpeechButton() {
         toggleSpeechButton.style.display = "block";
+    }
+
+    // Functions for the social media sharing
+
+    /**
+     * Retrieves the text content of the modal element and sets a URL for sharing it on Facebook
+     * using the Facebook sharing endpoint including 2 parameters
+     * U -> for the current page URL on window location href
+     * Quote -> contains the recipe details which are encoded using the encodeURIComponent so that special characters
+     * will be safely handled in the URL
+     * Then opens a new tab with the new URL where the user will be ready to share it
+     * ------------------------------------- Similar explanation goes for Twitter and Pinterest ---------------------------------------------
+     */
+
+    function shareOnFacebook() {
+        const recipeDetails = modalContent.textContent;
+        const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}&quote=${encodeURIComponent(recipeDetails)}`;
+        window.open(shareUrl, '_blank');
+    }
+
+    function shareOnTwitter() {
+        const recipeDetails = modalContent.textContent;
+        const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(recipeDetails)}`;
+        window.open(tweetUrl, '_blank');
+    }
+
+    function shareOnPinterest() {
+        const recipeDetails = modalContent.textContent;
+        const shareUrl = `https://www.pinterest.com/pin/create/button/?url=${encodeURIComponent(window.location.href)}&description=${encodeURIComponent(recipeDetails)}`;
+        window.open(shareUrl, '_blank');
+    }
+
+    /**
+     * Retrieves the recipe details by getting the text content of the modal and then defines
+     * the Email subject to prompt the recipient to view the shared recipe
+     * The recipe is encoded by encodeURIComponent so any special characters will be properly shown in the email body
+     * Uses the mailTo scheme to include both subject and body paremeters for the URL / link which will be used
+     * to pre fill the mail for the user
+     * Then triggers a new window to open on the user's default mail client with all of the above info included in it
+     */
+
+    function shareByEmail() {
+        const recipeDetails = modalContent.textContent;
+        const emailSubject = "Check out this recipe!";
+        const emailBody = encodeURIComponent(recipeDetails);
+        const mailtoLink = `mailto:?subject=${emailSubject}&body=${emailBody}`;
+        window.location.href = mailtoLink;
     }
 
     displaySavedRecipes();
