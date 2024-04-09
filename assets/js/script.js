@@ -582,7 +582,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Retrieves the recipe details by getting the text content of the modal and then defines
      * the Email subject to prompt the recipient to view the shared recipe
      * The recipe is encoded by encodeURIComponent so any special characters will be properly shown in the email body
-     * Uses the mailTo scheme to include both subject and body paremeters for the URL / link which will be used
+     * Uses the mailTo scheme to include both subject and body parameters for the URL / link which will be used
      * to pre fill the mail for the user
      * Then triggers a new window to open on the user's default mail client with all of the above info included in it
      */
