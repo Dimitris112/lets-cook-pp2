@@ -396,6 +396,15 @@ button:active {
     color: #333;
 }
 
+.social-media-sharing button {
+    font-size: 1.4rem;
+}
+
+.social-media-sharing h2 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
 /* The message when no recipe is found */
 .no-recipes-message {
     text-align: center;
