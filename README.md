@@ -82,31 +82,32 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
    - For the **JavaScript** I used 
 
  - ### Test cases "user story based with screenshots"
-      - ### Alphabetical Search 
+      - ### Alphabetical Search **[Go back to features](#features)**
       ![Alphabetical Search](assets/images/validation/alphabet.png "Alphabetical search")
 
-      - ### Random Recipe 
+      - ### Random Recipe **[Go back to features](#features)**
       ![Random Recipe](assets/images/validation/random.png "Random Recipe button")
 
-      - ### Filter Category 
+      - ### Filter Category **[Go back to features](#features)**
       ![Filter Category](assets/images/validation/filter_category.png "Filter category dropdown menu")
+      
 
-      - ### Pagination 
+      - ### Pagination **[Go back to features](#features)**
       ![Pagination](assets/images/validation/category_pagination.gif "Pagination controls")
 
-      - ### Saved Recipes 
+      - ### Saved Recipes **[Go back to features](#features)**
       ![Saved Recipes](assets/images/validation/savedrecipes.png "Saved recipe list") ![Saved alert](assets/images/validation/recipe_saved.png "Saved recipe alert") ![Already saved alert](assets/images/validation/recipe_already_saved.png "Already saved recipe alert")
 
-      - ### Toggle Speech 
+      - ### Toggle Speech **[Go back to features](#features)**
       ![Toggle Speech](assets/images/validation/togglespeech.png "Toggle Speech button")
 
-      - ### Scrollbar 
+      - ### Scrollbar **[Go back to features](#features)**
       ![Scrollbar](assets/images/validation/scrollbar.gif "Scrollbar with the webkit effects")
       
-      - ### Social Media Sharing
+      - ### Social Media Sharing**[Go back to features](#features)**
       ![Social Media Sharing](assets/images/validation/share.gif "Social media icons")
 
-      - ### Footer 
+      - ### Footer **[Go back to features](#features)**
       ![Footer](assets/images/validation/footer.gif "Footer including the pulse effect and the github & linkedin icons when hovered")
 
  - ### Fixed bugs
