@@ -31,6 +31,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 - As a busy individual, I want to be able to search recipes based on specific ingredients or keywords so that I can quickly find recipes that match my available ingredients or dietary preferences. This feature would save me time and help me make the most out of my limited cooking time.
 - As someone passionate about cooking, I want to have a functionality to save recipes that I find intriguing or unique, empowering me to experiment with new flavors and techniques at my own pace.
 - couple more will come if i add any more functionality
+- As an extrovert who loves food and cooking, I'd like to share on my social media the recipes I find fancy.
 
 ## Features 
 - Users can easily navigate through recipes **[alphabetically](#alphabetical-search)** by selecting a letter, instantly filtering the displayed recipes to those beginning with the chosen letter.
@@ -39,6 +40,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 - The project includes clean **[pagination](#pagination)** functionality, ensuring a smooth browsing experience by displaying up to 4 recipes per page. Pagination controls such as `Previous` and `Next` buttons enable the user to navigate between pages.
 - Users can save each recipe they desire by clicking the `Save Recipe` button which then will be stored below the **[Saved Recipes](#saved-recipes)**. To manage their saved recipes, users have the flexibility to either remove individual recipes by clicking the `Remove` button or clear their entire saved collection with a single click on the `Reset` button. Moreover the `Save Recipe` button is hidden within the details of recipes that are already saved, which ensures that the users are not overwhelmed with unnecessary options. When the user saves the recipe for the first time, an alert will pop displaying **Recipe saved successfully!**, if it's clicked again it will be displayed as **Recipe already saved!**.
 - The project includes a **[Toggle Speech](#toggle-speech)** button which will read aloud the details of the recipe once the user has clicked to view one. It's easily accessible since its below the `Save Recipe` button. The speech can be ended in 2 ways. The first is by clicking the `Toggle Speech` button a second time and the second is when the user exits the recipe details window either by clicking the X button or just by clicking out of it. This feature enhances accessibility, catering to users who may benefit from auditory assistance.
+- Users can share their favourite recipes with friends and followers through their **[Social Media](#social-media-sharing)**.
 - On the **[footer](#footer)** I've included a visually appealing spherical pulse effect housing my 2 social icons which lead to this **Github repository** and my [Linkedin](https://www.linkedin.com/in/dimitrios-thlivitis-617492300/ "target=_blank") profile.
 
 - ### **DISCLAIMER**
@@ -101,8 +103,11 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
       - ### Scrollbar 
       ![Scrollbar](assets/images/validation/scrollbar.gif "Scrollbar with the webkit effects")
       
+      - ### Social Media Sharing
+      ![Social Media Sharing](assets/images/validation/share.gif "Social media icons")
+
       - ### Footer 
-      ![Footer](assets/images/validation/footer.gif "Footer")
+      ![Footer](assets/images/validation/footer.gif "Footer including the pulse effect and the github & linkedin icons when hovered")
 
  - ### Fixed bugs
    - Fixed an issue with the save recipe button not storing the recipes locally in the browser by updating the JavaScript code so when the user clicks it, it will be stored no matter if the browser is closed or refreshed,
