@@ -560,6 +560,21 @@ footer p {
     transform: translateY(-5px);
 }
 
+/* ---------------------------- 404 PAGE ---------------------------- */
+.error-landing p {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.error-landing a {
+    color: #1e87d3;
+    font-weight: bold;
+}
+
+.error-landing a:hover {
+    color: #ee0979;
+}
+
 /* Keyframe animations */
 @keyframes fadeIn {
     from {
@@ -635,6 +650,10 @@ footer p {
 
     .container h1 {
         font-size: 2.4rem;
+    }
+
+    .error-landing p {
+        font-size: 1.9rem;
     }
 
     #searchInput {
@@ -757,6 +776,10 @@ footer p {
         font-size: 4.5rem;
     }
 
+    .error-landing p {
+        font-size: 2rem;
+    }
+
     .recipe {
         margin-bottom: 3%;
     }
@@ -792,7 +815,10 @@ footer p {
 
     .container h1 {
         font-size: 5.4rem;
+    }
 
+    .error-landing p {
+        font-size: 2.9rem;
     }
 
     .recipe {
@@ -827,6 +853,10 @@ footer p {
     .container h1 {
         font-size: 7vw;
     }
+
+    .error-landing p {
+        font-size: 3.9rem;
+    }
 }
 
 /* --------------------------- 1400px+ --------------------------- */
@@ -844,4 +874,7 @@ footer p {
         font-size: 5vw;
     }
 
+    .error-landing p {
+        font-size: 3.7rem;
+    }
 }
