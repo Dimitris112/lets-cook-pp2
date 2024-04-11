@@ -1,21 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Variables
-    const alphabet = document.getElementsByClassName("alphabet")[0];
-    const modal = document.getElementById("modal");
-    const searchButton = document.getElementById("searchButton");
-    const randomButton = document.getElementById("randomButton");
-    const closeButton = document.getElementsByClassName("close")[0];
-    const searchInput = document.getElementById("searchInput");
-    const saveButton = document.getElementById("saveButton");
-    const modalContent = document.getElementById("modalContent");
-    const recipeContainer = document.getElementById("recipeContainer");
-    const savedRecipesList = document.getElementById("savedRecipesList");
-    const resetButton = document.getElementById("resetButton");
-    const prevPageButton = document.getElementById("prevPageButton");
-    const nextPageButton = document.getElementById("nextPageButton");
-    const toggleSpeechButton = document.getElementById("toggleSpeechButton");
+    let alphabet = document.getElementsByClassName("alphabet")[0];
+    let modal = document.getElementById("modal");
+    let searchButton = document.getElementById("searchButton");
+    let randomButton = document.getElementById("randomButton");
+    let closeButton = document.getElementsByClassName("close")[0];
+    let searchInput = document.getElementById("searchInput");
+    let saveButton = document.getElementById("saveButton");
+    let modalContent = document.getElementById("modalContent");
+    let recipeContainer = document.getElementById("recipeContainer");
+    let savedRecipesList = document.getElementById("savedRecipesList");
+    let resetButton = document.getElementById("resetButton");
+    let prevPageButton = document.getElementById("prevPageButton");
+    let nextPageButton = document.getElementById("nextPageButton");
+    let toggleSpeechButton = document.getElementById("toggleSpeechButton");
     let currentPage = 1;
-    const pageSize = 4;
+    let pageSize = 4;
     let recipes = [];
     let totalRecipes = 0;
 
@@ -375,6 +375,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!savedRecipes.includes(recipeId)) {
                 savedRecipes.push(recipeId);
                 localStorage.setItem("savedRecipes", JSON.stringify(savedRecipes));
+                console.table(savedRecipes);
                 alert("Recipe saved successfully!");
             } else {
                 alert("Recipe already saved!");

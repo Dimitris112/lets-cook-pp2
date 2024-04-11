@@ -652,13 +652,30 @@ footer p {
         font-size: 2.4rem;
     }
 
+    .social-media-sharing button {
+        margin: 1% 3%;
+    }
+
     .error-landing p {
         font-size: 1.9rem;
+    }
+
+    .recipe {
+        width: 100%;
+        border-radius: 12%;
+    }
+
+    .viewRecipeButton {
+        bottom: -1%;
     }
 
     #searchInput {
         padding: 1.5% 2.5%;
         font-size: 1rem;
+    }
+
+    .modal-content {
+        border-radius: 10px;
     }
 
     #searchInput::placeholder {
@@ -683,6 +700,7 @@ footer p {
     #toggleSpeechButton {
         margin-left: 0;
         margin-top: 2%;
+        font-size: 2.7rem;
     }
 
     .recipe-container {
@@ -782,6 +800,7 @@ footer p {
 
     .recipe {
         margin-bottom: 3%;
+        width: 49%;
     }
 
     .recipe img {
@@ -857,6 +876,10 @@ footer p {
     .error-landing p {
         font-size: 3.9rem;
     }
+
+    #toggleSpeechButton {
+        font-size: 3rem;
+    }
 }
 
 /* --------------------------- 1400px+ --------------------------- */
@@ -876,5 +899,9 @@ footer p {
 
     .error-landing p {
         font-size: 3.7rem;
+    }
+
+    #toggleSpeechButton {
+        font-size: 2rem;
     }
 }

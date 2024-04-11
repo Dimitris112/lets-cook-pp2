@@ -6,9 +6,13 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 - ## [Purpose of the project](#purpose-of-the-project)
 - ## [User Stories](#user-stories)
 - ## [Features](#features)
-- ## [Future Features](#future-features)
+    - [Implemented Features](#implemented-features)
+    - [Future Features](#future-features)
 - ## [Typography and color scheme](#typography-and-color-scheme)
 - ## [Technology](#technology)
+    - [Languages](#languages)
+    - [Tools](#tools)
+    - [API](#api)
 - ## [Testing](#testing)
     - [Code Validation](#code-validation)
     - [Test cases](#test-cases)
@@ -32,30 +36,30 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 - As someone passionate about cooking, I want to have a functionality to save recipes that I find intriguing or unique, empowering me to experiment with new flavors and techniques at my own pace.
 - couple more will come if i add any more functionality
 - As an extrovert who loves food and cooking, I'd like to share on my social media the recipes I find fancy.
+## Features
+  ### Implemented Features 
+  - Users can easily navigate through recipes **[alphabetically](#alphabetical-search)** by selecting a letter, instantly filtering the displayed recipes to those beginning with the chosen letter.
+  - Users can discover new and exciting recipes by clicking the **[Random Recipe](#random-recipe)** button, which selects a recipe at random from the mealdb API providing an element of surprise.
+  - Users can refine their recipe search based on specific meal **[categories](#filter-category)** via a dropdown menu, which provides a list of available food categories to choose from.
+  - The project includes clean **[pagination](#pagination)** functionality, ensuring a smooth browsing experience by displaying up to 4 recipes per page. Pagination controls such as `Previous` and `Next` buttons enable the user to navigate between pages.
+  - Users can save each recipe they desire by clicking the `Save Recipe` button which then will be stored below the **[Saved Recipes](#saved-recipes)**. To manage their saved recipes, users have the flexibility to either remove individual recipes by clicking the `Remove` button or clear their entire saved collection with a single click on the `Reset` button. Moreover the `Save Recipe` button is hidden within the details of recipes that are already saved, which ensures that the users are not overwhelmed with unnecessary options. When the user saves the recipe for the first time, an alert will pop displaying **Recipe saved successfully!**, if it's clicked again it will be displayed as **Recipe already saved!**.
+  - The project includes a **[Toggle Speech](#toggle-speech)** button which will read aloud the details of the recipe once the user has clicked to view one. It's easily accessible since its below the `Save Recipe` button. The speech can be ended in 2 ways. The first is by clicking the `Toggle Speech` button a second time and the second is when the user exits the recipe details window either by clicking the X button or just by clicking out of it. This feature enhances accessibility, catering to users who may benefit from auditory assistance.
+  - Users can share their favorite recipes with friends and followers through their **[Social Media](#social-media-sharing)**.
+  - The project includes it's own **[error 404 page](#error-404-page)** for when the user clicks on something broken, which will guide him back to **homepage**.
+  - On the **[footer](#footer)** I've included a visually appealing spherical pulse effect housing my 2 social icons which lead to this **Github repository** and my [Linkedin](https://www.linkedin.com/in/dimitrios-thlivitis-617492300/ "target=_blank") profile.
 
-## Features 
-- Users can easily navigate through recipes **[alphabetically](#alphabetical-search)** by selecting a letter, instantly filtering the displayed recipes to those beginning with the chosen letter.
-- Users can discover new and exciting recipes by clicking the **[Random Recipe](#random-recipe)** button, which selects a recipe at random from the mealdb API providing an element of surprise.
-- Users can refine their recipe search based on specific meal **[categories](#filter-category)** via a dropdown menu, which provides a list of available food categories to choose from.
-- The project includes clean **[pagination](#pagination)** functionality, ensuring a smooth browsing experience by displaying up to 4 recipes per page. Pagination controls such as `Previous` and `Next` buttons enable the user to navigate between pages.
-- Users can save each recipe they desire by clicking the `Save Recipe` button which then will be stored below the **[Saved Recipes](#saved-recipes)**. To manage their saved recipes, users have the flexibility to either remove individual recipes by clicking the `Remove` button or clear their entire saved collection with a single click on the `Reset` button. Moreover the `Save Recipe` button is hidden within the details of recipes that are already saved, which ensures that the users are not overwhelmed with unnecessary options. When the user saves the recipe for the first time, an alert will pop displaying **Recipe saved successfully!**, if it's clicked again it will be displayed as **Recipe already saved!**.
-- The project includes a **[Toggle Speech](#toggle-speech)** button which will read aloud the details of the recipe once the user has clicked to view one. It's easily accessible since its below the `Save Recipe` button. The speech can be ended in 2 ways. The first is by clicking the `Toggle Speech` button a second time and the second is when the user exits the recipe details window either by clicking the X button or just by clicking out of it. This feature enhances accessibility, catering to users who may benefit from auditory assistance.
-- Users can share their favorite recipes with friends and followers through their **[Social Media](#social-media-sharing)**.
-- The project includes it's own **[error 404 page](#error-404-page)** for when the user clicks on something broken, which will guide him back to **homepage**.
-- On the **[footer](#footer)** I've included a visually appealing spherical pulse effect housing my 2 social icons which lead to this **Github repository** and my [Linkedin](https://www.linkedin.com/in/dimitrios-thlivitis-617492300/ "target=_blank") profile.
-
-- ### **DISCLAIMER**
-  - The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API "target=_blank")
+  - ### ***DISCLAIMER***
+    - The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API "target=_blank")
  
-  - The **[scrollbar](#scrollbar)** effects / colors will be visible **ONLY** to browsers that include the `::-webkit-scrollbar`. Here's the link for more information -> 
+    - The **[scrollbar](#scrollbar)** effects / colors will be visible **ONLY** to browsers that include the `::-webkit-scrollbar`. Here's the link for more information -> 
  [Webkit Scrollbar](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar "target=_blank")
 
-  - Saved recipes will be saved **ONLY** locally in the browser (computer or mobile) as for now the project lacks back-end services.
+    - Saved recipes will be saved **ONLY** locally in the browser (computer or mobile) as for now the project lacks back-end services.
 
-## Future Features
-- Add the option for users to search recipes by *Area* just like they can search by meal category.
-- Implement user authentication with sign-up / login functionality once back-end services are introduced, enabling users to leave comments and ratings on their favorite recipes.
-- Enable voice search functionality enabling users to search recipes by simply speaking, providing a convenient user experience.
+ ### Future Features
+  - Add the option for users to search recipes by *Area* just like they can search by meal category.
+  - Implement user authentication with sign-up / login functionality once back-end services are introduced, enabling users to leave comments and ratings on their favorite recipes.
+  - Enable voice search functionality enabling users to search recipes by simply speaking, providing a convenient user experience.
 
 ## Typography and color scheme
 - The project utilizes the **Montserrat** font family from Google Fonts, while the primary font is Montserrat / the fallback font is Sans-serif. As for the color scheme for the body `background: linear-gradient(135deg, #ff9a00, #ee0979);` it ensures a vibrant orange for primary color `"ff9a00"` and bold pink for the secondary color `"ee0979"` while the `linear-gradient of 135deg` let's it flow diagonally from the bottom left to the top right with a value of 135degrees creating a smooth color change. Furthermore buttons, headings and images are enhanced with effects like text shadow / box shadow adding depth and dimension.
@@ -86,68 +90,89 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
  - ### Test cases
       - ### Alphabetical Search
        
+        The user explores recipes alphabetically by clicking on each letter. If there are no recipes starting with the selected letter, a message will appear below the search bar stating `No recipes found.`
+
       ![Alphabetical Search](assets/images/validation/alphabet.png "Alphabetical search")
 
-      **[Go back to features](#features)**
+      **[Go back to implemented features](#implemented-features)**
 
       - ### Random Recipe
        
+        By clicking the `Random Recipe` button, the user will be prompted with a window from a random picked recipe across any category and area.
+
       ![Random Recipe](assets/images/validation/random.png "Random Recipe button")
 
-      **[Go back to features](#features)**
+      **[Go back to implemented features](#implemented-features)**
 
       - ### Filter Category 
 
+        The filter category dropdown menu helps the user to pick quickly his choice of meal / recipe. It contains 14 categories to choose from, on **mobile phones and tablets** this feature instead of the dropdown menu, prompts a new selection menu.
+
       ![Filter Category](assets/images/validation/filter_category.png "Filter category dropdown menu")
 
-      **[Go back to features](#features)**
+      **[Go back to implemented features](#implemented-features)**
       
 
       - ### Pagination
 
+        The user will come across 4 recipes per page and with the help of the `previous` and `next` button will navigate through the pages. In small mobile screens although the user sees 4 recipes per page, ***but*** they are aligned vertically 1 by 1.
+
       ![Pagination](assets/images/validation/category_pagination.gif "Pagination controls")
       
-      **[Go back to features](#features)**
+      **[Go back to implemented features](#implemented-features)**
 
       - ### Saved Recipes 
 
+        The user can save his recipes locally by clicking the `Save Recipe` button in the modal display, then every recipe stored in the browser will be shown below with its name and having the `Remove` button in its right to remove it from the list. Above the first saved recipe, there is the `Reset` button which clears the list of the saved recipes. If the user clicks the button to save the recipe, an alert will pop indicating the user that it's `Recipe saved successfully!`, if it's clicked again a new alert will pop with the message of `Recipe already saved!`
+
       ![Saved Recipes](assets/images/validation/savedrecipes.png "Saved recipe list") ![Saved alert](assets/images/validation/recipe_saved.png "Saved recipe alert") ![Already saved alert](assets/images/validation/recipe_already_saved.png "Already saved recipe alert")
       
-      **[Go back to features](#features)**
+      **[Go back to implemented features](#implemented-features)**
 
 
       - ### Toggle Speech
 
+        The user can click the `Toggle speech` button which then reads the instructions of the recipe by using the `Web Speech API` which is not universal amongst browsers, the button is found only inside the modal content of the recipe and acts as an extra help for users who have issues with their vision. The speech can be terminated by 2 ways. First the user clicks the button again. Second, the user exits the modal display content or clicks the **X** button.
+
       ![Toggle Speech](assets/images/validation/togglespeech.png "Toggle Speech button")
 
-      **[Go back to features](#features)**
-
+      **[Go back to implemented features](#implemented-features)**
 
       - ### Scrollbar 
 
+        The user can experience some fancy scrolling effects. Just that.
+
       ![Scrollbar](assets/images/validation/scrollbar.gif "Scrollbar with the webkit effects")
       
-      **[Go back to features](#features)**
+      **[Go back to implemented features](#implemented-features)**
 
       - ### Social Media Sharing 
-      
+
+        The user can share his favorite recipe in one or all of the three social media below, including via e-mail as the fourth. By clicking each button, he will be lead to a new tab in his browser where he can simply click the "share button" of each platform or in the case of the e-mail, the subject and body of the mail is autocompleted.
+
       ![Social Media Sharing](assets/images/validation/share.gif "Social media icons")
 
-      **[Go back to features](#features)**
+      **[Go back to implemented features](#implemented-features)**
 
       - ### Error 404 Page 
 
+        What page? This page doesn't exist, it's 404. Ok jokes aside, this page acts as the "border" of the website for when the user clicks on something broken, then he can simply click back to `homepage`.
+
       ![Error 404 page](assets/images/validation/error404.png "Error 404 page")
 
-      **[Go back to features](#features)**
+      **[Go back to implemented features](#implemented-features)**
 
       - ### Footer 
 
+        On the footer, the user looks on some visually appealing sphere effect and when he hovers over it or click on it if he's on phone/tablet. He can see the **[Github](https://github.com/Dimitris112/lets-cook-pp2)** repository and my **[Linkedin Profile](https://www.linkedin.com/in/dimitrios-thlivitis/)**. Both links open in a new tab for the best user experience. Also there is the `Created by Dimitris 2024` below the icons, which `Dimitris` is me and the `2024` is the year of building this project.
+
       ![Footer](assets/images/validation/footer.gif "Footer including the pulse effect and the github & linkedin icons when hovered")
 
-      **[Go back to features](#features)**
+      **[Go back to implemented features](#implemented-features)**
 
       - ### Metrics 
+      
+        Using the Lighthouse metrics score on Chrome's devtools, on incognito mode managed to increase the accessibility score from **87** to **95**. The rest of the metrics remain the same as **100**.
 
       - #### Before ####
 
@@ -157,7 +182,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 
       ![Metrics_after](assets/images/validation/metrics_after.png "Screenshot of Lighthouse score on the page after the changes")
 
-      **[Go back to features](#features)**
+      **[Go back to implemented features](#implemented-features)**
 
  - ### Fixed bugs
    - Fixed an issue with the save recipe button not storing the recipes locally in the browser by updating the JavaScript code so when the user clicks it, it will be stored no matter if the browser is closed or refreshed,
