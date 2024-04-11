@@ -41,12 +41,13 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 - Users can save each recipe they desire by clicking the `Save Recipe` button which then will be stored below the **[Saved Recipes](#saved-recipes)**. To manage their saved recipes, users have the flexibility to either remove individual recipes by clicking the `Remove` button or clear their entire saved collection with a single click on the `Reset` button. Moreover the `Save Recipe` button is hidden within the details of recipes that are already saved, which ensures that the users are not overwhelmed with unnecessary options. When the user saves the recipe for the first time, an alert will pop displaying **Recipe saved successfully!**, if it's clicked again it will be displayed as **Recipe already saved!**.
 - The project includes a **[Toggle Speech](#toggle-speech)** button which will read aloud the details of the recipe once the user has clicked to view one. It's easily accessible since its below the `Save Recipe` button. The speech can be ended in 2 ways. The first is by clicking the `Toggle Speech` button a second time and the second is when the user exits the recipe details window either by clicking the X button or just by clicking out of it. This feature enhances accessibility, catering to users who may benefit from auditory assistance.
 - Users can share their favorite recipes with friends and followers through their **[Social Media](#social-media-sharing)**.
+- The project includes it's own **[error 404 page](#error-404-page)** for when the user clicks on something broken, which will guide him back to **homepage**.
 - On the **[footer](#footer)** I've included a visually appealing spherical pulse effect housing my 2 social icons which lead to this **Github repository** and my [Linkedin](https://www.linkedin.com/in/dimitrios-thlivitis-617492300/ "target=_blank") profile.
 
 - ### **DISCLAIMER**
   - The speech which reads the details of the recipes works **ONLY** in browsers that include `Web Speech API`. Click here for more information -> [WebSpeech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API "target=_blank")
  
-  - The scrollbar effects / colors will be visible **ONLY** to browsers that include the `::-webkit-scrollbar`. Here's the link for more information -> 
+  - The **[scrollbar](#scrollbar)** effects / colors will be visible **ONLY** to browsers that include the `::-webkit-scrollbar`. Here's the link for more information -> 
  [Webkit Scrollbar](https://developer.mozilla.org/en-US/docs/Web/CSS/::-webkit-scrollbar "target=_blank")
 
   - Saved recipes will be saved **ONLY** locally in the browser (computer or mobile) as for now the project lacks back-end services.
@@ -72,7 +73,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
   - [**Favicon**](https://favicon.io/ "target=_blank") Used for generating the favicon.
   - [**Font awesome**](https://fontawesome.com/ "target=_blank") Used for the social icons in the footer.
   - [**Am I Responsive**](https://ui.dev/amiresponsive?url=https://dimitris112.github.io/lets-cook-pp2/ "target=_blank") Used for checking the responsiveness of the website.
-  - [**Lighthouse**](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk "target=_blank") Used for checking the score on the page on incognito mode, specifically I did 2 metrics `before` and `after` some minor changes, added `aria-label` and invisible `h5` to the footer. Click here to view the screenshot [before](#before) and [after](#after)
+  - [**Lighthouse**](https://chromewebstore.google.com/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk "target=_blank") Used for checking the score for the page through Google Chrome's dev tools on incognito mode, specifically I did 2 metrics `before` and `after` some minor changes, added `aria-label` and invisible `h5` to the footer. Click here to view the screenshot [before](#before) and [after](#after)
 - ### ***API***
   - Recipe data was obtained from the **[Mealdb API](https://www.themealdb.com/api.php)** using asynchronous functions. 
 
@@ -82,43 +83,81 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
    - For the **CSS** I used the same method which is also error free but received warnings about the `::-webkit-scrollbar` because it is not universal among the browsers. See for yourself -> [CLICK ME](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en "target=_blank")
    - For the **JavaScript** I used 
 
- - ### Test cases "user story based with screenshots"
-      - ### Alphabetical Search **[Go back to features](#features)**
+ - ### Test cases
+      - ### Alphabetical Search
+       
       ![Alphabetical Search](assets/images/validation/alphabet.png "Alphabetical search")
 
-      - ### Random Recipe **[Go back to features](#features)**
+      **[Go back to features](#features)**
+
+      - ### Random Recipe
+       
       ![Random Recipe](assets/images/validation/random.png "Random Recipe button")
 
-      - ### Filter Category **[Go back to features](#features)**
+      **[Go back to features](#features)**
+
+      - ### Filter Category 
+
       ![Filter Category](assets/images/validation/filter_category.png "Filter category dropdown menu")
+
+      **[Go back to features](#features)**
       
 
-      - ### Pagination **[Go back to features](#features)**
+      - ### Pagination
+
       ![Pagination](assets/images/validation/category_pagination.gif "Pagination controls")
+      
+      **[Go back to features](#features)**
 
-      - ### Saved Recipes **[Go back to features](#features)**
+      - ### Saved Recipes 
+
       ![Saved Recipes](assets/images/validation/savedrecipes.png "Saved recipe list") ![Saved alert](assets/images/validation/recipe_saved.png "Saved recipe alert") ![Already saved alert](assets/images/validation/recipe_already_saved.png "Already saved recipe alert")
+      
+      **[Go back to features](#features)**
 
-      - ### Toggle Speech **[Go back to features](#features)**
+
+      - ### Toggle Speech
+
       ![Toggle Speech](assets/images/validation/togglespeech.png "Toggle Speech button")
 
-      - ### Scrollbar **[Go back to features](#features)**
+      **[Go back to features](#features)**
+
+
+      - ### Scrollbar 
+
       ![Scrollbar](assets/images/validation/scrollbar.gif "Scrollbar with the webkit effects")
       
-      - ### Social Media Sharing **[Go back to features](#features)**
+      **[Go back to features](#features)**
+
+      - ### Social Media Sharing 
+      
       ![Social Media Sharing](assets/images/validation/share.gif "Social media icons")
 
-      - ### Footer **[Go back to features](#features)**
+      **[Go back to features](#features)**
+
+      - ### Error 404 Page 
+
+      ![Error 404 page](assets/images/validation/error404.png "Error 404 page")
+
+      **[Go back to features](#features)**
+
+      - ### Footer 
+
       ![Footer](assets/images/validation/footer.gif "Footer including the pulse effect and the github & linkedin icons when hovered")
 
-      - ### Metrics **[Go back to features](#features)**
-        - #### Before ####
+      **[Go back to features](#features)**
 
-         ![Metrics_before](assets/images/validation/metrics_before.png "Screenshot of Lighthouse score on the page before the changes") 
+      - ### Metrics 
 
-        - #### After ####
+      - #### Before ####
 
-         ![Metrics_after](assets/images/validation/metrics_after.png "Screenshot of Lighthouse score on the page after the changes")
+      ![Metrics_before](assets/images/validation/metrics_before.png "Screenshot of Lighthouse score on the page before the changes") 
+
+      - #### After ####
+
+      ![Metrics_after](assets/images/validation/metrics_after.png "Screenshot of Lighthouse score on the page after the changes")
+
+      **[Go back to features](#features)**
 
  - ### Fixed bugs
    - Fixed an issue with the save recipe button not storing the recipes locally in the browser by updating the JavaScript code so when the user clicks it, it will be stored no matter if the browser is closed or refreshed,
