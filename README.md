@@ -221,9 +221,12 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
   6. The URL for the page takes some time to be created, once it's done it will be displayed at the top. In the meantime, find something to cook!
 
 ## Credits
+
 - ### General
   - When I was thinking of building a recipe finder website, I searched here and there for some information on how to implement the key functions for the recipes etc and landed on using the [mealDB](https://www.themealdb.com/ "target=_blank"). Used only the free version of its API.
+  - Rohit Sharma - My mentor.
+  - Code Institute's slack community.
   - .
-  - .
+
 - ### Media
   - I got the idea for the scrollbar effects from this video -> [How to Web Dev](https://www.youtube.com/watch?v=rjYo5YUA2fU "target=_blank")
