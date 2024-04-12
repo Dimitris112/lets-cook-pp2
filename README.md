@@ -184,7 +184,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 
       - ### Metrics 
       
-        Using the Lighthouse metrics score on Chrome's devtools, on incognito mode managed to increase the accessibility score from **87** to **95**. The rest of the metrics remain the same as **100**.
+        Using the Lighthouse metrics score on Chrome's devtools, on incognito mode managed to increase the accessibility score from **87** to **100**. The rest of the metrics remain the same as **100**.
 
       - #### Before ####
 
