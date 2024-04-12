@@ -5,6 +5,8 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 
 - ## [Purpose of the project](#purpose-of-the-project)
 - ## [User Stories](#user-stories)
+    - [First Timer](#first-timer)
+    - [Frequent user](#frequent-user)
 - ## [Features](#features)
     - [Implemented Features](#implemented-features)
     - [Future Features](#future-features)
@@ -34,8 +36,18 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 - As a food enthusiast, I want to explore recipes from different cuisines and categories.
 - As a busy individual, I want to be able to search recipes based on specific ingredients or keywords so that I can quickly find recipes that match my available ingredients or dietary preferences. This feature would save me time and help me make the most out of my limited cooking time.
 - As someone passionate about cooking, I want to have a functionality to save recipes that I find intriguing or unique, empowering me to experiment with new flavors and techniques at my own pace.
-- couple more will come if i add any more functionality
 - As an extrovert who loves food and cooking, I'd like to share on my social media the recipes I find fancy.
+
+### First Timer
+ - As a first time visitor to the website, I want a clear and intuitive interface that guides me through the recipe discovery process.
+ - As someone new to cooking, I want easy access to beginner-friendly recipes with simple instructions and common ingredients.
+ - As a single individual cooking for myself, I want recipes that are portioned for one or two servings, preventing food waste and allowing me to enjoy a variety of meals without leftovers.
+
+### Frequent User
+ - As a seasoned home cook, I want the ability to save my own recipes and share them with the community, showcasing my culinary creations and inspiring others.
+ - As an amateur chef, I want access to a variety of recipes ranging from simple everyday meals to gourmet dishes, allowing me to continuously improve my cooking skills and experiment with different ingredients and cooking techniques.
+ - As a meal planner, I want to find recipes that can be easily customized and adapted to suit my family's preferences, dietary restrictions, and ingredient availability, empowering me to create personalized meal plans and grocery lists for the week ahead.
+
 ## Features
   ### Implemented Features 
   - Users can easily navigate through recipes **[alphabetically](#alphabetical-search)** by selecting a letter, instantly filtering the displayed recipes to those beginning with the chosen letter.
@@ -227,7 +239,6 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
   - When I was thinking of building a recipe finder website, I searched here and there for some information on how to implement the key functions for the recipes etc and landed on using the [mealDB](https://www.themealdb.com/ "target=_blank"). Used only the free version of its API.
   - Rohit Sharma - My mentor.
   - Code Institute's slack community.
-  - .
 
 - ### Media
   - I got the idea for the scrollbar effects from this video -> [How to Web Dev](https://www.youtube.com/watch?v=rjYo5YUA2fU "target=_blank")
