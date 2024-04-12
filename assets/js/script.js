@@ -291,8 +291,10 @@ document.addEventListener("DOMContentLoaded", function () {
      * in the search bar and then clicks on any button / menu, the searchbar will be empty
      * then it checks if there are available recipes to display and if there are
      * it iterates over each recipe creating a recipe card for each one
+     * 
      * Each card contains the title, thumbnail image and a button to view the details
      * also the cards are appended to the recipe container
+     * 
      * If no recipes are found, it displays a message indicating so
      * Finally updates the pagination controls based on the total number of recipes displayed. 
      */
@@ -326,9 +328,11 @@ document.addEventListener("DOMContentLoaded", function () {
      * Calculates the total number of pages required to display all of the recipes based
      * on the total number of recipes found and the page size, also ensures that at least 
      * 1 page is displayed by rounding the up the nearest whole number with the ceil method
+     * 
      * Next determines whether the previous or next buttons should be disabled to prevent navigation
      * to a non existent page. If the current page is the First, it disables the previous button, in the
      * same way if the page is the Last page, it disables the next button
+     * 
      * Then updates the text content of the current page to display the correct pagination number
      * Finally determines whether the pagination container should be displayed or be hidden based
      * on the total number of recipes, if there are more or less than 4 recipes per page
@@ -364,9 +368,11 @@ document.addEventListener("DOMContentLoaded", function () {
      * Saves the recipe locally in the browser's storage, starts by retrieving the
      * array of saved recipes from the local storage and if there are no saved recipes
      * or if retrieving them fails, then it sets an empty array
+     * 
      * Checks if the recipe id is already included in the saved array, if it isn't 
      * then it adds it by pushing it, then updates the local storage by stringify method the
      * array and stores it under it using the set item
+     * 
      * If it's already saved, then it triggers an alert indicating that it is already saved
      * any errors that occurred during the process are caught by the try and catch block, then 
      * it's logged into the console
@@ -457,10 +463,12 @@ document.addEventListener("DOMContentLoaded", function () {
      * sets the URL to search for fetching the recipe details based on their name and
      * fetches the data by sending a GET request to the URL provided using fetch and awaits for
      * the response to be received before proceeding further
+     * 
      * Parses the JSON response received from the mealDB API into an object
      * Then checks if the API contains any meal data, if it does then displays the details of the first
      * meal found and the data are stored in the recipe variable and then the display recipe details function 
      * is called in order to display them
+     * 
      * If an error occurs during the process, it is caught by the catch block and it's logged to the console.
      */
     async function fetchRecipeByName(recipeName) {
@@ -484,8 +492,10 @@ document.addEventListener("DOMContentLoaded", function () {
      * The async function takes a single parameter of Category, 
      * sets a URL for fetching recipes by category and sends a GET request to that URL which then
      * parses the response as JSON data
+     * 
      * Then extracts the list of recipes from the response data provided or an empty array if none is found
      * Then updates the total recipes based on the fetched data and displays the recipes on the page
+     * 
      * By catch it logs any error occurred to the console
      */
     async function fetchRecipesByCategory(category) {
@@ -504,8 +514,10 @@ document.addEventListener("DOMContentLoaded", function () {
     /**
      * Manages the changes in the recipe category selection, extracts the value of the selected category from the
      * event target and stores it in the selected category variable
+     * 
      * If the selected category is not equal to all (all recipes) then calls the fetch recipes by category passing the selected
      * category as argument which fetches and displays the recipes
+     * 
      * Else calls the fetch recipes function passing the value of the search input
      * Also resets the current page to always start on 1 whenever the user changes category
      */
@@ -524,6 +536,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * the function takes as a single parameter which is the recipe object and
      * it updates the the modal title with the recipe name and fills the 
      * modal content with instructions, category, area and the image of the recipe
+     * 
      * Then sets the dataset property of the modal content by setting its style to block
      * to store the recipe ID
      * Also checks if the recipe is already saved and shows the speech button
@@ -559,7 +572,9 @@ document.addEventListener("DOMContentLoaded", function () {
      * U -> for the current page URL on window location href
      * Quote -> contains the recipe details which are encoded using the encodeURIComponent so that special characters
      * will be safely handled in the URL
+     * 
      * Then opens a new tab with the new URL where the user will be ready to share it
+     * 
      * ------------------------------------- Similar explanation goes for Twitter and Pinterest ---------------------------------------------
      */
 
@@ -584,9 +599,11 @@ document.addEventListener("DOMContentLoaded", function () {
     /**
      * Retrieves the recipe details by getting the text content of the modal and then defines
      * the Email subject to prompt the recipient to view the shared recipe
+     * 
      * The recipe is encoded by encodeURIComponent so any special characters will be properly shown in the email body
      * Uses the mailTo scheme to include both subject and body parameters for the URL / link which will be used
      * to pre fill the mail for the user
+     * 
      * Then triggers a new window to open on the user's default mail client with all of the above info included in it
      */
 
