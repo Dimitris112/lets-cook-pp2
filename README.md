@@ -205,6 +205,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
    - Fixed a minor issue with the save recipe button not reappearing after viewing an already saved recipe, just by updating the function which displays the recipe details.
    - Fixed the speech to stop whenever the user exits the recipe details window.
    - Fixed the issue where the user would type anything in the search bar and it would be there no matter what.
+   - Fixed the error which led the user to `infinite` 404 page landing if he used `/` after the **index.html** and then kept typing.
     
 
  - ### Unfixed bugs
