@@ -62,6 +62,13 @@ h4 {
     z-index: 1;
 }
 
+#searchButton,
+#randomButton,
+#resetButton {
+    background-color: #1F3EDB;
+    color: #FAF9F9;
+}
+
 .browse-heading {
     font-size: 1.5rem;
     margin: 2% auto;
