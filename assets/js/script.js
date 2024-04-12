@@ -287,7 +287,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /**
      * Shows recipe cards based on the array of the recipes and it begins
-     * by clearing any existing content within the recipe container
+     * by clearing any existing content within the recipe container and each time the user types
+     * in the search bar and then clicks on any button / menu, the searchbar will be empty
      * then it checks if there are available recipes to display and if there are
      * it iterates over each recipe creating a recipe card for each one
      * Each card contains the title, thumbnail image and a button to view the details
@@ -296,6 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Finally updates the pagination controls based on the total number of recipes displayed. 
      */
     function displayRecipes(recipes) {
+        searchInput.value = "";
         recipeContainer.innerHTML = "";
         if (recipes && recipes.length > 0) {
             const startIndex = (currentPage - 1) * pageSize;
