@@ -38,7 +38,7 @@ h1 {
     text-shadow: 1px 2px 2px #00000080;
 }
 
-h4 {
+h3 {
     display: none;
 }
 
@@ -64,7 +64,8 @@ h4 {
 
 #searchButton,
 #randomButton,
-#resetButton {
+#resetButton,
+.remove-button {
     background-color: #1F3EDB;
     color: #FAF9F9;
 }

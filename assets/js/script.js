@@ -309,7 +309,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const recipeElement = document.createElement("div");
                 recipeElement.classList.add("recipe");
                 recipeElement.innerHTML = `
-                    <h3>${recipe.strMeal}</h3>
+                    <h2>${recipe.strMeal}</h2>
                     <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" loading="lazy">
                     <button class="viewRecipeButton" data-recipe-id="${recipe.idMeal}">View Recipe</button>
                 `;
