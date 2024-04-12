@@ -58,6 +58,7 @@
 
     <section class="search-container">
       <h4>Search container</h4>
+      <label for="searchInput" class="label-hidden">Search for recipes:</label>
       <input type="text" id="searchInput" placeholder="Search for recipes">
       <button id="searchButton">Search</button>
       <button id="randomButton">Random Recipe</button>
@@ -114,21 +115,30 @@
       <div id="modalContent"></div>
       <div class="social-media-sharing">
         <h2>Share it on</h2>
-        <button id="facebook-share-btn">
+        <button id="facebook-share-btn"><span class="label-hidden">
+            Share on Facebook
+          </span>
           <i class="fab fa-facebook"></i>
         </button>
-        <button id="twitter-share-btn">
+        <button id="twitter-share-btn"><span class="label-hidden">
+            Share on Twitter
+          </span>
           <i class="fa-brands fa-x-twitter"></i>
         </button>
-        <button id="pinterest-share-btn">
+        <button id="pinterest-share-btn"><span class="label-hidden">
+            Share on Pinterest
+          </span>
           <i class="fab fa-pinterest"></i>
         </button>
-        <button id="email-share-btn">
+        <button id="email-share-btn"><span class="label-hidden">
+            Share via Email
+          </span>
           <i class="far fa-envelope"></i>
         </button>
       </div>
       <button id="saveButton">Save Recipe</button>
       <button id="toggleSpeechButton">
+        <span class="label-hidden">Toggle Speech</span>
         <i class="fa-solid fa-volume-high fa-2xs"></i>
       </button>
     </div>

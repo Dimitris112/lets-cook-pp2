@@ -24,6 +24,10 @@ body {
     position: relative;
 }
 
+.label-hidden {
+    display: none;
+}
+
 h1 {
     color: #ff7f00;
     text-align: center;
