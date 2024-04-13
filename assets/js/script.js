@@ -334,6 +334,10 @@ document.addEventListener("DOMContentLoaded", function () {
      * same way if the page is the Last page, it disables the next button
      * 
      * Then updates the text content of the current page to display the correct pagination number
+     * 
+     * When the user goes back and forth through the pages, the scrollIntoView will smoothly
+     * take him to the first recipe shown in the container
+     * 
      * Finally determines whether the pagination container should be displayed or be hidden based
      * on the total number of recipes, if there are more or less than 4 recipes per page
      */
@@ -346,6 +350,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("currentPage").textContent = `Page ${currentPage}`;
         const paginationContainer = document.getElementsByClassName("pagination-container")[0];
         paginationContainer.style.display = totalRecipes > 4 ? "flex" : "none";
+        document.getElementById("recipeContainer").scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+
     }
 
 
