@@ -299,7 +299,11 @@ document.addEventListener("DOMContentLoaded", function () {
      * Each card contains the title, thumbnail image and a button to view the details
      * also the cards are appended to the recipe container
      * 
-     * If no recipes are found, it displays a message indicating so
+     * If no recipes are found, it displays a message indicating so and the
+     * filter category will be reset
+     * 
+     * The scroll into view will take the user to whatever he was seeing to the search bar
+     * 
      * Finally updates the pagination controls based on the total number of recipes displayed. 
      */
     function displayRecipes(recipes) {
@@ -324,6 +328,11 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             recipeContainer.innerHTML = "<p class='no-recipes-message'>No recipes found.</p>";
             updatePaginationControls(0);
+            searchInput.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            resetFilterOption();
         }
     }
 
