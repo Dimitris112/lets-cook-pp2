@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
             fetchRecipes(searchInput.value);
         }
+        currentPage = 1;
     }
 
     /**
@@ -223,6 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = "block";
         checkIfRecipeIsSaved(recipe.idMeal);
         showSpeechButton();
+        resetFilterOption();
     }
 
     /**
@@ -263,6 +265,7 @@ document.addEventListener("DOMContentLoaded", function () {
             recipes = data.meals || [];
             totalRecipes = recipes.length;
             displayRecipes(recipes);
+            resetFilterOption();
         } catch (error) {
             console.error("Error fetching recipes by first letter:", error);
         }
@@ -280,6 +283,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const response = await fetch(randomUrl);
             const data = await response.json();
             displayRandomRecipe(data.meals[0]);
+            resetFilterOption();
         } catch (error) {
             console.error("Error fetching random recipe:", error);
         }
@@ -336,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function () {
      * Then updates the text content of the current page to display the correct pagination number
      * 
      * When the user goes back and forth through the pages, the scrollIntoView will smoothly
-     * take him to the first recipe shown in the container
+     * go to the first recipe shown in the container
      * 
      * Finally determines whether the pagination container should be displayed or be hidden based
      * on the total number of recipes, if there are more or less than 4 recipes per page
@@ -373,6 +377,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function resetFilterOption() {
+        mealCategory.value = "all";
+    }
     /**
      * Saves the recipe locally in the browser's storage, starts by retrieving the
      * array of saved recipes from the local storage and if there are no saved recipes

@@ -206,6 +206,8 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
    - Fixed the speech to stop whenever the user exits the recipe details window.
    - Fixed the issue where the user would type anything in the search bar and it would be there no matter what.
    - Fixed the error which led the user to `infinite` 404 page landing if he used `/` after the **index.html** and then kept typing.
+   - Whenever the user goes through the pages of the recipes, the new page will start on the first recipe that is found. Which before led to bad UX.
+   - Fixed the category to be reset when the user clicks on a random recipe or an alphabet letter and always to start on page 1 whenever he searches something new.
     
 
  - ### Unfixed bugs
