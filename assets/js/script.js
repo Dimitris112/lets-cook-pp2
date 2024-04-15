@@ -83,12 +83,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Functions
 
+    /**
+     * The user types in the search bar and presses enter
+     * then it fetches the recipes
+     * also each time the user types in the search bar and then clicks on any button / menu, the searchbar will be empty
+     * then it checks if there are available recipes to display and if there are
+     * it iterates over each recipe creating a recipe card for each one
+     * Also resets the current page to always start on 1
+     */
     function handleSearchInput(event) {
         if (event.key === "Enter") {
             event.preventDefault();
-            fetchRecipes(searchInput.value);
+            if (searchInput && searchInput.value) {
+                fetchRecipes(searchInput.value);
+            }
+            currentPage = 1;
         }
-        currentPage = 1;
     }
 
     /**
@@ -228,6 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /**
+     * If the searchbar is empty then the no recipes found message will appear under it
      * Fetches recipes from the API based on a search query and category
      * constructs a URL using these and if it's provided then it makes a HTTP request
      * to that specific URL using the 'fetch' API. Next if it receives a response
@@ -236,6 +247,17 @@ document.addEventListener("DOMContentLoaded", function () {
      */
     async function fetchRecipes(searchQuery, category = '') {
         try {
+            if (!searchQuery.trim()) {
+                recipeContainer.innerHTML = "<p class='no-recipes-message'>No recipes found.</p>";
+                updatePaginationControls(0);
+                searchInput.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                resetFilterOption();
+                return;
+            }
+
             let searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`;
             if (category) {
                 searchUrl += `&c=${category}`;
@@ -249,6 +271,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Error fetching recipes:", error);
         }
     }
+
 
     /**
      * Fetches recipes by the first letter of their name and takes the letter as parameter
