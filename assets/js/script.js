@@ -255,6 +255,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     block: 'start'
                 });
                 resetFilterOption();
+                const paginationContainer = document.getElementsByClassName("pagination-container")[0];
+                paginationContainer.style.display = "none";
                 return;
             }
 
@@ -267,10 +269,13 @@ document.addEventListener("DOMContentLoaded", function () {
             recipes = data.meals || [];
             totalRecipes = recipes.length;
             displayRecipes(recipes);
+            const paginationContainer = document.getElementsByClassName("pagination-container")[0];
+            paginationContainer.style.display = totalRecipes > 4 ? "flex" : "none";
         } catch (error) {
             console.error("Error fetching recipes:", error);
         }
     }
+
 
 
     /**
