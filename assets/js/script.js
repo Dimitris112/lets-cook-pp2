@@ -42,12 +42,22 @@ document.addEventListener("DOMContentLoaded", function () {
      * clicking the view recipe button -> it shows the recipe details
      * clicking the remove -> it deletes the single recipe
      * clicking on a saved recipe in the list, fetches the recipe by name
+     * Clicking on the view recipe button, the user will be seeing always the top of the 
+     * recipe details (h2) with a smooth 200ms transition
      */
 
     document.addEventListener("click", function (event) {
         if (event.target.classList.contains("viewRecipeButton")) {
             const recipeId = event.target.dataset.recipeId;
             fetchAndDisplayRecipeDetails(recipeId);
+            setTimeout(() => {
+                const modalContent = document.getElementsByClassName('modal-content');
+                const h2Element = modalContent[0].getElementsByTagName('h2')[0];
+                h2Element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }, 200);
         } else if (event.target.classList.contains("remove-button")) {
             const recipeId = event.target.dataset.recipeId;
             removeSavedRecipe.call(event.target, recipeId);
@@ -56,6 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
             fetchRecipeByName(recipeName);
         }
     });
+
+
+
 
     /**
      * The user clicks on a specified button ID and depending on the ID, the appropriate

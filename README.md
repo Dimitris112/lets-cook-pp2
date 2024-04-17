@@ -209,8 +209,9 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
    - Whenever the user goes through the pages of the recipes, the new page will start on the first recipe that is found. Which before led to bad UX.
    - Fixed the category to be reset when the user clicks on a random recipe or an alphabet letter and always to start on page 1 whenever he searches something new.
    - Fixed the issue where the `category` would remain the same even if the user entered invalid information.
-   - When the user clicked the `Search` button despite if there was nothing in the searchbar, it would fetch recipes. Instead now it will show that `No recipes found.`
+   - When the user clicked the `Search` button despite if there was nothing in the search bar, it would fetch recipes. Instead now it will show that `No recipes found.`
    - Fixed the pagination controls to be hidden when the user clicked the `Search` button if earlier there were multiple pages of recipes displayed and the `No recipes found` message appeared.
+   - When the user clicks the `View Recipe` button, he will be seeing **always** the top of the recipe details instead of just where he left off - if he viewed other recipes before.
     
 
  - ### Unfixed bugs
