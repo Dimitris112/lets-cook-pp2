@@ -176,7 +176,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 
       - ### Footer 
 
-        On the footer, the user looks on some visually appealing sphere effect and when he hovers over it or click on it if he's on phone/tablet. He can see the **[Github](https://github.com/Dimitris112/lets-cook-pp2)** repository and my **[Linkedin Profile](https://www.linkedin.com/in/dimitrios-thlivitis/)**. Both links open in a new tab for the best user experience. Also there is the `Created by Dimitris 2024` below the icons, which `Dimitris` is me and the `2024` is the year of building this project.
+        On the footer, the user looks on some visually appealing sphere effect and when he hovers over it or click on it if he's on phone/tablet. He can see the **[Github](https://github.com/Dimitris112/lets-cook-pp2)** repository and my **[Linkedin Profile](https://www.linkedin.com/in/dimitrios-thlivitis/)**. Both links open in a new tab for the best user experience. Also there is the `Created by Dimitris - 2024` below the icons, which `Dimitris` is me and the `2024` is the year of building this project.
 
       ![Footer](assets/images/validation/footer.gif "Footer including the pulse effect and the github & linkedin icons when hovered")
 
@@ -212,9 +212,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
    - When the user clicked the `Search` button despite if there was nothing in the search bar, it would fetch recipes. Instead now it will show that `No recipes found.`
    - Fixed the pagination controls to be hidden when the user clicked the `Search` button if earlier there were multiple pages of recipes displayed and the `No recipes found` message appeared.
    - When the user clicks to view any recipe, he will be seeing **always** the top of the recipe details instead of just where he left off - if he viewed other recipes before.
-    
 
- - ### Unfixed bugs
  
  - ### Supported screens and browsers
    - **Responsive Design:** The website is fully responsive and optimized for all screen sizes, ensuring seamless browsing experience. From the compact *Samsung Galaxy Fold* with a width as small as 280px up to large PC monitors.
