@@ -50,33 +50,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target.classList.contains("viewRecipeButton")) {
             const recipeId = event.target.dataset.recipeId;
             fetchAndDisplayRecipeDetails(recipeId);
-            setTimeout(() => {
-                const modalContent = document.getElementsByClassName('modal-content');
-                const h2Element = modalContent[0].getElementsByTagName('h2')[0];
-                h2Element.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }, 200);
         } else if (event.target.classList.contains("remove-button")) {
             const recipeId = event.target.dataset.recipeId;
             removeSavedRecipe.call(event.target, recipeId);
         } else if (event.target.tagName.toLowerCase() === 'li') {
             const recipeName = event.target.textContent.split('Remove')[0].trim();
             fetchRecipeByName(recipeName);
-        }
-    });
-
-
-
-
-    /**
-     * The user clicks on a specified button ID and depending on the ID, the appropriate
-     * sharing function is called
-     */
-
-    document.addEventListener("click", function (event) {
-        if (event.target.id === "facebook-share-btn") {
+        } else if (event.target.id === "facebook-share-btn") {
             shareOnFacebook();
         } else if (event.target.id === "twitter-share-btn") {
             shareOnTwitter();
@@ -86,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
             shareByEmail();
         }
     });
+
 
 
     /**
@@ -554,6 +535,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+
     /**
      * The async function takes a single parameter of Category, 
      * sets a URL for fetching recipes by category and sends a GET request to that URL which then
@@ -605,8 +587,13 @@ document.addEventListener("DOMContentLoaded", function () {
      * 
      * Then sets the dataset property of the modal content by setting its style to block
      * to store the recipe ID
+     * 
+     * The user will always look at the top of the recipe details when clicking on the
+     * modal content to pop up with a 300ms delay in order to be sure that it's loaded
+     * 
      * Also checks if the recipe is already saved and shows the speech button
      */
+
     function displayRecipeDetails(recipe) {
         const modalTitle = document.getElementById("modalTitle");
         modalTitle.textContent = recipe.strMeal;
@@ -615,12 +602,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 <p>Category: ${recipe.strCategory}</p>
                 <p>Area: ${recipe.strArea}</p>
                 <img src="${recipe.strMealThumb}" alt="${recipe.strMeal}" />
-                `;
+            `;
         modalContent.dataset.recipeId = recipe.idMeal;
         modal.style.display = "block";
         checkIfRecipeIsSaved(recipe.idMeal);
         showSpeechButton();
+        setTimeout(() => {
+            modalContent.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }, 300);
     }
+
+
+
 
     function hideSpeechButton() {
         toggleSpeechButton.style.display = "none";

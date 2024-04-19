@@ -127,7 +127,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
 
       - ### Pagination
 
-        The user will come across 4 recipes per page and with the help of the `previous` and `next` button will navigate through the pages. In small mobile screens although the user sees 4 recipes per page, ***but*** they are aligned vertically 1 by 1.
+        The user will come across 4 recipes per page and with the help of the `previous` and `next` button will navigate through the pages. In small mobile screens although the user sees 4 recipes per page, they are aligned vertically ***1 by 1***.
 
       ![Pagination](assets/images/validation/category_pagination.gif "Pagination controls")
       
@@ -211,7 +211,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
    - Fixed the issue where the `category` would remain the same even if the user entered invalid information.
    - When the user clicked the `Search` button despite if there was nothing in the search bar, it would fetch recipes. Instead now it will show that `No recipes found.`
    - Fixed the pagination controls to be hidden when the user clicked the `Search` button if earlier there were multiple pages of recipes displayed and the `No recipes found` message appeared.
-   - When the user clicks the `View Recipe` button, he will be seeing **always** the top of the recipe details instead of just where he left off - if he viewed other recipes before.
+   - When the user clicks to view any recipe, he will be seeing **always** the top of the recipe details instead of just where he left off - if he viewed other recipes before.
     
 
  - ### Unfixed bugs
