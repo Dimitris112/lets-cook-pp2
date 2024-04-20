@@ -19,7 +19,6 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
     - [Code Validation](#code-validation)
     - [Test cases](#test-cases)
     - [Fixed bugs](#fixed-bugs)
-    - [Unfixed bugs](#unfixed-bugs)
     - [Supported screens and browsers](#supported-screens-and-browsers)
 - ## [Deployment](#deployment)
     - [Gitpod](#via-gitpod)
