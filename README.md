@@ -1,4 +1,8 @@
 # Let's Cook
+
+*In order to open links in a new tab either click on them with your **scroll wheel** or hold **Ctrl and click** for Windows users -
+**Command key and click** for Mac users.*
+
 Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "target=_blank")
 
 ![Responsiveness](assets/images/validation/responsive.png "Screenshot of the webpage on multiple screen sizes")
