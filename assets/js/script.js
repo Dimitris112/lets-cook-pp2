@@ -239,35 +239,41 @@ document.addEventListener("DOMContentLoaded", function () {
      * it extracts the array of recipes and updates the UI to display them
      * if there is an error, it will be logged to the console
      */
-    async function fetchRecipes(searchQuery, category = '') {
-        try {
-            if (!searchQuery.trim()) {
-                recipeContainer.innerHTML = "<p class='no-recipes-message'>No recipes found.</p>";
-                updatePaginationControls(0);
-                searchInput.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                resetFilterOption();
-                const paginationContainer = document.getElementsByClassName("pagination-container")[0];
-                paginationContainer.style.display = "none";
-                return;
-            }
-
-            let searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`;
-            if (category) {
-                searchUrl += `&c=${category}`;
-            }
-            const response = await fetch(searchUrl);
-            const data = await response.json();
-            recipes = data.meals || [];
-            totalRecipes = recipes.length;
-            displayRecipes(recipes);
+    function fetchRecipes(searchQuery, category = '') {
+        if (!searchQuery.trim()) {
+            recipeContainer.innerHTML = "<p class='no-recipes-message'>No recipes found.</p>";
+            updatePaginationControls(0);
+            searchInput.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+            resetFilterOption();
             const paginationContainer = document.getElementsByClassName("pagination-container")[0];
-            paginationContainer.style.display = totalRecipes > 4 ? "flex" : "none";
-        } catch (error) {
-            console.error("Error fetching recipes:", error);
+            paginationContainer.style.display = "none";
+            return Promise.resolve();
         }
+        let searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`;
+        if (category) {
+            searchUrl += `&c=${category}`;
+        }
+        return fetch(searchUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                recipes = data.meals || [];
+                totalRecipes = recipes.length;
+                displayRecipes(recipes);
+                const paginationContainer = document.getElementsByClassName("pagination-container")[0];
+                paginationContainer.style.display = totalRecipes > 4 ? "flex" : "none";
+            })
+            .catch(error => {
+                console.error("Error fetching recipes:", error);
+                throw error;
+            });
     }
 
 
@@ -279,19 +285,31 @@ document.addEventListener("DOMContentLoaded", function () {
      * updates the total number of recipes, then calls the display recipes function to render them to the page
      * Logs any error occurred if any are found
      */
-    async function fetchRecipesByFirstLetter(letter) {
+    function fetchRecipesByFirstLetter(letter) {
         try {
             const searchUrl = letter === '' ? 'https://www.themealdb.com/api/json/v1/1/search.php' : `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`;
-            const response = await fetch(searchUrl);
-            const data = await response.json();
-            recipes = data.meals || [];
-            totalRecipes = recipes.length;
-            displayRecipes(recipes);
-            resetFilterOption();
+
+            fetch(searchUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    recipes = data.meals || [];
+                    totalRecipes = recipes.length;
+                    displayRecipes(recipes);
+                    resetFilterOption();
+                })
+                .catch(error => {
+                    console.error("Error fetching recipes by first letter:", error);
+                });
         } catch (error) {
             console.error("Error fetching recipes by first letter:", error);
         }
     }
+
 
     /**
      * Fetches a random recipe by sending a GET request to the URL, upon receiving the response
@@ -299,17 +317,25 @@ document.addEventListener("DOMContentLoaded", function () {
      * Then the display random recipe function is called using the first index of its array to display
      * the recipe, if any errors occur, they will be caught by the catch block and logged to the console
      */
-    async function fetchRandomRecipe() {
-        try {
-            const randomUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
-            const response = await fetch(randomUrl);
-            const data = await response.json();
-            displayRandomRecipe(data.meals[0]);
-            resetFilterOption();
-        } catch (error) {
-            console.error("Error fetching random recipe:", error);
-        }
+    function fetchRandomRecipe() {
+        const randomUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
+
+        fetch(randomUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                displayRandomRecipe(data.meals[0]);
+                resetFilterOption();
+            })
+            .catch(error => {
+                console.error("Error fetching random recipe:", error);
+            });
     }
+
 
     /**
      * Shows recipe cards based on the array of the recipes and it begins
@@ -463,16 +489,29 @@ document.addEventListener("DOMContentLoaded", function () {
      * 
      * If any error occurs , then by try and catch it will be logged to the console
      */
-    async function displaySavedRecipes() {
-        try {
-            savedRecipesList.innerHTML = "";
-            let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
-            for (let i = 0; i < savedRecipes.length; i++) {
-                const recipeId = savedRecipes[i];
-                const lookupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
-                const response = await fetch(lookupUrl);
-                const data = await response.json();
-                const recipe = data.meals[0];
+    function displaySavedRecipes() {
+        savedRecipesList.innerHTML = "";
+        let savedRecipes = JSON.parse(localStorage.getItem("savedRecipes")) || [];
+
+        function fetchRecipeDetails(recipeId) {
+            const lookupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
+            return fetch(lookupUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    return data.meals[0];
+                });
+        }
+        // Ssaved recipes in sequence
+        let promise = Promise.resolve();
+        savedRecipes.forEach(recipeId => {
+            promise = promise.then(() => {
+                return fetchRecipeDetails(recipeId);
+            }).then(recipe => {
                 const li = document.createElement("li");
                 li.textContent = recipe.strMeal;
                 const removeButton = document.createElement("button");
@@ -481,11 +520,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 removeButton.dataset.recipeId = recipe.idMeal;
                 li.appendChild(removeButton);
                 savedRecipesList.appendChild(li);
-            }
-        } catch (error) {
+            });
+        });
+        promise.catch(error => {
             console.error("Error displaying saved recipes:", error);
-        }
+        });
     }
+
+
 
     /**
      * Constructs a URL which fetches the recipe details using the recipe ID and
@@ -493,16 +535,23 @@ document.addEventListener("DOMContentLoaded", function () {
      * JSON data and displays the fetched recipe details on the page and logs any errors during
      * the process
      */
-    async function fetchAndDisplayRecipeDetails(recipeId) {
-        try {
-            const lookupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
-            const response = await fetch(lookupUrl);
-            const data = await response.json();
-            displayRecipeDetails(data.meals[0]);
-        } catch (error) {
-            console.error("Error fetching recipe details:", error);
-        }
+    function fetchAndDisplayRecipeDetails(recipeId) {
+        const lookupUrl = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`;
+        fetch(lookupUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                displayRecipeDetails(data.meals[0]);
+            })
+            .catch(error => {
+                console.error("Error fetching recipe details:", error);
+            });
     }
+
 
     /**
      * The async function has the parameter of recipeName which represents the 
@@ -518,22 +567,29 @@ document.addEventListener("DOMContentLoaded", function () {
      * 
      * If an error occurs during the process, it is caught by the catch block and it's logged to the console.
      */
-    async function fetchRecipeByName(recipeName) {
-        try {
-            const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`;
-            const response = await fetch(searchUrl);
-            const data = await response.json();
-            if (data.meals && data.meals.length > 0) {
-                const recipe = data.meals[0];
-                displayRecipeDetails(recipe);
-                checkIfRecipeIsSaved(recipe.idMeal);
-            } else {
-                console.error("Recipe not found:", recipeName);
-            }
-        } catch (error) {
-            console.error("Error fetching recipe by name:", error);
-        }
+    function fetchRecipeByName(recipeName) {
+        const searchUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${recipeName}`;
+        fetch(searchUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.meals && data.meals.length > 0) {
+                    const recipe = data.meals[0];
+                    displayRecipeDetails(recipe);
+                    checkIfRecipeIsSaved(recipe.idMeal);
+                } else {
+                    console.error("Recipe not found:", recipeName);
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching recipe by name:", error);
+            });
     }
+
 
 
     /**
@@ -546,18 +602,26 @@ document.addEventListener("DOMContentLoaded", function () {
      * 
      * By catch it logs any error occurred to the console
      */
-    async function fetchRecipesByCategory(category) {
-        try {
-            const searchUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
-            const response = await fetch(searchUrl);
-            const data = await response.json();
-            recipes = data.meals || [];
-            totalRecipes = recipes.length;
-            displayRecipes(recipes);
-        } catch (error) {
-            console.error("Error fetching recipes by category:", error);
-        }
+    function fetchRecipesByCategory(category) {
+        const searchUrl = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`;
+        fetch(searchUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                recipes = data.meals || [];
+                totalRecipes = recipes.length;
+                displayRecipes(recipes);
+            })
+            .catch(error => {
+                console.error("Error fetching recipes by category:", error);
+            });
     }
+
+
 
     /**
      * Manages the changes in the recipe category selection, extracts the value of the selected category from the
