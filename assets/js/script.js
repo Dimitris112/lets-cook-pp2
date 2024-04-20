@@ -13,43 +13,13 @@ let resetButton = document.getElementById("resetButton");
 let prevPageButton = document.getElementById("prevPageButton");
 let nextPageButton = document.getElementById("nextPageButton");
 let toggleSpeechButton = document.getElementById("toggleSpeechButton");
+let mealCategory = document.getElementById("mealCategory");
 let currentPage = 1;
 let pageSize = 4;
 let recipes = [];
 let totalRecipes = 0;
 
 searchInput.focus();
-/**
- * I've included both the view recipe and remove buttons in the event listener below
- * clicking the view recipe button -> it shows the recipe details
- * clicking the remove -> it deletes the single recipe
- * clicking on a saved recipe in the list, fetches the recipe by name
- * Clicking on the view recipe button, the user will be seeing always the top of the 
- * recipe details (h2) with a smooth 200ms transition
- */
-
-document.addEventListener("click", function (event) {
-    if (event.target.classList.contains("viewRecipeButton")) {
-        const recipeId = event.target.dataset.recipeId;
-        fetchAndDisplayRecipeDetails(recipeId);
-    } else if (event.target.classList.contains("remove-button")) {
-        const recipeId = event.target.dataset.recipeId;
-        removeSavedRecipe.call(event.target, recipeId);
-    } else if (event.target.tagName.toLowerCase() === 'li') {
-        const recipeName = event.target.textContent.split('Remove')[0].trim();
-        fetchRecipeByName(recipeName);
-    } else if (event.target.id === "facebook-share-btn") {
-        shareOnFacebook();
-    } else if (event.target.id === "twitter-share-btn") {
-        shareOnTwitter();
-    } else if (event.target.id === "pinterest-share-btn") {
-        shareOnPinterest();
-    } else if (event.target.id === "email-share-btn") {
-        shareByEmail();
-    }
-});
-
-
 
 /**
  * Instead of importing every code from the mealdb API 
@@ -174,6 +144,7 @@ function readRecipeDetails() {
     speech.rate = 1;
     speech.volume = 1;
     speechSynthesis.speak(speech);
+
 }
 
 /**
@@ -397,9 +368,7 @@ function updatePaginationControls() {
         behavior: 'smooth',
         block: 'start'
     });
-
 }
-
 
 function goToPrevPage() {
     if (currentPage > 1) {
@@ -739,6 +708,38 @@ document.addEventListener("DOMContentLoaded", function () {
     nextPageButton.addEventListener("click", goToNextPage);
     mealCategory.addEventListener("change", handleCategoryChange);
     toggleSpeechButton.addEventListener("click", toggleSpeech);
+
+
+
+    /**
+     * I've included both the view recipe and remove buttons in the event listener below
+     * clicking the view recipe button -> it shows the recipe details
+     * clicking the remove -> it deletes the single recipe
+     * clicking on a saved recipe in the list, fetches the recipe by name
+     * Clicking on the view recipe button, the user will be seeing always the top of the 
+     * recipe details (h2) with a smooth 200ms transition
+     */
+
+    document.addEventListener("click", function (event) {
+        if (event.target.classList.contains("viewRecipeButton")) {
+            const recipeId = event.target.dataset.recipeId;
+            fetchAndDisplayRecipeDetails(recipeId);
+        } else if (event.target.classList.contains("remove-button")) {
+            const recipeId = event.target.dataset.recipeId;
+            removeSavedRecipe.call(event.target, recipeId);
+        } else if (event.target.tagName.toLowerCase() === 'li') {
+            const recipeName = event.target.textContent.split('Remove')[0].trim();
+            fetchRecipeByName(recipeName);
+        } else if (event.target.id === "facebook-share-btn") {
+            shareOnFacebook();
+        } else if (event.target.id === "twitter-share-btn") {
+            shareOnTwitter();
+        } else if (event.target.id === "pinterest-share-btn") {
+            shareOnPinterest();
+        } else if (event.target.id === "email-share-btn") {
+            shareByEmail();
+        }
+    });
 
     displaySavedRecipes();
 });

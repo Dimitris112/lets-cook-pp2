@@ -97,7 +97,7 @@ Go to the website -> [Live link](https://dimitris112.github.io/lets-cook-pp2/ "t
  - ### Code Validation
    - For the **HTML** validation I used [w3](https://validator.w3.org/ "target=_blank") which shows the [page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F "target=_blank") error free. 
    - For the **CSS** I used the same method which is also error free but received warnings about the `::-webkit-scrollbar` because it is not universal among the browsers. See for yourself -> [CLICK ME](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fdimitris112.github.io%2Flets-cook-pp2%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en "target=_blank")
-   - For the **JavaScript** I used 
+   - For the **JavaScript** I used the [JSint in es6](https://jshint.com/) which shows error less result.
 
  - ### Test cases
       - ### Alphabetical Search
